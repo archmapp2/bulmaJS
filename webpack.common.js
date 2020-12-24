@@ -86,13 +86,25 @@ module.exports = {
         test: /\.html$/,
         use: ['html-loader'],
       },
+      // {
+      //   test: /\.(svg|png|jpg|gif|ico)$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 8192,
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.(svg|png|jpg|gif|ico)$/,
         use: {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'src/assets/img',
+            outputPath: '/bulmaJS/src/assets/img',
+            // outputPath: '/docs/src/assets/img',
           },
         },
       },
