@@ -1,0 +1,145 @@
+<!--https://subscription.packtpub.com/book/web_development/9781783282654/1/ch01lvl1sec06/top-6-features-you-need-to-know-about -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Handlebars</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"
+    />
+
+    <!-- <script src="./js/handlebars.min-v4.7.6.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="../../js/shortBulma$$.js"></script>
+    <script src="../../js/shortHbs$$.js"></script>
+  </head>
+
+  <body>
+    <section class="section">
+      <div class="container">
+        <div id="target"></div>
+      </div>
+    </section>
+
+    <script id="template" type="text/x-handlebars-template">
+      <div>
+        <article class="message has-background-success-light">
+          <div class="message-header has-background-warning">
+            <p>ヘルパー関数</p>
+          </div>
+          <div class="message-body mt-2">
+            <p>
+              ヘルパー関数には、大まかに言ってブロックヘルパー関数と そうでないヘルパー関数( tag helper )とがありますが、両者はともに、Handlebars.registerHelper()を使って作成されます。<br>
+              ブロックヘルパー関数は、そのブロック部分（テンプレート）をoptions.fn()で処理をするということが、下記のページで詳しく丁寧に説明されています。
+            </p>
+            <div class="has-text-centered"><a href="https://subscription.packtpub.com/book/web_development/9781783282654/1/ch01lvl1sec06/top-6-features-you-need-to-know-about"title="Instant Handlebars.js">Instant Handlebars.js By Gabriel Manricks</a>
+            </div>
+          </div>
+        </article>
+        <h2 class="notification is-info subtitle">Block Version</h2>
+        {{#formIt user}}
+          <div class="field">
+            <label class="label">名前</label>
+            <div class="control">{{name}}</div>
+          </div>
+
+          <div class="field">
+            <label class="label">年齢</label>
+            <div class="control">{{age}}</div>
+          </div>
+
+          <div class="field">
+            {{newsletter}}
+            <label for="chkExB">メールを受け取る</label>
+          </div>
+          {{submit}}<br>
+        {{/formIt}}
+      </div>
+      <hr>
+
+      <div>
+        <h2 class="notification is-success subtitle">Tag Version</h2>
+        {{formIt user}}
+      </div>
+    </script>
+
+    <script>
+      Handlebars.registerHelper('formIt', function (data, options) {
+        let fields = {};
+        //Generate the Inputs
+        for (let k in data) {
+          let v = data[k];
+          let html = '';
+          switch (typeof v) {
+            case 'string':
+              v = Handlebars.Utils.escapeExpression(v);
+              html = `<input class="input is-medium" type="text" name="${k}" value="${v}" />`;
+              // html = '<input type="text" name="' + k + '" value="' + v + '" />';
+              break;
+            case 'number':
+              html = `<input class="input is-medium" type="number" name="${k}" value="${v}" />`;
+              break;
+            case 'boolean':
+              let checked = v ? 'checked' : '';
+              html = `<input id="chkExB" type="checkbox" class="is-checkradio" name="${k}" ${checked} />`;
+              break;
+          }
+          fields[k] = new Handlebars.SafeString(html);
+        }
+
+        let out = '<form>';
+
+        let button = `
+              <div class="field">
+                <div class="control" id="submit">
+                  <button class="button has-background-link-light mt-4">送信</button>
+                </div>
+              </div>
+              `;
+        if (typeof options.fn == 'undefined') {
+          //If it's a tag helper then add each element manually
+          for (let k in fields) {
+            if (k === 'newsletter') {
+              let checked = data[k] ? 'checked' : '';
+              out += `
+                <div class="field">
+                  <input id="chkEx" type="checkbox" class="is-checkradio" name="${k}" ${checked} />
+                  <label for="chkEx">メールを受け取る</label>
+                </div>`;
+            } else {
+              out += `
+                <div class="field">
+                  <label class="label">${k}</label>
+                  <div class="control">${fields[k]}</div>
+                </div>`;
+            }
+          }
+          out += button;
+        } else {
+          //If it's a block helper add the button and run the template
+          fields.submit = new Handlebars.SafeString(button);
+          out += options.fn(fields);
+        }
+
+        out += '</form>';
+        return new Handlebars.SafeString(out);
+      });
+
+      let userData = {
+        name: 'John Smith',
+        age: 25,
+        newsletter: true,
+      };
+
+      $$qtFnqT('#template', { user: userData }, '#target');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+
+  devServer: {
+    // writeToDisk: true,
+    host: '0.0.0.0',
+  },
+
+IPv4 アドレス . . . . . . . . . . . .: 192.168.10.106
+
+
+Free themes for Bulma
+https://jenil.github.io/bulmaswatch/
+
+<link rel="stylesheet" href="https://unpkg.com/bulmaswatch/default/bulmaswatch.min.css">
+
+
+
+archmapp77@gmail.com
+
+github
+  archmapp@i.softbank.jp
+  dist ===> docs
+
+  [Settings]
+    GitHub Pages
+    Source: None => master [save]
+      Branch master /docs
+
+    https://archmapp2.github.io/bulmaproject/
+
+    ***  For root URLs (like http://example.com/) you must provide an index.html file.
+
+
+xcopy /siYQ .\src\sub\*.* .\docs\src\sub
+

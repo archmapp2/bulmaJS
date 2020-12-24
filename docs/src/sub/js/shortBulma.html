@@ -1,0 +1,191 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma入門 javascript Handlebars Electron Angular notification"/><title>Bulma Project</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="../../js/shortBulma$$.js"></script><link href="../../../main.ef0929a6150b0869673d.css" rel="stylesheet"></head><body><nav class="navbar is-info has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a></div></div></div></nav><section class="section"><div class="container"><div class="notification has-background-info-light is-bold mb-1"><div class="container"><h1 class="title is-3 has-text-info">shortBulma <span class="is-size-4">ライブラリ</span></h1><h2 class="subtitle is-5 has-text-white"><strong class="subtitle is-6 has-text-danger">shortBulma$$.js</strong> ・ <strong class="subtitle is-6 has-text-danger">shortBulma.js</strong></h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/js/js.html" class="has-text-grey-light">Javascript</a></li><li class="is-active"><a href="#">shortBulmaライブラリ</a></li></ul></nav></div><div class="columns mt-5"><div class="column"></div><div class="column is-8 content"><article class="message is-info"><div class="message-header"><p></p></div><div class="message-body has-background-white-bis" style="border-bottom: inset 2px #aaaa88"><p class="has-text-centered has-text-weight-bold">このサイト独自の Bulma用ライブラリです</p></div></article><div class="box"><div class="box"><h2 class="is-size-4 has-background-white-ter p-2 km">解説</h2><div class="is-size-5-tablet lh7">~~ 自作ライブラリ <strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong> ~~</div><div class="content"><ul><li>BulmaでJavascriptを利用するために、このWebサイトでは<br/>　<strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong><br/>というライブラリを使います。<article class="panel is-warning mt-5"><p class="panel-heading mb-0">特徴</p><div class="panel-block"><span class="panel-icon mb-5"><i class="fas fa-2x fa-mug-hot chestnut-light" aria-hidden="true"></i> </span><span class="ml-4">BulmaでJavascriptを短い名前で利用します</span></div><div class="panel-block"><span class="panel-icon mb-5"><i class="fas fa-2x fa-mug-hot chestnut-light" aria-hidden="true"></i> </span><span class="ml-4">これらのエイリアス（ショートカット名）はできるだけ小数に限定</span></div><div class="panel-block"><span class="panel-icon mb-5"><i class="fas fa-2x fa-mug-hot chestnut-light" aria-hidden="true"></i> </span><span class="ml-4">Bulmaの特定の機能を実現する関数も追加</span></div><div class="panel-block"><span class="ml-6">（ 例：$$bulmaMenu、$$bulmaTabs、$$bulmaModal等 ）</span></div></article><h3 class="is-size-5 has-background-white-ter mt-2 mb-1 px-2 py-1">使い分け</h3><div class="box has-background-warning-light mt-1"><h4 class="is-size-6 has-background-white-ter px-2 py-1"><strong>shortBulma$$.js</strong></h4><ul><li>globalで使える環境で利用</li><li>使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;</li><li>headタグ内に挿入。但し、pathは状況によって変わります。</li><li><div class="mt-3"><dl><dt>$$de = (f) => { ...'DOMContentLoaded', f)</dt><dd>ロード時にイベントリスナーを設定</dd><dt>$$qAll('.notification .delete')</dt><dd>各notificationの削除ボタンを全て取得</dd><dt>$$oe = (o, f)</dt><dd>オブジェクトにイベントリスナーを設定</dd><dt>$$Id('n1')</dt><dd>idが'n1'である要素を取得</dd></dl></div></li></ul></div><div class="box has-background-warning-light mt-1"><h4 class="is-size-6 has-background-white-ter px-2 py-1"><strong>shortBulma.js</strong></h4><ul><li>moduleとして利用</li><li>使い方の例：import * as $$ from './js/shortBulma';</li><li>但し、pathは状況によって変わります。</li><li><div class="mt-3"><dl><dt>$$.de(f)</dt><dd>ロード時にイベントリスナーを設定</dd><dt>$$.qAll('.notification .delete')</dt><dd>各notificationの削除ボタンを全て取得</dd><dt>$$.oe = (o, f)</dt><dd>オブジェクトにイベントリスナーを設定</dd><dt>$$.Id('n1')</dt><dd>idが'n1'である要素を取得</dd></dl></div></li></ul></div></li><hr/><li><strong>shortBulma$$.js</strong>等は、筆者がタイピングが苦手で、長い名前に弱いため使っています。<p class="has-text-centered mt-3">( <small>Bulma や Javascript に標準であったらいいな～</small> )</p></li></ul></div></div></div><h2 class="subtitle has-background-white-ter mb-2 p-2">shortBulma$$.jsのソースコード</h2><blockquote class="is-size-6 ml-2"><div class="sourceview"><pre id="pre1" class="brush: html;">
+// shortBulma$$.js
+
+// ss: String, not selector
+const $$Id0 = (id) =&gt; {
+  return document.getElementById(id);
+};
+const $$Id = (id) =&gt; {
+  id = id.substring(0, 1) === &#039;#&#039; ? id.substring(1) : id;
+  return document.getElementById(id);
+};
+
+// selector
+const $$q = (sel) =&gt; document.querySelector(sel);
+const $$qAll = (sel) =&gt; document.querySelectorAll(sel);
+const $$oq = (o, sel) =&gt; o.querySelector(sel);
+const $$qoAll = (o, sel) =&gt; o.querySelectorAll(sel);
+
+const $$de = (f) =&gt; {
+  document.addEventListener(&#039;DOMContentLoaded&#039;, f);
+};
+
+const $$oe = (o, f, evNa = &#039;click&#039;) =&gt; {
+  o.addEventListener(evNa, f);
+};
+
+const $$qoe = (sel, f, evNa = &#039;click&#039;) =&gt; {
+  $$oe($$q(sel), f, evNa);
+};
+
+const $$dqoe = (sel, f) =&gt; {
+  $$de(() =&gt; $$qe(sel, f));
+};
+
+const $$qecL = (sel, selT, cN = &#039;is-active&#039;, mN = &#039;toggle&#039;) =&gt; {
+  $$qe(sel, (e) =&gt; {
+    e.stopPropagation();
+    $$qcL(sel, cN, mN);
+    $$qcL(selT, cN, mN);
+  });
+};
+
+const $$qe = (sel, f, evNa = &#039;click&#039;) =&gt; {
+  $$oe($$q(sel), f, evNa);
+};
+
+const $$doe = (o, f) =&gt; {
+  $$de(() =&gt; $$oe(o, f));
+};
+
+const $$qAe = (sel, f) =&gt; {
+  $$qAll(sel).forEach((o) =&gt; $$oe(o, f));
+};
+
+const $$qcL = (sel, cN = &#039;is-active&#039;, mN = &#039;toggle&#039;) =&gt;
+  $$q(sel).classList[mN](cN);
+
+const $$ocL = (o, cN = &#039;is-active&#039;, mN = &#039;toggle&#039;) =&gt; o.classList[mN](cN);
+
+const $$DF = () =&gt; new DocumentFragment();
+
+const $$oes = (o, f) =&gt; {
+  o.addEventListener(&#039;submit&#039;, f);
+};
+
+//  &lt;template&gt; 要素は、そのHTMLTemplateElement.contentプロパティにDocumentFragmentを含みます。
+const $$tC = (id) =&gt; {
+  return $$Id(id).content;
+};
+
+const $$tCc = (id, b = true) =&gt; {
+  return document.importNode($$tC(id), b);
+};
+
+const $$tCco = (o, b = true) =&gt; {
+  return document.importNode(o, b);
+};
+
+const $$mkTemplate = (id, v) =&gt; {
+  const template = document.createElement(&#039;template&#039;);
+  template.id = id;
+  template.innerHTML = v;
+  $$q(&#039;body&#039;).appendChild(template);
+};
+
+const $$da_t = (id) =&gt; document.body.appendChild($$tCc(id));
+const $$oa_t = (o, id) =&gt; o.appendChild($$tCc(id));
+
+const $$ogA = (o, ss) =&gt; o.getAttribute(&#039;data-&#039; + ss);
+const $$ogD = (o, ss) =&gt; o.dataset[ss];
+const $$qogA = (sel, ss) =&gt; $$q(sel).getAttribute(&#039;data-&#039; + ss);
+const $$qogD = (sel, ss) =&gt; $$q(sel).dataset[ss];
+
+const $$na = (ss) =&gt; document.getElementsByName(ss); // form radio
+
+const $$qcLm = (
+  sel,
+  { selT, cN = &#039;is-active&#039; },
+  mN = &#039;toggle&#039;,
+  stopP = true
+) =&gt; {
+  $$ocLm($$q(sel), { trgt: $$q(selT) });
+};
+
+const $$ocLm = (o, { trgt, cN = &#039;is-active&#039; }, mN = &#039;toggle&#039;, stopP = true) =&gt; {
+  $$oe(o, (e) =&gt; {
+    if (stopP) e.stopPropagation();
+    trgt.classList[mN](cN);
+  });
+};
+
+const $$oAcLm = (
+  o,
+  { trgts, cN = &#039;is-active&#039; }, // trgts: array
+  mN = &#039;toggle&#039;,
+  stopP = true
+) =&gt; {
+  $$oe(o, (e) =&gt; {
+    if (stopP) e.stopPropagation();
+    trgts.forEach((t) =&gt; t.classList[mN](cN));
+  });
+};
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const $$bulmaMenu = (ss, ssT) =&gt; {
+  $$qecL(ss, ssT);
+  $$dqoe(&#039;body&#039;, (e) =&gt; {
+    e.stopPropagation();
+    const b = $$q(ss);
+    if (b.classList.contains(&#039;is-active&#039;)) {
+      $$ocL(b);
+      $$qcL(ssT);
+    }
+  });
+};
+
+const $$bulmaTabs = (ssTabs, ssContent) =&gt; {
+  const tabs = $$qAll(ssTabs);
+  const boxes = $$qAll(ssContent);
+
+  tabs.forEach((tab) =&gt; {
+    const target = $$Id(tab.dataset.target);
+
+    $$oe(tab, () =&gt; {
+      $$bulmaTab(tabs, tab);
+      $$bulmaTabR(boxes, target, &#039;is-hidden&#039;);
+    });
+  });
+};
+
+// $$bulmaTabs(&#039;.tabs li&#039;, &#039;#tab-content &gt; div&#039;);
+
+const $$bulmaTab = (items, target, cN = &#039;is-active&#039;) =&gt; {
+  items.forEach((item) =&gt; {
+    if (item === target) {
+      $$ocL(item, cN, &#039;add&#039;);
+    } else {
+      $$ocL(item, cN, &#039;remove&#039;);
+    }
+  });
+};
+
+const $$bulmaTabR = (items, target, cN = &#039;is-active&#039;) =&gt; {
+  items.forEach((item) =&gt; {
+    if (item === target) {
+      $$ocL(item, cN, &#039;remove&#039;);
+    } else {
+      $$ocL(item, cN, &#039;add&#039;);
+    }
+  });
+};
+
+const $$bulmaModal = (sel, selB, selM) =&gt; {
+  $$qcLm(sel, { selT: selM });
+  $$qcLm(selB, { selT: selM });
+};
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Bulmaとは直接関係ありません。
+const $$codeS = (id) =&gt; { // クリックしたテキストをすべて選択
+  const pre1 = $$Id(id);
+  if (!pre1) return;
+
+  $$oe(pre1, () =&gt; {
+    document
+      .getSelection()
+      .setBaseAndExtent(pre1, 0, pre1, pre1.childNodes.length);
+    // console.log(&#039;pre1.childNodes.length&#039;, pre1.childNodes.length);
+  });
+};
+                </pre></div></blockquote><div class="box"><h2 class="is-size-4 has-background-white-ter p-2 km">解説</h2><div class="is-size-5-tablet lh7">~~ Bulmaの ショートカットライブラリ ~~</div><div class="content"><ul><li>BulmaでJavascriptを利用するとき、このWebサイトでは<br/>　<a href="shortBulma.html"><strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong></a><br/>というライブラリを使います。</li><li class="pt-2">使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br/>headタグ内に挿入。但し、pathは状況によって変わります。</li><li class="pt-2"><p class="pt-3 px-3">例えば、Dropdown$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br/>&lt;script src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt; または<br/>&lt;script src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt; となります。</p></li><li class="pt-2">以下に、いくつかの例を解説をしますが、基本的には標準のJavascriptの<strong>ショートカット</strong>です。</li><hr/><li class="pt-2"><dl><dt>$$Id0(id)、$$Id(id)</dt><dd class="py-2">idを持つ最初の要素を取得します。<br/>$$Id(id)は、idに#が付いていても構いません。</dd><dt>$$q(sel)</dt><dd class="py-2">セレクターselを持つ最初の要素を取得します。</dd><dt>$$qAll(sel)</dt><dd class="py-2">セレクターselを持つ全ての要素を取得します。</dd><dt>$$oq(o, sel)</dt><dd class="py-2">要素oの中で、セレクターselを持つ最初の要素を取得します。</dd><dt>$$de(f)</dt><dd class="py-2">ページがロードされた時点で、イベントリスナーfを設定します。</dd><dt>$$oe(sel, f, evNa = 'click')</dt><dd class="py-2">要素oがクリックされたとき、イベントリスナーfを設定します。<br/>'click'イベントがデフォルトです。</dd><dt>$$qAe(sel, f)</dt><dd class="py-2">セレクター'sel'を持つ全ての要素を取得し、それぞれにイベントリスナーfを設定する。</dd><dt>$$ocLm(o, { trgt: target }, 'remove');</dt><dd class="py-2">oをクリックすると<br/>　「要素targetのクラスリストから'is-active'クラスを削除する」<br/>というイベントリスナーを設定<br/>（'is-active'、'toggle'がデフォルト）</dd><dt>$$bulmaMenu('#burger', '#nav-links');</dt><dd class="py-2">狭い画面で表示されるBulmaのburgerメニューのコントロール</dd></dl></li></ul></div></div></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/js/js.html" class="has-text-grey-light">Javascript</a></li><li class="is-active"><a href="#">shortBulmaライブラリ</a></li></ul></nav></div></div></section><script>$$codeS('#pre1');</script><script>$$bulmaMenu('#burger', '#nav-links');</script><script src="../../../main.f0af1110c755ccaff868.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>

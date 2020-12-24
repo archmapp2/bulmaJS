@@ -1,0 +1,465 @@
+<!-- tabs$$.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Bulma入門 javascript Handlebars Electron Angular tabs"
+    />
+
+    <title>Bulma Project　tabs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="../../assets/img/faviconBulma.png"
+      sizes="16x16"
+    />
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+    ></script>
+
+    <script src="../../js/shortBulma$$.js"></script>
+  </head>
+
+  <body>
+    <section class="section">
+      <div class="container">
+        <nav
+          class="navbar is-primary has-text-weight-medium has-shadow"
+          role="navigation"
+          aria-label="Main navigation"
+          id="nav"
+        >
+          <div class="container">
+            <div class="navbar-brand">
+              <a href="../../../index.html" class="navbar-item" title="Top page"
+                >BulmaProject</a
+              >
+              <div id="burger" class="navbar-burger" data-target="navbarMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div
+              class="navbar-menu is-primary is-pulled-right mr-2"
+              id="nav-links"
+            >
+              <div class="navbar-start navbar-item">
+                <a
+                  href="https://bulma.io/documentation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button navbar-item is-primary is-fullwidth mt-1"
+                  title="Bulma home!!"
+                >
+                  <span class="icon">
+                    <img src="../../assets/img/bulma32.ico" alt="bulma" />
+                  </span>
+                  <span>Bulma</span>
+                </a>
+              </div>
+
+              <div class="navbar-end has-text-dark">
+                <a href="../../sub/js/js.html" class="navbar-item has-text-right"
+                  >Javascript</a
+                >
+                <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right"
+                  >Handlebars</a
+                >
+                <a href="../../sub/tron/tron.html" class="navbar-item has-text-right"
+                  >Electron</a
+                >
+                <a href="../../sub/ang/ang.html" class="navbar-item has-text-right"
+                  >Angular</a
+                >
+                <a
+                  href="../../sub/react/react.html"
+                  class="navbar-item has-text-right"
+                  >React</a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="notification has-background-primary-light is-bold mb-1">
+          <div class="container">
+            <h1 class="title">タブメニューで画面の切換え</h1>
+            <h2 class="subtitle is-5">tabs コンポーネント</h2>
+          </div>
+        </div>
+
+        <!-- breadcrumbs -->
+        <div class="section pt-0 pb-0">
+          <nav class="breadcrumb has-arrow-separator">
+            <ul class="is-size-6 container">
+              <li>
+                <a href="/" class="has-text-grey-light">Top page</a>
+              </li>
+              <li>
+                <a href="../../sub/js/js.html" class="has-text-grey-light"
+                  >Javascript</a
+                >
+              </li>
+              <li class="is-active"><a href="#">Tabs</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="columns mt-5">
+          <div class="column"></div>
+          <div class="column is-8 content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>tabs コンポーネントで画面の切替</p>
+              </div>
+              <div
+                class="message-body has-background-white-bis"
+                style="border-bottom: inset 2px #aaaa88"
+              >
+                <p>
+                  $$bulmaTabs(ssTabs,
+                  ssContent)を使って、Tabsメニューの切替えを行います。
+                </p>
+              </div>
+
+              <h2 class="subtitle has-text-weight-bold pl-3">
+                tabs コンポーネント<span
+                  class="subtitle has-text-weight-normal is-size-6"
+                  >（下のタブをクリックしてください）</span
+                >
+              </h2>
+              <nav class="tabs is-boxed tabsX">
+                <ul>
+                  <li class="is-active" data-target="product-details">
+                    <a>Sitemap</a>
+                  </li>
+                  <li data-target="delivery-information">
+                    <a href="#0">Copyright</a>
+                  </li>
+                  <li data-target="delivery-support">
+                    <a href="#0">Support</a>
+                  </li>
+                  <li data-target="delivery-jobs"><a href="#0">Jobs</a></li>
+                </ul>
+              </nav>
+
+              <div class="px-6" id="tab-content">
+                <div id="product-details">
+                  <h3 class="is-size-5 title">A Product Details</h3>
+                  <p>
+                    1. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  </p>
+                </div>
+                <div id="delivery-information" class="is-hidden">
+                  <h3 class="is-size-5 title">B Delivery Information</h3>
+                  <p>
+                    2. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  </p>
+                </div>
+                <div id="delivery-support" class="is-hidden">
+                  <h3 class="is-size-5 title">C Delivery support</h3>
+                  <p>
+                    3. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  </p>
+                </div>
+                <div id="delivery-jobs" class="is-hidden">
+                  <h3 class="is-size-5 title">D Delivery jobs</h3>
+                  <p>
+                    4. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  </p>
+                </div>
+              </div>
+
+              <hr />
+            </article>
+
+            <div class="box">
+              <h2 class="subtitle has-background-white-ter mb-2 p-2">
+                上記のソースコード
+              </h2>
+
+              <blockquote class="is-size-6 ml-2">
+                <div class="sourceview">
+                  <pre id="pre1" class="brush: html;">
+&lt;!-- tabs$$.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Bulma Project&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;
+    /&gt;
+    &lt;script
+      defer
+      src=&quot;https://use.fontawesome.com/releases/v5.7.1/js/all.js&quot;
+    &gt;&lt;/script&gt;
+
+    &lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- &lt;script src=&quot;./js/shortBulma$$.js&quot;&gt;&lt;/script&gt; --&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;notification has-background-primary-light is-bold mb-1&quot;&gt;
+          &lt;div class=&quot;container&quot;&gt;
+            &lt;h1 class=&quot;title&quot;&gt;タブメニューで画面の切換え&lt;/h1&gt;
+            &lt;h2 class=&quot;subtitle is-5&quot;&gt;tabs コンポーネント&lt;/h2&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;columns mt-5&quot;&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+          &lt;!-- 各ページ --&gt;
+            &lt;article class=&quot;message is-primary&quot;&gt;
+              &lt;div class=&quot;message-header&quot;&gt;
+                &lt;p&gt;
+                  tabs コンポーネントで画面の切替
+                &lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div
+                class=&quot;message-body has-background-white-bis&quot;
+                style=&quot;border-bottom: inset 2px #aaaa88&quot;
+              &gt;
+                &lt;p&gt;
+                  $$bulmaTabs(ssTabs,
+                  ssContent)を使って、Tabsメニューの切替えを行います。
+                &lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;h2 class=&quot;subtitle has-text-weight-bold pl-3&quot;&gt;
+                tabs コンポーネント&lt;span
+                  class=&quot;subtitle has-text-weight-normal is-size-6&quot;
+                  &gt;（下のタブをクリックしてください）&lt;/span
+                &gt;
+              &lt;/h2&gt;
+              &lt;nav class=&quot;tabs is-boxed tabsX&quot;&gt;
+                &lt;ul&gt;
+                  &lt;li class=&quot;is-active&quot; data-target=&quot;product-details&quot;&gt;
+                    &lt;a&gt;Sitemap&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li data-target=&quot;delivery-information&quot;&gt;
+                    &lt;a href=&quot;#0&quot;&gt;Copyright&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li data-target=&quot;delivery-support&quot;&gt;
+                    &lt;a href=&quot;#0&quot;&gt;Support&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li data-target=&quot;delivery-jobs&quot;&gt;&lt;a href=&quot;#0&quot;&gt;Jobs&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/nav&gt;
+
+              &lt;div class=&quot;px-6&quot; id=&quot;tab-content&quot;&gt;
+                &lt;div id=&quot;product-details&quot;&gt;
+                  &lt;h3 class=&quot;is-size-5 title&quot;&gt;A Product Details&lt;/h3&gt;
+                  &lt;p&gt;
+                    1. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;delivery-information&quot; class=&quot;is-hidden&quot;&gt;
+                  &lt;h3 class=&quot;is-size-5 title&quot;&gt;B Delivery Information&lt;/h3&gt;
+                  &lt;p&gt;
+                    2. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;delivery-support&quot; class=&quot;is-hidden&quot;&gt;
+                  &lt;h3 class=&quot;is-size-5 title&quot;&gt;C Delivery support&lt;/h3&gt;
+                  &lt;p&gt;
+                    3. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;delivery-jobs&quot; class=&quot;is-hidden&quot;&gt;
+                  &lt;h3 class=&quot;is-size-5 title&quot;&gt;D Delivery jobs&lt;/h3&gt;
+                  &lt;p&gt;
+                    4. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fuga, reprehenderit voluptates! Quisquam dolores distinctio
+                    minima eligendi, sint enim quaerat. Totam eaque eligendi
+                    quis, itaque beatae id sit fuga voluptatibus a autem debitis
+                    sequi, officiis dolores corporis! Necessitatibus, libero
+                    voluptate? Fuga, natus iusto! Perspiciatis iure officiis
+                    rerum, illo temporibus iusto voluptatum.
+                  &lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;hr /&gt;
+            &lt;/article&gt;
+
+          &lt;!-- 各ページ終り --&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script&gt;
+      $$bulmaTabs(&#039;.tabsX li&#039;, &#039;#tab-content &gt; div&#039;);
+
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre
+                  >
+                </div>
+              </blockquote>
+
+              <div class="box">
+                <h2 class="is-size-4 has-background-white-ter p-2 km">解説</h2>
+                <div class="is-size-5-tablet lh7">
+                  ~~ タブメニューで画面の切換え ~~
+                </div>
+                <div class="content">
+                  <ul>
+                    <li>
+                      BulmaでJavascriptを利用するために、このWebサイトでは<br />
+                      　<a href="shortBulma.html"
+                        ><strong>shortBulma$$.js</strong> または
+                        <strong>shortBulma.js</strong></a
+                      ><br />
+                      というライブラリを使います。
+                    </li>
+                    <li>
+                      使い方の例：&lt;script
+                      src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br />
+                      headタグ内に挿入。但し、pathは状況によって変わります。
+                    </li>
+                    <li>
+                      <p class="pt-3 px-3">
+                        例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br />
+                        &lt;script
+                        src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt;
+                        または<br />
+                        &lt;script
+                        src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt;
+                        となります。
+                      </p>
+                    </li>
+                    <hr />
+                    <li>
+                      <strong>shortBulma$$.js</strong
+                      >等は、筆者がタイピングが苦手で長い名前に弱いため使っています。<br />
+                      より詳しくは<a href="shortBulma.html"
+                        >ライブラリ
+                        <strong class="is-size-5">shortBulma$$.js</strong></a
+                      >をご覧ください。
+                    </li>
+                    <hr />
+                    <li>
+                      <dl>
+                        <dt>$$bulmaMenu('#burger', '#nav-links');</dt>
+                        <dd class="py-2">
+                          狭い画面で表示されるBulmaのburgerメニューをコントロールします。<br />burgerアイコンとbodyにそれぞれイベントを設定して、
+                          <ul>
+                            <li>
+                              [burgerアイコン]のクリックでburgerメニューを開閉
+                            </li>
+                            <li>
+                              [body]のクリックでburgerメニューを閉じます。
+                            </li>
+                          </ul>
+                        </dd>
+                        <dt>$$bulmaTabs('.tabsX li', '#tab-content > div')</dt>
+                        <dd>
+                          <strong>shortBulma.js</strong>というライブラリを使用
+                        </dd>
+                        <dt>$$bulmaTabs('.tabsX li', '#tab-content > div');</dt>
+                        <dd>
+                          関数$$bulmaTabsは各タブ項目と各画面を指定するセレクタ文字列を引数に取り、タブ機能を実現しています
+                        </dd>
+                        <dt></dt>
+                        <dd></dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <!-- breadcrumbs -->
+        <div class="section pt-0 pb-0">
+          <nav class="breadcrumb has-arrow-separator">
+            <ul class="is-size-6 container">
+              <li>
+                <a href="/" class="has-text-grey-light">Top page</a>
+              </li>
+              <li>
+                <a href="../../sub/js/js.html" class="has-text-grey-light"
+                  >Javascript</a
+                >
+              </li>
+              <li class="is-active"><a href="#">Tabs</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $$codeS('#pre1');
+    </script>
+
+    <script>
+      $$bulmaMenu('#burger', '#nav-links');
+
+      $$bulmaTabs('.tabsX li', '#tab-content > div');
+    </script>
+  </body>
+</html>

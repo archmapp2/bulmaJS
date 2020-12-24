@@ -1,0 +1,429 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma Handlebars"/><title>Bulma Project [Web Components]</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script src="../../js/shortBulma$$.js"></script><script src="../../js/shortHbs$$.js"></script><style>body {
+        --theme-colour: var(--blue);
+        --background: #333;
+        background: var(--picker-colour);
+        --picker-colour: #777;
+        --blue: #29abe2;
+        /* display: flex; */
+        height: 100%;
+        /* height: 100vh; */
+        font-family: sans-serif;
+        background-color: var(--background);
+        color: white;
+      }
+
+      twoot-post {
+        margin: auto;
+      }</style><template id="twoot-post"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><style>:host {
+          font-size: 24px;
+          font-family: inherit;
+        }
+
+        .reactions {
+          border-top: 2px solid var(--theme-colour);
+          border-bottom: 2px solid var(--theme-colour);
+          min-height: 50px;
+          padding: 0 0.5em;
+        }
+
+        .avatar {
+          min-width: 70px;
+          max-width: 100px;
+        }</style><div class="columns is-mobile is-primary"><div class="column is-2-mobile is-2-tablet"><div class="avatar"><img/></div></div><div class="column"><div class="content"><slot></slot></div></div><div class="column is-2"><div><reaction-picker></reaction-picker></div></div></div><div class="reactions pt-2"></div></template><template id="emoji-picker"><style>:host {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          position: relative;
+        }
+        button {
+          border: none;
+          background: none;
+          color: var(--theme-colour);
+          font-size: 2em;
+          cursor: pointer;
+        }
+        button:active,
+        button:focus {
+          outline: inherit;
+        }
+        ul {
+          position: absolute;
+          border: 2px solid var(--theme-colour);
+          list-style: none;
+          padding: 0.4em;
+          left: -20%;
+          top: -103%;
+          background: var(--background);
+        }
+        ul.hidden {
+          display: none;
+        }
+        li button:hover,
+        li button:focus {
+          background: var(--picker-colour);
+        }</style><button class="selected">+</button><ul class="hidden"><li><button>😃</button></li><li><button>😞</button></li><li><button><small>&nbsp;</small>🚡</button></li></ul></template><link href="../../../main.ef0929a6150b0869673d.css" rel="stylesheet"></head><body><nav class="navbar is-primary has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a></div></div></div></nav><section class="section"><div class="container"><div class="notification has-background-warning is-bold mb-1"><div class="container"><h1 class="title">Handlebars</h1><h2 class="subtitle has-text-warning-dark is-5">Handlebars & Web Components</h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/hbs/hbs.html" class="has-text-grey-light">Handlebars</a></li><li class="is-active has-background-grey-lighter"><a href="#">Mario</a></li></ul></nav></div><div class="columns"><div class="column"></div><div class="column is-10 mt-6"><article class="message is-primary"><div class="message is-primary"><div class="message-header subtitle"><p>初めての [<strong>Web Components</strong>]</p></div><div class="message-body pt-1"><span class="is-size-6">2つのテンプレートを利用しています。</span></div></div><div class="message-body has-background-grey-lighter" style="border-bottom: inset 2px #aaaa88"><div class="has-text-dark pb-2">参考URL</div><p>講演会：<a href="https://www.youtube.com/watch?v=zZ1YMJydqR0&t=63s"><strong>Web Components: It’s about Time | Erin Zimmer</strong></a><br/>デモ　：<a href="http://web-components.ez.codes/demo.html"><strong>Mario demo</strong></a><br/></p></div></article><main class="my-6"><div class="columns is-centered my-6"><div class="column is-12-mobile is-10-tablet is-8-desktop"><twoot-post avatar="../../assets/img/bowser-avatar.png"><span class="is-size-5 has-text-grey-lighter">Hey Mario,<br/>the princess is in</span> <a href="https://goo.gl/maps/cZzyjm8LMrF2">another castle</a></twoot-post></div></div><div class="columns is-centered mt-6"><div class="column is-12-mobile is-10-tablet is-8-desktop"><twoot-post avatar="../../assets/img/Racoon_Mario_24649.png"><span class="is-size-5 has-text-grey-lighter">in another castle? ..　Ok!</span> <a href="https://goo.gl/maps/cZzyjm8LMrF2">　another castle</a><br/><span class="is-size-5 has-text-grey-lighter">oof</span></twoot-post></div></div><div class="columns is-centered mt-6"><div class="column is-12-mobile is-10-tablet is-8-desktop"><twoot-post avatar="../../assets/img/Goomba_24659.png"><span class="is-size-5 has-text-grey-lighter">Hum Hum Hum ...</span> <a href="https://goo.gl/maps/cZzyjm8LMrF2">　another castle</a><br/><span class="is-size-5 has-text-grey-lighter">toko toko ...</span></twoot-post></div></div></main><div class="box"><h2 class="subtitle has-background-white-ter mb-2 p-2">上記のソースコード</h2><blockquote class="is-size-6 ml-2"><pre id="pre1">
+&lt;!-- Mario$$.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Bulma Handlebars&quot; /&gt;
+    &lt;title&gt;Bulma Project [Web Components]&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;
+    /&gt;
+    &lt;script
+      defer
+      src=&quot;https://use.fontawesome.com/releases/v5.7.1/js/all.js&quot;
+    &gt;&lt;/script&gt;
+
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script src=&quot;../../js/shortBulma$$.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;../../js/shortHbs$$.js&quot;&gt;&lt;/script&gt;
+
+    &lt;style&gt;
+      body {
+        --theme-colour: var(--blue);
+        --background: #333;
+          background: var(--picker-colour);
+        --picker-colour: #777;
+        --blue: #29abe2;
+        display: flex;
+        height: 100%;
+        /* height: 100vh; */
+        font-family: sans-serif;
+        background-color: var(--background);
+        color: white;
+      }
+
+      twoot-post {
+        margin: auto;
+      }
+    &lt;/style&gt;
+
+    &lt;template id=&quot;twoot-post&quot;&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot; /&gt;
+
+      &lt;style&gt;
+        :host {
+          font-size: 24px;
+          font-family: inherit;
+        }
+
+        .reactions {
+          border-top: 2px solid var(--theme-colour);
+          border-bottom: 2px solid var(--theme-colour);
+          min-height: 50px;
+          padding: 0 0.5em;
+        }
+      &lt;/style&gt;
+
+      &lt;div class=&quot;columns is-mobile is-primary&quot;&gt;
+        &lt;div class=&quot;column is-2&quot;&gt;
+          &lt;div class=&quot;avatar&quot;&gt;&lt;img /&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;column is-8&quot;&gt;
+          &lt;div class=&quot;content&quot;&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;column is-2 reaction&quot;&gt;
+          &lt;div class=&quot;reaction&quot;&gt;
+            &lt;reaction-picker&gt;&lt;/reaction-picker&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;reactions pt-2&quot;&gt;&lt;/div&gt;
+    &lt;/template&gt;
+
+    &lt;template id=&quot;emoji-picker&quot;&gt;
+      &lt;style&gt;
+        :host {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          position: relative;
+        }
+        button {
+          border: none;
+          background: none;
+          color: var(--theme-colour);
+          font-size: 2em;
+          cursor: pointer;
+        }
+        button:active,
+        button:focus {
+          outline: inherit;
+        }
+        ul {
+          position: absolute;
+          border: 2px solid var(--theme-colour);
+          list-style: none;
+          padding: 0.4em;
+          left: -20%;
+          top: -103%;
+          background: var(--background);
+        }
+        ul.hidden {
+          display: none;
+        }
+        li button:hover,
+        li button:focus {
+          background: var(--picker-colour);
+        }
+      &lt;/style&gt;
+
+      &lt;button class=&quot;selected&quot;&gt;+&lt;/button&gt;
+      &lt;ul class=&quot;hidden&quot;&gt;
+        &lt;li&gt;&lt;button&gt;😃&lt;/button&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;button&gt;😞&lt;/button&gt;&lt;/li&gt;
+        &lt;li&gt;
+          &lt;button&gt;&lt;small&gt;&amp;nbsp;&lt;/small&gt;🚡&lt;/button&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/template&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;columns&quot;&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;column is-10 mt-4&quot;&gt;
+            &lt;article class=&quot;message is-primary&quot;&gt;
+              &lt;div class=&quot;message-header subtitle&quot;&gt;
+                &lt;p&gt;初めての [&lt;strong&gt;Web Components&lt;/strong&gt;]&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;span class=&quot;message-body has-text-centered is-size-5&quot;&gt;
+                &lt;span class=&quot;is-size-5&quot;&gt;2つのテンプレート&lt;/span&gt;
+              &lt;/span&gt;
+            &lt;/article&gt;
+
+            &lt;main&gt;
+              &lt;div class=&quot;columns is-centered mt-6&quot;&gt;
+                &lt;div class=&quot;column is-10&quot;&gt;
+                  &lt;twoot-post avatar=&quot;../../img/bowser-avatar.png&quot;&gt;
+                    Hey Mario,&lt;br /&gt;
+                    the princess is in
+                    &lt;a href=&quot;https://goo.gl/maps/cZzyjm8LMrF2&quot;
+                      &gt;another castle&lt;/a
+                    &gt;
+                  &lt;/twoot-post&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;columns is-centered mt-6&quot;&gt;
+                &lt;div class=&quot;column is-10&quot;&gt;
+                  &lt;twoot-post avatar=&quot;../../img/Racoon_Mario_24649.png&quot;&gt;
+                    ../../Racoon_Mario_24649.png,&lt;br /&gt;
+                    the princess is in another castle? Ok!
+                    &lt;a href=&quot;https://goo.gl/maps/cZzyjm8LMrF2&quot;
+                      &gt;another castle&lt;/a
+                    &gt;
+                  &lt;/twoot-post&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;columns is-centered mt-6&quot;&gt;
+                &lt;div class=&quot;column is-10&quot;&gt;
+                  &lt;twoot-post avatar=&quot;../../img/Goomba_24659.png&quot;&gt;
+                    Goomba_24659.png&lt;br /&gt;
+                    Hum Hum Hum ...
+                    &lt;a href=&quot;https://goo.gl/maps/cZzyjm8LMrF2&quot;
+                      &gt;another castle&lt;/a
+                    &gt;
+                  &lt;/twoot-post&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/main&gt;
+
+            &lt;div class=&quot;box mt-6&quot;&gt;
+              &lt;div class=&quot;box&quot;&gt;
+                &lt;h2 class=&quot;is-size-4 has-background-white-ter p-2 km&quot;&gt;　解説&lt;/h2&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;ul&gt;
+                    &lt;li class=&quot;pt-1&quot;&gt;
+                      &lt;dl&gt;
+                        &lt;dt&gt;
+                          &lt;strong
+                            &gt;$$oa_t(this.shadowRoot, &#039;twoot-post&#039;);&lt;/strong
+                          &gt;
+                        &lt;/dt&gt;
+                        &lt;dd class=&quot;py-2&quot;&gt;
+                          テンプレート#templateをコンパイルし、コンテキストｖを適用して得られたHTMLコードを、要素#contentsのinnserHTMLプロパティに代入する。
+                        &lt;/dd&gt;
+                        &lt;dt&gt;
+                          &lt;strong
+                            &gt;$$oq(this.shadowRoot, &#039;img&#039;)&lt;/strong
+                          &gt;
+                        &lt;/dt&gt;
+                        &lt;dd class=&quot;py-2&quot;&gt;
+                          オブジェクトthis.shadowRootから&#039;img&#039;要素を求める。
+                        &lt;/dd&gt;
+                        &lt;dt&gt;
+                          &lt;strong
+                            &gt;$$oe = (o, f, evNa = &#039;click&#039;)
+                          &lt;/strong&gt;
+                        &lt;/dt&gt;
+                        &lt;dd class=&quot;py-2&quot;&gt;
+                          オブジェクトthis.shadowRootに、clickイベントリスナーf を登録する。
+                        &lt;/dd&gt;
+                        &lt;dt&gt;
+                          &lt;strong
+                            &gt;$$ocL(this.options, &#039;hidden&#039;, &#039;remove&#039;);&lt;/strong
+                          &gt;
+                        &lt;/dt&gt;
+                        &lt;dd class=&quot;py-2&quot;&gt;
+                          オブジェクトから&#039;hidden&#039;クラスを取り除く。
+                        &lt;/dd&gt;
+                      &lt;/dl&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+
+    &lt;script&gt;
+      customElements.define(
+        &#039;twoot-post&#039;,
+        class extends HTMLElement {
+          constructor() {
+            super();
+            this.attachShadow({ mode: &#039;open&#039; });
+
+            $$oa_t(this.shadowRoot, &#039;twoot-post&#039;);
+
+            $$oq(this.shadowRoot, &#039;img&#039;).src = this.getAttribute(&#039;avatar&#039;);
+
+            this.reactionsElement = $$oq(this.shadowRoot, &#039;.reactions&#039;);
+            this.reactions = [];
+
+            $$oe(
+              this.shadowRoot,
+              (event) =&gt; {
+                this.reactions.push(event.detail);
+                this.reactionsElement.textContent = this.reactions.join(&#039;&#039;);
+              },
+              &#039;reaction-selected&#039;
+            );
+          }
+        }
+      );
+
+      customElements.define(
+        &#039;reaction-picker&#039;,
+        class extends HTMLElement {
+          constructor() {
+            super();
+            this.attachShadow({ mode: &#039;open&#039; });
+
+            $$oa_t(this.shadowRoot, &#039;emoji-picker&#039;);
+
+            this.selected = $$oq(this.shadowRoot, &#039;button.selected&#039;);
+            this.options = $$oq(this.shadowRoot, &#039;ul&#039;);
+
+            $$oe(this.selected, () =&gt; {
+              $$ocL(this.options, &#039;hidden&#039;, &#039;remove&#039;);
+            });
+
+            $$oe(this.options, (event) =&gt; {
+              this.value = event.target.textContent;
+              $$ocL(this.options, &#039;hidden&#039;, &#039;add&#039;);
+            });
+          }
+
+          toggleList() {
+            $$ocL(this.options, &#039;hidden&#039;);
+          }
+
+          set value(emoji) {
+            this._value = emoji;
+            this.selected.textContent = emoji;
+            this.dispatchEvent(
+              new CustomEvent(&#039;reaction-selected&#039;, {
+                detail: emoji,
+                bubbles: true,
+              })
+            );
+          }
+          get value() {
+            return this._value;
+          }
+        }
+      );
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></blockquote><div class="box"><h2 class="is-size-4 has-background-white-ter p-2 km">　解説</h2><div class="content"><ul><li>BulmaでJavascriptを利用するために、このWebサイトでは<br/>　<a href="../../sub/js/shortBulma.html"><strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong></a><br/>というライブラリを使います。</li><li class="pt-2">使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br/>headタグ内に挿入。但し、pathは状況によって変わります。</li><li class="pt-2"><p class="pt-3 px-3">例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br/>&lt;script src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt; または<br/>&lt;script src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt; となります。</p></li><li>同じく、handlebars用に<br/>　<a href="../../sub/js/shortHbs.html"><strong>shortHbs$$.js</strong></a><br/>というライブラリを使います。</li><hr/><li class="pt-1"><dl><dt><strong>$$oa_t(this.shadowRoot, 'twoot-post');</strong></dt><dd class="py-2">テンプレート#twoot-postのクローンを作成し、オブジェクトthis.shadowRootに追加(appendChild)する。</dd><dt><strong>$$oq(this.shadowRoot, 'img')</strong></dt><dd class="py-2">オブジェクトthis.shadowRootの中から'img'要素を求める。</dd><dt><strong>$$oe = (o, f, evNa = 'click')</strong></dt><dd class="py-2">オブジェクトoに、clickイベントリスナーf を登録する。</dd><dt><strong>$$ocL(this.options, 'hidden', 'remove');</strong></dt><dd class="py-2">オブジェクトthis.optionsから'hidden'クラスを取り除く。</dd></dl></li></ul></div></div></div></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/hbs/hbs.html" class="has-text-grey-light">Handlebars</a></li><li class="is-active has-background-grey-lighter"><a href="#">Mario</a></li></ul></nav></div></div></section><script>$$bulmaMenu('#burger', '#nav-links');
+      $$codeS('#pre1');</script><script>customElements.define(
+        'twoot-post',
+        class extends HTMLElement {
+          constructor() {
+            super();
+            this.attachShadow({ mode: 'open' });
+
+            $$oa_t(this.shadowRoot, 'twoot-post');
+
+            $$oq(this.shadowRoot, 'img').src = this.getAttribute('avatar');
+
+            this.reactionsElement = $$oq(this.shadowRoot, '.reactions');
+            this.reactions = [];
+
+            $$oe(
+              this.shadowRoot,
+              (event) => {
+                this.reactions.push(event.detail);
+                this.reactionsElement.textContent = this.reactions.join('');
+              },
+              'reaction-selected'
+            );
+          }
+        }
+      );
+
+      customElements.define(
+        'reaction-picker',
+        class extends HTMLElement {
+          constructor() {
+            super();
+            this.attachShadow({ mode: 'open' });
+
+            $$oa_t(this.shadowRoot, 'emoji-picker');
+
+            this.selected = $$oq(this.shadowRoot, 'button.selected');
+            this.options = $$oq(this.shadowRoot, 'ul');
+
+            $$oe(this.selected, () => {
+              $$ocL(this.options, 'hidden', 'remove');
+            });
+
+            $$oe(this.options, (event) => {
+              this.value = event.target.textContent;
+              $$ocL(this.options, 'hidden', 'add');
+            });
+          }
+
+          toggleList() {
+            $$ocL(this.options, 'hidden');
+          }
+
+          set value(emoji) {
+            this._value = emoji;
+            this.selected.textContent = emoji;
+            this.dispatchEvent(
+              new CustomEvent('reaction-selected', {
+                detail: emoji,
+                bubbles: true,
+              })
+            );
+          }
+          get value() {
+            return this._value;
+          }
+        }
+      );</script><script src="../../../main.f0af1110c755ccaff868.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>

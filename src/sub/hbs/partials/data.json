@@ -1,0 +1,21 @@
+{
+  "items": [{
+      "item": "<span class='has-text-primary has-text-weight-medium'>~~~ WebPack v4 への対応 ~~~</span>"
+    },
+    {
+      "item": " {test: /.handlebars$/, loader: 'handlebars-loader'},"
+    },
+    {
+      "item": "<span class='has-text-primary'>new webpack.LoaderOptionsPlugin</span>({options: ...})"
+    },
+    {
+      "item": " handlebarsLoader: {},"
+    },
+    {
+      "item": "<span class='has-text-primary'>new HtmlWebpackPlugin</span>({...}),"
+    },
+    {
+      "item": " templateParameters: require('../src/partials/data.json'),"
+    }
+  ]
+}

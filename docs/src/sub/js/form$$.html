@@ -1,0 +1,401 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma入門 javascript Handlebars Electron Angular notification"/><title>Bulma Project Javascript Form</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"/><link rel="stylesheet" href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css"/><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="../../js/shortBulma$$.js"></script><style>dt {
+        color:#333333;
+      }</style><link href="../../../main.ef0929a6150b0869673d.css" rel="stylesheet"></head><body><nav class="navbar is-primary has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a></div></div></div></nav><section class="section"><div class="container"><div class="notification is-bold mb-1"><div class="container"><h1 class="title">Form</h1><h2 class="subtitle is-5">Form のサンプル・ 始めての　<strong>Bulma-Extensions</strong></h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/js/js.html" class="has-text-grey-light">Javascript</a></li><li class="is-active"><a href="#">Form</a></li></ul></nav></div><div class="columns mt-3"><div class="column"></div><div class="column is-8 content"><article class="message is-primary"><div class="message-header"><p class="is-size-4 p-3">Form のサンプル</p></div><div class="message-body has-background-white-bis" style="border-bottom: inset 2px #aaaa88"><div class="has-text-grey-dark mb-2">スタイルに、 <a href="https://jenil.github.io/bulmaswatch/darkly/" class="is-size-4 has-text-warning"><strong>bulmaswatch</strong></a> を利用</div><p>チェックボックス・ラジオボタンには、<strong>Bulma-Extensions</strong>も使っています。</p></div></article><div class="box"><div class="notification py-1">DevToolsのconsoleにも出力　[ f12, shift+ctrl+I ]</div><form><div class="field"><label class="label">Name</label><div class="control has-icons-left"><input class="input" id="name" placeholder="Text input"/> <span class="icon is-small is-left"><i class="fas fa-user"></i></span></div></div><div class="field"><label class="label">Email</label><div class="control has-icons-left has-icons-right"><input class="input is-danger" id="email" type="email" placeholder="Email input" value=""/> <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div></div><div class="field"><label class="label">Subject</label><div class="control"><div class="select"><select id="sel"><option>Select dropdown</option><option>With options</option></select></div></div></div><div class="field"><label class="label">Message</label><div class="control"><textarea class="textarea" id="msg" placeholder="Textarea"></textarea></div></div><div class="field"><div class="control"><label class="checkbox"><input type="checkbox" id="chk" value="value1"/> I agree to the <a href="#">terms and conditions</a></label></div></div><div class="field"><div class="control" id="rGroup"><label class="radio"><input type="radio" name="question" value="rad_value1"/> Yes</label> <label class="radio"><input type="radio" name="question" value="rad_value2"/> No</label></div></div><hr/><p>~~~~~ Bulma-Extensions (<strong>bulma-checkradio</strong>) ~~~~~</p><div class="field"><input type="checkbox" class="is-checkradio" id="chkEx" name="chkEx" value="value1Ex"/> <label for="chkEx">I agree to the <a href="#">terms and conditions</a></label></div><div class="field" id="rGroupEx"><input type="radio" class="is-checkradio" id="rd1" name="question2" value="rad_value1Ex"/> <label for="rd1">Yes</label> <input type="radio" class="is-checkradio" id="rd2" name="question2" value="rad_value2Ex"/> <label for="rd2">No</label></div><div class="field is-grouped"><div class="control" id="submit"><button class="button is-link mt-4">Submit</button></div><div class="control" id="reset"><button class="button is-link is-light mt-4">Reset</button></div></div></form></div><article class="panel"><p class="panel-heading mb-1">送信データの情報</p><div class="data has-background-grey"></div></article><hr/><div class="box"><h2 class="subtitle mb-2 p-2">上記のソースコード</h2><blockquote class="is-size-6 ml-2"><pre id="pre1">
+&lt;!-- form$$.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Bulma Project&lt;/title&gt;
+
+    &lt;meta
+      name=&quot;viewport&quot;
+      content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;
+    /&gt;
+
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;
+    /&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css&quot;
+    /&gt;
+
+    &lt;script
+      defer
+      src=&quot;https://use.fontawesome.com/releases/v5.7.1/js/all.js&quot;
+    &gt;&lt;/script&gt;
+
+    &lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- /npm/bulma-extensions@6.2.7/bulma-checkradio --&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;columns&quot;&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;column is-8 content&quot;&gt;
+            &lt;!-- 各ページ --&gt;
+            &lt;article class=&quot;message is-primary&quot;&gt;
+              &lt;div class=&quot;message-header&quot;&gt;
+                &lt;p class=&quot;is-size-4 p-4&quot;&gt;Form のサンプル&lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;div
+                class=&quot;message-body has-background-white-bis&quot;
+                style=&quot;border-bottom: inset 2px #aaaa88&quot;
+              &gt;
+                &lt;p&gt;
+                  チェックボックス・ラジオボタンには、&lt;strong&gt;Bulma-Extensions&lt;/strong&gt;も使っています。
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;div class=&quot;box&quot;&gt;
+              &lt;div class=&quot;notification&quot;&gt;
+                DevToolsのconsoleにも出力　[ f12, shift+ctrl+I ]
+              &lt;/div&gt;
+
+              &lt;form&gt;
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;label class=&quot;label&quot;&gt;Name&lt;/label&gt;
+                  &lt;div class=&quot;control has-icons-left&quot;&gt;
+                    &lt;input
+                      class=&quot;input&quot;
+                      id=&quot;name&quot;
+                      type=&quot;text&quot;
+                      placeholder=&quot;Text input&quot;
+                    /&gt;
+                    &lt;span class=&quot;icon is-small is-left&quot;&gt;
+                      &lt;i class=&quot;fas fa-user&quot;&gt;&lt;/i&gt;
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;label class=&quot;label&quot;&gt;Email&lt;/label&gt;
+                  &lt;div class=&quot;control has-icons-left has-icons-right&quot;&gt;
+                    &lt;input
+                      class=&quot;input is-danger&quot;
+                      id=&quot;email&quot;
+                      type=&quot;email&quot;
+                      placeholder=&quot;Email input&quot;
+                      value=&quot;&quot;
+                    /&gt;
+                    &lt;span class=&quot;icon is-small is-left&quot;&gt;
+                      &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;label class=&quot;label&quot;&gt;Subject&lt;/label&gt;
+                  &lt;div class=&quot;control&quot;&gt;
+                    &lt;div class=&quot;select&quot;&gt;
+                      &lt;select id=&quot;sel&quot;&gt;
+                        &lt;option&gt;Select dropdown&lt;/option&gt;
+                        &lt;option&gt;With options&lt;/option&gt;
+                      &lt;/select&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;label class=&quot;label&quot;&gt;Message&lt;/label&gt;
+                  &lt;div class=&quot;control&quot;&gt;
+                    &lt;textarea
+                      class=&quot;textarea&quot;
+                      id=&quot;msg&quot;
+                      placeholder=&quot;Textarea&quot;
+                    &gt;&lt;/textarea&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;div class=&quot;control&quot;&gt;
+                    &lt;label class=&quot;checkbox&quot;&gt;
+                      &lt;input type=&quot;checkbox&quot; id=&quot;chk&quot; value=&quot;value1&quot; /&gt;
+                      I agree to the &lt;a href=&quot;#&quot;&gt;terms and conditions&lt;/a&gt;
+                    &lt;/label&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;div class=&quot;control&quot; id=&quot;rGroup&quot;&gt;
+                    &lt;label class=&quot;radio&quot;&gt;
+                      &lt;input type=&quot;radio&quot; name=&quot;question&quot; value=&quot;rad_value1&quot; /&gt;
+                      Yes
+                    &lt;/label&gt;
+                    &lt;label class=&quot;radio&quot;&gt;
+                      &lt;input type=&quot;radio&quot; name=&quot;question&quot; value=&quot;rad_value2&quot; /&gt;
+                      No
+                    &lt;/label&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;hr /&gt;
+                &lt;p&gt;
+                  ~~~~~ Bulma-Extensions (&lt;strong&gt;bulma-checkradio&lt;/strong&gt;)
+                  ~~~~~
+                &lt;/p&gt;
+                &lt;div class=&quot;field&quot;&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    class=&quot;is-checkradio&quot;
+                    id=&quot;chkEx&quot;
+                    name=&quot;chkEx&quot;
+                    value=&quot;value1Ex&quot;
+                  /&gt;
+                  &lt;!-- checked=&quot;checked&quot; --&gt;
+                  &lt;label for=&quot;chkEx&quot;
+                    &gt;I agree to the &lt;a href=&quot;#&quot;&gt;terms and conditions&lt;/a&gt;&lt;/label
+                  &gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;field&quot; id=&quot;rGroupEx&quot;&gt;
+                  &lt;input
+                    type=&quot;radio&quot;
+                    class=&quot;is-checkradio&quot;
+                    id=&quot;rd1&quot;
+                    name=&quot;question2&quot;
+                    value=&quot;rad_value1Ex&quot;
+                  /&gt;
+                  &lt;label for=&quot;rd1&quot;&gt;Yes&lt;/label&gt;
+                  &lt;input
+                    type=&quot;radio&quot;
+                    class=&quot;is-checkradio&quot;
+                    id=&quot;rd2&quot;
+                    name=&quot;question2&quot;
+                    value=&quot;rad_value2Ex&quot;
+                  /&gt;
+                  &lt;label for=&quot;rd2&quot;&gt;No&lt;/label&gt;
+                &lt;/div&gt;
+
+                &lt;hr /&gt;
+
+                &lt;div class=&quot;field is-grouped&quot;&gt;
+                  &lt;div class=&quot;control&quot; id=&quot;submit&quot;&gt;
+                    &lt;button class=&quot;button is-link&quot;&gt;Submit&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;control&quot; id=&quot;reset&quot;&gt;
+                    &lt;button class=&quot;button is-link is-light&quot;&gt;Reset&lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;hr /&gt;
+
+            &lt;article class=&quot;panel&quot;&gt;
+              &lt;p class=&quot;panel-heading has-background-info-light mb-1&quot;&gt;
+                送信データの情報
+              &lt;/p&gt;
+
+              &lt;div class=&quot;data&quot;&gt;
+                &lt;!-- &lt;a class=&quot;panel-block&quot;&gt;
+              &lt;span class=&quot;panel-icon&quot;&gt;
+                &lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+              &lt;/span&gt;
+              bulma
+            &lt;/a&gt; --&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;!-- 各ページ終り --&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+      $$de(() =&gt; {
+        $$q(&#039;#name&#039;).focus();
+        $$qe(&#039;#name&#039;, (e) =&gt; console.log(e.target.value), &#039;change&#039;);
+        $$qe(&#039;#email&#039;, (e) =&gt; console.log(e.target.value), &#039;change&#039;);
+        $$qe(&#039;#sel&#039;, (e) =&gt; console.log(e.target.value), &#039;change&#039;);
+        $$qe(&#039;#msg&#039;, (e) =&gt; console.log(e.target.value), &#039;change&#039;);
+
+        $$qe(
+          &#039;#chk&#039;,
+          (e) =&gt; console.log( `${e.target.value}: ${e.target.checked}` ),
+          &#039;change&#039;
+        );
+
+        $$qAe(
+          &#039;#rGroup input&#039;,
+          (e) =&gt; {
+            console.log( `${e.target.value}: ${e.target.checked}` );
+          },
+          &#039;change&#039;
+        );
+
+        $$qe(
+          &#039;#chkEx&#039;,
+          (e) =&gt; console.log( `${e.target.value}: ${e.target.checked}` ),
+          &#039;change&#039;
+        );
+
+        $$qAe(
+          &#039;#rGroupEx input&#039;,
+          (e) =&gt; {
+            console.log( `${e.target.value}: ${e.target.checked}` );
+          },
+          &#039;change&#039;
+        );
+
+        $$qe(&#039;#submit&#039;, (e) =&gt; {
+          e.preventDefault();
+          console.log(e.target.innerHTML);
+          dispData();
+        });
+        $$qe(&#039;#reset&#039;, (e) =&gt; {
+          // e.preventDefault();
+          e.target.form.reset();
+        });
+      });
+
+      const dispData = () =&gt; {
+        let data = &#039;&#039;;
+
+        data += mkData(&#039;name&#039;, &#039;#name&#039;);
+        data += mkData(&#039;email&#039;, &#039;#email&#039;);
+        data += mkData(&#039;sel&#039;, &#039;#sel&#039;);
+        data += mkData(&#039;msg&#039;, &#039;#msg&#039;);
+        data += mkData(&#039;chk&#039;, `${$$Id(&#039;#chk&#039;).value}: ${$$Id(&#039;#chk&#039;).checked}`);
+        data += mkData(&#039;rGroup&#039;, getRadioValue(&#039;question&#039;));
+        data += &#039;~~~~~  Extentions  ~~~~~&#039;;
+        data += mkData(
+          &#039;chkEx&#039;,
+          `${$$Id(&#039;#chkEx&#039;).value}: ${$$Id(&#039;#chkEx&#039;).checked}`
+        );
+        data += mkData(&#039;rGroupEx&#039;, getRadioValue(&#039;question2&#039;));
+        $$q(&#039;.data&#039;).innerHTML = data;
+      };
+
+      const mkData = (hd, sel) =&gt; {
+        if ([&#039;chk&#039;, &#039;chkEx&#039;, &#039;rGroup&#039;, &#039;rGroupEx&#039;].includes(hd)) {
+          return `
+          &lt;span class=&quot;panel-block has-background-white-ter px-4&quot;&gt;
+            #${hd}: &amp;nbsp;&lt;strong&gt;${sel}&lt;/strong&gt;
+          &lt;/span&gt;
+          `;
+        } else {
+          return `
+          &lt;span class=&quot;panel-block has-background-white-ter px-4&quot;&gt;
+            #${hd}: &amp;nbsp;&lt;strong&gt;${$$q(sel).value}&lt;/strong&gt;
+          &lt;/span&gt;
+          `;
+        }
+      };
+
+      const getRadioValue = (na) =&gt; {
+        let ret = &#039;&#039;;
+
+        $$na(na).forEach((elm) =&gt; {
+          if (elm.checked) {
+            ret = elm.value;
+          }
+        });
+        return ret;
+      };
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></blockquote><div class="box"><h2 class="is-size-4 p-2 km">解説</h2><div class="is-size-5-tablet lh7">~~ Formのサンプルです~~</div><div class="content"><ul><li>BulmaでJavascriptを利用するために、このWebサイトでは<br/>　<a href="shortBulma.html"><strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong></a><br/>というライブラリを使います。</li><li class="pt-2">使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br/>headタグ内に挿入。但し、pathは状況によって変わります。</li><li class="pt-2"><p class="pt-3 px-3">例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br/>&lt;script src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt; または<br/>&lt;script src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt; となります。</p></li><li>[<strong>Bulma-Extensions</strong>] も利用しています。<br/>より詳しくは こちら<a href="https://wikiki.github.io/"><strong> 参考URL </strong></a>をご覧ください。<dl class="mt-3"><dt>CDNを使う時</dt><dd>href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"</dd><dt>さらに、Javascriptを使う時</dt><dd>src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"</dd><dt>npmでインストールして使う時は、</dt><dd>npm install bulma-extensions</dd><dt>確認事項</dt><dd>Bulma-Extensionsを設定する前に、Bulmaの設定を忘れないこと！</dd></dl><hr/></li><li class="pt-2"><dl><dt>$$bulmaMenu('#burger', '#nav-links');</dt><dd class="py-2">狭い画面で表示されるBulmaのburgerメニューをコントロールします。<br/>burgerアイコンとbodyにそれぞれイベントを設定して、<ul><li>[burgerアイコン]のクリックでburgerメニューを開閉</li><li>[body]のクリックでburgerメニューを閉じます。</li></ul></dd><dt>$$codeS('#pre1')</dt><dd class="py-2">コードをコピーするため、コードをクリックしたときに選択状態にします。</dd><dt>$$de = (f) => { ...'DOMContentLoaded', f)</dt><dd class="py-2">ロード時にイベントリスナーを設定</dd><dt>$$q('#name')</dt><dd class="py-2">idが'name'である要素を取得</dd><dt>$$qe = (sel, f)</dt><dd class="py-2">セレクターselを持つ要素ににイベントリスナーを設定</dd><dt>$$qAe(sel, f)</dt><dd class="py-2">セレクターselを持つ全ての要素ににイベントリスナーを設定</dd></dl></li></ul></div></div></div></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/js/js.html" class="has-text-grey">Javascript</a></li><li class="is-active"><a href="#">Form</a></li></ul></nav></div></div></section><script>$$bulmaMenu('#burger', '#nav-links');
+      $$codeS('#pre1');
+
+      $$de(() => {
+        $$q('#name').focus();
+        $$qe('#name', (e) => console.log(e.target.value), 'change');
+        $$qe('#email', (e) => console.log(e.target.value), 'change');
+        $$qe('#sel', (e) => console.log(e.target.value), 'change');
+        $$qe('#msg', (e) => console.log(e.target.value), 'change');
+
+        $$qe(
+          '#chk',
+          (e) => console.log(`${e.target.value}: ${e.target.checked}`),
+          'change'
+        );
+
+        $$qAe(
+          '#rGroup input',
+          (e) => {
+            console.log(`${e.target.value}: ${e.target.checked}`);
+          },
+          'change'
+        );
+
+        $$qe(
+          '#chkEx',
+          (e) => console.log(`${e.target.value}: ${e.target.checked}`),
+          'change'
+        );
+
+        $$qAe(
+          '#rGroupEx input',
+          (e) => {
+            console.log(`${e.target.value}: ${e.target.checked}`);
+          },
+          'change'
+        );
+
+        $$qe('#submit', (e) => {
+          e.preventDefault();
+          console.log(e.target.innerHTML);
+          dispData();
+        });
+        $$qe('#reset', (e) => {
+          // e.preventDefault();
+          e.target.form.reset();
+        });
+      });
+
+      const dispData = () => {
+        let data = '';
+
+        data += mkData('name', '#name');
+        data += mkData('email', '#email');
+        data += mkData('sel', '#sel');
+        data += mkData('msg', '#msg');
+        data += mkData('chk', `${$$Id('#chk').value}: ${$$Id('#chk').checked}`);
+        data += mkData('rGroup', getRadioValue('question'));
+        data += '<span class="panel-block has-text-black-bis mt-3">　~~~~~  Extentions  ~~~~~</span>';
+        data += mkData(
+          'chkEx',
+          `${$$Id('#chkEx').value}: ${$$Id('#chkEx').checked}`
+        );
+        data += mkData('rGroupEx', getRadioValue('question2'));
+        $$q('.data').innerHTML = `<div class="">${data}</div>`;
+      };
+
+      const mkData = (hd, sel) => {
+        if (['chk', 'chkEx', 'rGroup', 'rGroupEx'].includes(hd)) {
+          return `
+          <span class="panel-block px-4">
+            #${hd}: &nbsp;<strong>${sel}</strong>
+          </span>
+          `;
+        } else {
+          return `
+          <span class="panel-block px-4">
+            #${hd}: &nbsp;<strong>${$$q(sel).value}</strong>
+          </span>
+          `;
+        }
+      };
+
+      const getRadioValue = (na) => {
+        let ret = '';
+
+        $$na(na).forEach((elm) => {
+          if (elm.checked) {
+            ret = elm.value;
+          }
+        });
+        return ret;
+      };</script><script src="../../../main.f0af1110c755ccaff868.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>

@@ -1,0 +1,35 @@
+https://divlog.jp/css%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AEbulma%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/
+
+CSSフレームワークのBulmaをインストールする方法
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows環境。
+Xamppのhtdocs以下にBulmaをインストールする方法となります。
+
+[Bash]
+cd C:\Users\Oner\bulma
+下記コマンドを打つとインストールが始まります。
+
+npm init -y
+  {"name": "bulmaProject",}
+npm install bulma
+
+
+{{sassをscssに変換}}
+sassのままだと扱いづらいので、scssに変換します。
+node_modulesディレクトリに移動します。
+cd node_modules
+
+下記コマンドを打つと、sassファイルからscssに変換されます。
+sass-convert --recursive --from sass --to scss bulma
+  （注）ファイルbulma.sassやフォルダlayoutとutilitiesの*.sassファイルは、変換されていない！
+
+node_modulesディレクトリにいることを確認し、下記コマンドを打つと、sassファイルが削除されてscssファイルのみが残ります。
+コマンドプロンプト： del /s bulma\*.sass
+bulmaの中にいるとき、
+コマンドプロンプト： del /s *.sass
+
+***********************************************************
+あとはテキストエディタ等で@importの拡張子をscssに変更しましょう。
+***********************************************************
+

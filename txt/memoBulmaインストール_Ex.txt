@@ -1,0 +1,166 @@
+
+
+~~~~~ 全て ~~~~~
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
+~~~~~ 全て ~~~~~
+
+
+
+
+    <!-- 
+      https://github.com/Wikiki/bulma-extensions/issues/74
+
+      For all extensions:
+      CSS:https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css
+      JS:https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js
+
+      All packages list
+      https://www.jsdelivr.com/package/npm/bulma-extensions -->
+
+
+    <!-- <link
+      rel="stylesheet"
+      href="../../css/bulma-checkradio.min.css"
+    /> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
+
+
+
+https://blog.nakamu.life/posts/css-bulma-url
+React + Bulma のフレームワーク「re-bulma」
+
+
+~~~~~ Documentation ~~~~~
+Documentation
+Everything you need to start with Bulma-extensions.
+
+Bulma-Extensions
+npm
+6.2.4
+https://wikiki.github.io/
+
+1
+Use NPM to install all extensions:
+This package gathers all extensions in one package.
+    npm install bulma-extensions
+
+2
+Use NPM to install extension individually:
+Using this method you can install only wanted extensions.
+This is an example to integrate the calendar extension.
+    npm install bulma-calendar
+
+3
+Use GitHub repository:
+To integrate all extensions use following command.
+    git clone git://github.com/Wikiki/bulma-extensions.git
+To integrate the calendar extension use following command.
+    git clone git://github.com/Wikiki/bulma-calendar.git
+
+
+＊＊＊　Bulma must be included first before you include bulma-extensions
+
+
+1 From NPM
+
+This is an example to integrate the calendar extension.
+Open your application's main .sass file and add the following line:
+
+    @import 'bulma';
+    @import '~bulma-calendar';
+Now you can build the bulma project with npm run build and the output will be available in the css folder.
+
+2 From GitHub repository
+
+Clone the bulma repo following Bulma's documentation
+Under the sass folder, create a new folder called extensions
+In this new folder, create a new file named bulma-calendar.sass
+Copy the code from the bulma-calendar repository's sass file (bulma-calendar.sass) into your new file
+In the same folder create a new file _all.sass (this is not required, but will help when you add more extensions)
+In this file add this code:
+    @charset "utf-8"
+
+    // Import Calendar extension
+    @import 'bulma-calendar.sass'
+
+Open your main application's sass file and add the following line:
+
+    @charset "utf-8"
+
+    // Import Bulma core
+    @import 'bulma.sass'
+
+    // Import Extensions
+    @import "sass/extensions/_all"
+
+
+
+~~~~~ JavaScript integration ~~~~~
+
+This is an example to integrate the calendar extension from NPM.
+Open your application's main JavaScript file and add the following line:
+
+    import bulmaCalendar from '/node_modules/bulma-extensions/bulma-calendar/dist/bulma-calendar.min.js';
+
+Or integrate the JavaScript file in your HTML source:
+
+    <script src="/node_modules/bulma-extensions/bulma-calendar/dist/bulma-calendar.min.js"></script>
+
+https://wikiki.github.io/
+~~~~~ Documentation ~~~~~
+
+
+
+
+bulma-extensions
+https://www.jsdelivr.com/package/npm/bulma-extensions
+
+6.2.7 
+ /npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js 
+ /npm/bulma-extensions@6.2.7/bulma-tooltip
+ /npm/bulma-extensions@6.2.7/bulma-timeline
+ /npm/bulma-extensions@6.2.7/bulma-tagsinput
+ /npm/bulma-extensions@6.2.7/bulma-switch
+ /npm/bulma-extensions@6.2.7/bulma-steps
+ /npm/bulma-extensions@6.2.7/bulma-slider
+ /npm/bulma-extensions@6.2.7/bulma-ribbon
+ /npm/bulma-extensions@6.2.7/bulma-quickview
+ /npm/bulma-extensions@6.2.7/bulma-pricingtable
+ /npm/bulma-extensions@6.2.7/bulma-pageloader
+ /npm/bulma-extensions@6.2.7/bulma-iconpicker
+ /npm/bulma-extensions@6.2.7/bulma-divider
+ /npm/bulma-extensions@6.2.7/bulma-checkradio
+ /npm/bulma-extensions@6.2.7/bulma-carousel
+ /npm/bulma-extensions@6.2.7/bulma-calendar
+ /npm/bulma-extensions@6.2.7/bulma-badge
+ /npm/bulma-extensions@6.2.7/bulma-accordion
+ /npm/bulma-extensions@6.2.7/dist
+ /npm/bulma-extensions@6.2.7/src
+ /npm/bulma-extensions@6.2.7/CHANGELOG.md 
+ /npm/bulma-extensions@6.2.7/LICENSE 
+ /npm/bulma-extensions@6.2.7/package.json 
+ /npm/bulma-extensions@6.2.7/README.md
+
+
+ ~~~~~ Free themes for Bulma ~~~~~
+ https://jenil.github.io/bulmaswatch/
+
+ Getting Started
+The easiest way to start using a theme is using CDN:
+
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/default/bulmaswatch.min.css">
+Simply replace default with the theme name like flatly.
+
+For more advance usage check the help page.

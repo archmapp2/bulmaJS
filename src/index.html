@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Bulma入門 javascript Handlebars Electron Angular React"
+    />
+    <title>Bulma Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+
+    <!-- <link rel="stylesheet" href="css/bulma0.css" /> -->
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+    ></script>
+
+    <!-- <script defer src="js/fontawesome-all.min.js"></script> -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/assets/img/faviconBulma.png"
+      sizes="16x16"
+    />
+
+    <script src="./src/js/shortBulma$$.js"></script>
+
+    <style>
+      #nav {
+        z-index: 1;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+      }
+
+      .km {
+        border-radius: 7px;
+      }
+
+      .km4 {
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body class="has-background-success-light">
+    <nav
+      class="navbar is-primary has-text-grey-light has-text-weight-medium has-shadow"
+      role="navigation"
+      aria-label="Main navigation"
+      id="nav"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="index.html" class="navbar-item mr-5" title="Top page"
+            >BulmaProject</a
+          >
+          <div id="burger" class="navbar-burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links">
+          <div class="navbar-start navbar-item">
+            <a
+              href="https://bulma.io/documentation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button navbar-item is-primary is-fullwidth mt-1"
+            >
+              <span class="icon">
+                <img
+                  src="./assets/img/bulma32.ico"
+                  title="Bulma home!"
+                  alt="bulma"
+                />
+              </span>
+              <span>Bulma</span>
+            </a>
+          </div>
+
+          <div class="navbar-end has-text-dark px-4">
+            <a href="./src/sub/js/js.html" class="navbar-item">Javascript</a>
+            <a href="./src/sub/hbs/hbs.html" class="navbar-item">Handlebars</a>
+            <a href="./src/sub/tron/tron.html" class="navbar-item">Electron</a>
+            <a href="./src/sub/ang/ang.html" class="navbar-item">Angular</a>
+            <a href="./src/sub/react/react.html" class="navbar-item">React</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="hero is-primary is-bold">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Bulmaと共に！</h1>
+              <h2 class="subtitle is-6">
+                Bulmaは、私たち個人でのWeb開発にも、大いに貢献してくれます。
+              </h2>
+              <h3 class="subtitle has-text-white is-5">using Bluma</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- breadcrumbs -->
+        <div class="section pt-3">
+          <nav class="breadcrumb has-arrow-separator">
+            <ul class="is-size-6 container">
+              <li class="is-active">
+                <a href="#">Top page</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-size-6 is-8 content">
+            <article class="message is-primary">
+              <div class="message-header subtitle">
+                <p>Bulmaを使おう</p>
+              </div>
+
+              <div class="notification has-background-primary-light py-1">
+                <h3 class="subtitle is-size-5">
+                  <div class="has-text-centered"><p>公開日：2020/12/15</p></div>
+                </h3>
+                <div class="subtitle has-text-centered">完了日：2021/04/30</div>
+              </div>
+
+              <div
+                class="message-body has-background-grey-lighter"
+                style="border-bottom: inset 2px #aaaa88"
+              >
+                <p>
+                  初回は、
+                  <strong>Javascript</strong> と
+                  <strong>Handlebars</strong> までです。
+                </p>
+              </div>
+            </article>
+
+            <div class="box">
+              <h2 class="title has-background-white-ter km">
+                <button
+                  class="button is-success is-rounded is-outlined is-size-3 is-size-2-tablet ml-4"
+                  onclick="location.href='./src/sub/js/js.html'"
+                >
+                  <span class="has-text-warning">
+                    <i class="fab fa-fw fa-1x fa-js"></i> </span
+                  >&nbsp;javascriptで操作
+                </button>
+              </h2>
+              <div class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
+                <span class="has-text-weight-medium has-text-primary-dark"
+                  >Bulma</span
+                >は、javascript無しのCSSフレームワークなので、javascriptは一切含まれていません。そこでいくつかjavascriptを試してみましょう。
+              </div>
+              <div class="has-text-centered mt-3">
+                ~~ このページもBulmaです ~~
+              </div>
+              <div class="has-text-dark is-size-6-tablet has-text-grey-darker">
+                Let's try javascript
+              </div>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-8 content">
+            <div class="box">
+              <h2 class="title has-background-white-ter km">
+                <button
+                  class="button is-warning is-rounded is-outlined is-size-3 is-size-2-tablet ml-4"
+                  onclick="location.href='./src/sub/hbs/hbs.html'"
+                >
+                  &nbsp;
+                  <span class="icon">
+                    <img
+                      src="./assets/img/handlebars42.png"
+                      alt="bulma" /></span
+                  >&nbsp;&nbsp;&nbsp;Handlebarsでは
+                </button>
+              </h2>
+              <p class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
+                テンプレートエンジン<span
+                  class="has-text-weight-medium has-text-warning-dark"
+                  >Handlebars</span
+                >で、HTMLの断片を使いまわすことが出来ます。
+                Javascriptのオブジェクトを渡して動的に変更したり、独自のヘルパー関数を定義することも可能です。
+                効率的なHTHLの生成を目指しましょう。 <br />
+                また、<span class="has-text-weight-medium has-text-success-dark"
+                  >Web Component</span
+                >も取り上げてみました。
+              </p>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-8 content">
+            <div class="box">
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i> under construction
+              </span>
+              <h2 class="title has-background-white-ter km">
+                <button
+                  class="button is-info is-rounded is-outlined is-size-3 is-size-2-tablet ml-4"
+                  onclick="location.href='./src/sub/tron/tron.html'"
+                >
+                  &nbsp;
+                  <span class="icon">
+                    <img src="./assets/img/electron2.png" alt="bulma" /></span
+                  >&nbsp;&nbsp;&nbsp; Electronを使おう
+                </button>
+              </h2>
+              <p class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                convallis velit quis sapien sollicitudin ultrices. Ut metus
+                tortor, aliquet non rutrum ac, dapibus vehicula augue. Etiam
+                congue erat sem, vitae gravida nunc pretium vitae. Fusce sed ex
+                tellus.
+              </p>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-8 content">
+            <div class="box">
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i> under construction
+              </span>
+              <h2 class="title has-background-white-ter km">
+                <button
+                  class="button is-danger is-rounded is-outlined is-size-3 is-size-2-tablet ml-4"
+                  onclick="location.href='./src/sub/ang/ang.html'"
+                >
+                  <span class="has-text-danger">
+                    <i class="fab fa-fw fa-1x fa-angular"></i>
+                  </span>
+                  &nbsp;Angular
+                </button>
+              </h2>
+              <p class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                convallis velit quis sapien sollicitudin ultrices. Ut metus
+                tortor, aliquet non rutrum ac, dapibus vehicula augue. Etiam
+                congue erat sem, vitae gravida nunc pretium vitae. Fusce sed ex
+                tellus.
+              </p>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-8 content">
+            <div class="box">
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i> under construction
+              </span>
+              <h2 class="title has-background-white-ter km">
+                <button
+                  class="button is-success is-rounded is-outlined is-size-3 is-size-2-tablet ml-4"
+                  onclick="location.href='./src/sub/react/react.html'"
+                >
+                  <span class="icon">
+                    <i class="fab fa-fw fa-1x fa-react"></i> </span
+                  >&nbsp;&nbsp;Reactを知りたい
+                </button>
+              </h2>
+              <p class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                convallis velit quis sapien sollicitudin ultrices. Ut metus
+                tortor, aliquet non rutrum ac, dapibus vehicula augue. Etiam
+                congue erat sem, vitae gravida nunc pretium vitae. Fusce sed ex
+                tellus.
+              </p>
+            </div>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <!-- breadcrumbs -->
+        <div class="section pt-3">
+          <nav class="breadcrumb has-arrow-separator">
+            <ul class="is-size-6 container">
+              <li class="is-active">
+                <a href="#">Top page</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-mobile is-multiline">
+          <div class="column is-half-mobile is-one-quarter-desktop">
+            <h6 class="title is-5">情報</h6>
+            <ul>
+              <li>
+                <i class="fas fa-fw fa-x fa-mug-hot chestnut-light"></i>
+                <a href="./src/sub/info/info$$.html"
+                  ><span class="is-size-5">参考資料</span></a
+                >
+              </li>
+              <!-- <li><a href="#0">Frequently Asked Questions</a></li> -->
+            </ul>
+          </div>
+          <div class="column"></div>
+          <div class="column is-half-mobile is-one-quarter-desktop">
+            <h6 class="title is-5">提供:</h6>
+            <address>
+              <strong>Bulma Project</strong><br />
+              <i class="fab fa-snapchat-ghost" style="color: #f07f7f"></i>
+              北九州<br />
+              <!-- ZIP code and city<br />
+              <i class="fas fa-fw fa-phone"></i>
+              <a href="tel:+1234567890">(123) 456-7890</a> -->
+              <br />
+              <i class="fas fa-fw fa-envelope lightcoral"></i>
+              <a href="mailto:archmapp@i.softbank.jp">archmapp@i.softbank.jp</a>
+            </address>
+          </div>
+        </div>
+        <!-- <p class="has-text-centered">&copy; 2017 Bulma. All rights reserved.</p> -->
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      $$bulmaMenu('#burger', '#nav-links');
+      // $$bulmaTabs('.tabs li', '#tab-content > div');
+    </script>
+  </body>
+</html>
