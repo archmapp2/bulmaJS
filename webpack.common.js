@@ -103,7 +103,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: '/src/assets/img',
+            outputPath: '/bulmaJS/src/assets/img',
             // outputPath: '/docs/src/assets/img',
           },
         },
