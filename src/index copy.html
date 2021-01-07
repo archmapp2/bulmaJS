@@ -26,7 +26,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="src/assets/img/faviconBulma.png"
+      href="./src/assets/img/faviconBulma.png"
       sizes="16x16"
     />
 
@@ -149,11 +149,6 @@
                   <strong>Javascript</strong> と
                   <strong>Handlebars</strong> までです。
                 </p>
-                <p>
-                  2021/01/07: &nbsp;
-                  <strong class="has-text-danger">Angular</strong>
-                  を追加しました。
-                </p>
               </div>
             </article>
 
@@ -173,11 +168,8 @@
                   >Bulma</span
                 >は、javascript無しのCSSフレームワークなので、javascriptは一切含まれていません。そこでいくつかjavascriptを試してみましょう。
               </div>
-              <div class="has-text-grey-light has-text-centered mt-3">
-                ~~ このページも<span
-                  class="has-text-weight-medium has-text-primary-dark"
-                  >Bulma</span
-                >です ~~
+              <div class="has-text-centered mt-3">
+                ~~ このページもBulmaです ~~
               </div>
               <div class="has-text-dark is-size-6-tablet has-text-grey-darker">
                 Let's try javascript
@@ -198,7 +190,9 @@
                 >
                   &nbsp;
                   <span class="icon">
-                    <img src="./assets/img/handlebars42.png" alt="Handlebars" /></span
+                    <img
+                      src="./assets/img/handlebars42.png"
+                      alt="Handlebars" /></span
                   >&nbsp;&nbsp;&nbsp;Handlebarsでは
                 </button>
               </h2>
@@ -248,10 +242,22 @@
           <div class="column"></div>
         </div>
 
+        <!-- 重要!　file-loaderによる outputPath: '/bulmaJS/src/assets/img'
+              へのコピー -->
+        <!-- <div> -->
+        <div class="is-hidden">
+          <img src="./assets/img/Javascript.png" alt="Javascript" />
+          <img src="./assets/img/Angular400.png" alt="Angular400" />
+          <img src="./assets/img/React.jpg" alt="React" />
+        </div>
+
         <div class="columns">
           <div class="column"></div>
           <div class="column is-8 content">
             <div class="box">
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i> under construction
+              </span>
               <h2 class="title has-background-white-ter km">
                 <button
                   class="button is-danger is-rounded is-outlined is-size-3 is-size-2-tablet ml-4"
@@ -263,19 +269,13 @@
                   &nbsp;Angular
                 </button>
               </h2>
-              <div class="has-text-centered mt-3">
-                <p class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
-                  Angularのチュートリアル<span
-                    class="has-text-weight-medium has-text-primary-dark"
-                    >【Tour of Heroes】</span
-                  >と<br />
-                  Brad Traversyのユーチューブ<span
-                    class="has-text-weight-medium has-text-primary-dark"
-                    >【ToDoリスト】</span
-                  >に、<br />
-                  Bulmaを適用してみました。
-                </p>
-              </div>
+              <p class="is-size-7 is-size-6-tablet has-text-grey-darker lh7">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                convallis velit quis sapien sollicitudin ultrices. Ut metus
+                tortor, aliquet non rutrum ac, dapibus vehicula augue. Etiam
+                congue erat sem, vitae gravida nunc pretium vitae. Fusce sed ex
+                tellus.
+              </p>
             </div>
           </div>
           <div class="column"></div>
