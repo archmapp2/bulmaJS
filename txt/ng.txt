@@ -1,0 +1,6 @@
+
+ng new --minimal --routing --style=scss プロジェクト名
+
+:smile
+::
+:smile_\
