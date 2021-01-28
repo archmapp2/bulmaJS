@@ -1,0 +1,78 @@
+[例]　Diagram$$_Web前.htmlの作成
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+まず、Diagram$$.htmlを作成しておく。
+  既にあるものをコピーして、Diagram$$.html用に変更する。
+
+Diagram$$_Web前.htmlの作成
+  Diagram$$.htmlファイルをコピーして、名前をDiagram$$_Web前.htmlとする。
+[変更箇所]
+・　<nav>メニューの削除
+
+・　     <div class="notification has-background-primary-light is-bold mb-1">
+          <div class="container">
+            <h1 class="title">00000000000000000000000</h1>    // まず、messageからコピー
+            <h2 class="subtitle is-5">000000000000000</h2>
+          </div>
+        </div>　いずれかを削除
+
+・　上下の <!-- breadcrumbs --> 部分の削除
+
+・　     <div class="columns mt-5">
+          <div class="column"></div>
+          <div class="column is-8 content">
+          <!-- 各ページ -->
+
+            ！ここに、数個の<article></article>部分をコピー
+
+          <!-- 各ページ終り -->
+          </div>
+          <div class="column"></div>
+        </div>
+
+・　    
+              <h2 class="title has-background-white-ter mb-2 p-2">
+                上記のソースコード
+              </h2>
+        を削除し、次も削除。
+
+              <blockquote class="is-size-6 ml-2">
+                <pre id="pre1">
+                  ・・・・・
+                </pre>
+              </blockquote>         
+
+・　          <li>
+                <strong>shortBulma$$.js</strong>のより詳しい説明は、<a
+                  href="shortBulma.html"
+                  ><strong> shortBulma$$.js </strong> </a
+                >をご覧ください。
+              </li>
+        も削除。
+
+・　    <script>
+          // $$bulmaMenu('#burger', '#nav-links');
+          // $$codeS('#pre1'); は、ともに不要
+        </script>
+
+・　下の <!-- breadcrumbs --> 部分の削除
+
+・　Diagram$$_Web前.htmlの内容をWebでHTML変換　！<pre>は不要！
+・　変換データ(エスケープデータ)を、[t.html]等でチェック（ブラウザで目視）
+        !! ブラウザで開く、またはwebpack-dev-server の再起動が必要
+
+・　Diagram$$.htmlの<blockquote></blockquote>部分に、変換データ(エスケープデータ)を貼り付け。
+
+・　Diagram$$.htmlの動きを確認。ユーザーはコードをコピペするので、こちらでも次の手順で確認してみる。
+
+・　<script src="./src/js/shortBulma$$.js"></script>を調節後、[t.html]等を｛ブラウザで開くで確認｝チェック
+
+*** 重要
+    <script src="./src/js/shortBulma$$.js"></script>のままで確認するには、
+    webpack-dev-serverを利用！
+
+
+* 作業終了後、BAKフォルダへ移動
+    Diagram$$_Web前.html
+* 作業終了後、BAKフォルダへコピー
+    Diagram$$.html

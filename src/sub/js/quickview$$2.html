@@ -38,11 +38,6 @@
     <!-- <script src="./js/shortBulma$$.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
-
-    <script
-      type="text/javascript"
-      src="../../js/bulma-quickview.min.js"
-    ></script>
   </head>
 
   <body>
@@ -167,27 +162,25 @@
                   </h2>
 
                   <button
-                    class="button is-primary is-medium mx-6 mb-3"
+                    class="button is-primary is-medium mx-6 mb-3 z-i"
                     id="quick"
                   >
                     quickview 表示トグル
                   </button>
-                  <button
-                    style="display: none"
+
+                  <!-- <button
                     class="button is-primary"
-                    id="quick_none"
                     data-show="quickview"
                     data-target="quickviewDefault"
                   >
                     Show quickview
-                  </button>
+                  </button> -->
 
-                  <div id="quickviewDefault" class="quickview quickT my-1">
-                    <!-- <div id="quickT" class="quickview my-1"> -->
+                  <div id="quickT" class="quickview my-1">
                     <div class="box has-background-primary p-3">
                       <header class="quickview-header">
                         <p class="is-size-4">クイックビュー Quickview</p>
-                        <span class="delete" data-dismiss="quickview"></span>
+                        <!-- <span class="delete" data-dismiss="quickview"></span> -->
                       </header>
                       <div class="quickview-body">
                         <p>
@@ -283,7 +276,7 @@
                   &lt;/h2&gt;
 
                   &lt;button
-                    class=&quot;button is-primary is-medium mx-6 mb-3&quot;
+                    class=&quot;button is-primary is-medium mx-6 mb-3 z-i&quot;
                     id=&quot;quick&quot;
                   &gt;
                     quickview 表示トグル
@@ -380,7 +373,7 @@
 
                         &lt;dt&gt;$$qcLm(&#039;#quick&#039;, {selT: &#039;#quickT&#039;})&lt;/dt&gt;
                         &lt;dd class=&quot;py-2&quot;&gt;
-                          ボタン&#039;#quick&#039;をクリックすると、セレクター&#039;#quickT&#039;を持つ要素のクラス&#039;is-active&#039;をトグルします。
+                          ボタン&#039;#quick&#039;をクリックすると、セレクター&#039;#quick&#039;を持つ要素のクラス&#039;is-active&#039;をトグルします。
                         &lt;/dd&gt;
                         &lt;dt&gt;bulmaQuickview.attach()&lt;/dt&gt;
                         &lt;dd class=&quot;py-2&quot;&gt;Quickview機能を装着します。&lt;/dd&gt;
@@ -532,11 +525,6 @@
                         <dd class="py-2">
                           ボタン'#quick'をクリックすると、セレクター'#quickT'を持つ要素のクラス'is-active'をトグルします。
                         </dd>
-
-                        <dt>$$qcLm('#quick', {selT: '.quickT'})</dt>
-                        <dd class="py-2">
-                          ボタン'#quick'をクリックすると、セレクター'.quickT'を持つ要素のクラス'is-active'をトグルします。
-                        </dd>
                         <dt>bulmaQuickview.attach()</dt>
                         <dd class="py-2">Quickview機能を装着します。</dd>
                       </dl>
@@ -618,12 +606,16 @@
       </div>
     </section>
 
+    <script
+      type="text/javascript"
+      src="../../../js/bulma-quickview.min.js"
+    ></script>
+
     <script type="text/javascript">
-      // $$bulmaMenu('#burger', '#nav-links');
+      $$bulmaMenu('#burger', '#nav-links');
       $$codeS('#pre1');
 
-      $$qcLm('#quick', { selT: '.quickT' });
-      // $$qcLm('#quick', { selT: '#quickT' });
+      $$qcLm('#quick', { selT: '#quickT' });
 
       // Quickview extension
       bulmaQuickview.attach();

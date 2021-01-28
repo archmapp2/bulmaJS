@@ -315,13 +315,13 @@ const $$qoeSW = (
 
   switch (toggle) {
     case 'add':
-      $$qoe(btnId, () => trgt.classList.add(changeClass));
+      $$qe(btnId, () => trgt.classList.add(changeClass));
       break;
     case 'remove':
-      $$qoe(btnId, () => trgt.classList.remove(changeClass));
+      $$qe(btnId, () => trgt.classList.remove(changeClass));
       break;
     default:
-      $$qoe(btnId, () => trgt.classList.toggle(changeClass));
+      $$qe(btnId, () => trgt.classList.toggle(changeClass));
       break;
   }
 };

@@ -1,0 +1,154 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"); */
+
+html {
+  overflow-y: hidden;
+  /* overflow-y: scroll; */
+}
+
+body {
+  background-color: #eee;
+  margin: 0;
+  font-family: Open Sans;
+
+  box-sizing: border-box;
+}
+
+nav>div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+nav input {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: black;
+  transition: all 0.2s;
+}
+
+
+.active {
+  border-bottom: 10px solid #2196F3;
+  padding-top: 10px;
+}
+
+main {
+  display: flex;
+  align-items: stretch;
+  min-height: calc(100vh - 40px);
+}
+
+section {
+  /* border: 6px solid black; */
+  margin: 0;
+  width: calc(100vw - 210px);
+  /* max-width: calc(100vw - 210px); */
+
+  order: 2;
+  /* flex: 4; */
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.f_container {
+  display: flex;
+}
+
+.flex_wrap {
+  flex-wrap: wrap;
+}
+
+.sidebar-left {
+  background-color: #2b304b;
+  /* border: 6px solid #3F51B5; */
+  color: #3F51B5;
+  order: 1;
+  width: 210px;
+  /* max-width: 210px;
+  min-width: 210px; */
+  flex: 1;
+}
+
+
+@media screen and (max-width: 575px) {
+  html {
+    /* overflow-y: hidden; */
+    overflow-y: scroll;
+    height: 700px;
+  }
+
+  body {
+    height: 1000px;
+  }
+
+  main {
+    /* flex-direction: column; */
+  }
+}
+
+
+.square {
+  font-size: 50px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family: lato;
+  font-weight: 300;
+  /* width: 250px; */
+  /* height: 50px; */
+}
+
+.square_w {
+  width: 250px;
+}
+
+.square_num {
+  display: none;
+}
+
+.square-1 {
+  background: #e51400;
+}
+
+.square-2 {
+  background: #fa6800;
+}
+
+.square-3 {
+  background: #f0a30a;
+}
+
+.square-4 {
+  background: #e3c800;
+}
+
+.square-5 {
+  background: #a4c400;
+}
+
+.square-6 {
+  background: #60a917;
+}
+
+.square-7 {
+  background: #09b380;
+}
+
+.square-8 {
+  background: #1ba1e2;
+}
+
+.square-9 {
+  background: #aa00ff;
+}
+
+.blueC {
+  color: blue;
+}

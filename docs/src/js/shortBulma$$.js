@@ -28,7 +28,7 @@ const $$qoe = (sel, f, evNa = 'click') => {
 };
 
 const $$dqoe = (sel, f) => {
-  $$de(() => $$qe(sel, f));
+  $$de(() => $$qoe(sel, f));
 };
 
 const $$qecL = (sel, selT, cN = 'is-active', mN = 'toggle') => {
@@ -43,12 +43,12 @@ const $$qe = (sel, f, evNa = 'click') => {
   $$oe($$q(sel), f, evNa);
 };
 
-const $$doe = (o, f) => {
-  $$de(() => $$oe(o, f));
+const $$doe = (o, f, evNa = 'click') => {
+  $$de(() => $$oe(o, f, evNa));
 };
 
-const $$qAe = (sel, f) => {
-  $$qAll(sel).forEach((o) => $$oe(o, f));
+const $$qAe = (sel, f, evNa = 'click') => {
+  $$qAll(sel).forEach((o) => $$oe(o, f, evNa));
 };
 
 const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
@@ -56,13 +56,34 @@ const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
 
 const $$ocL = (o, cN = 'is-active', mN = 'toggle') => o.classList[mN](cN);
 
+const $$qcLAll = (selS, sel, cN, change, evNa = 'toggle') => {
+  $$qe(
+    selS,
+    (e) => {
+      $$qAll(sel).forEach((o) => $$ocL(o, cN, evNa));
+    },
+    change
+  );
+};
+
+// $$qcLAll('#switchE2', '.square', 'square_w', 'change');
+
 const $$DF = () => new DocumentFragment();
 
 const $$oes = (o, f) => {
   o.addEventListener('submit', f);
 };
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  <template> 要素は、そのHTMLTemplateElement.contentプロパティにDocumentFragmentを含みます。
+
+const $$mkTemplate = (id, v) => {
+  const template = document.createElement('template');
+  template.id = id;
+  template.innerHTML = v;
+  $$q('body').appendChild(template);
+};
+
 const $$tC = (id) => {
   return $$Id(id).content;
 };
@@ -75,15 +96,9 @@ const $$tCco = (o, b = true) => {
   return document.importNode(o, b);
 };
 
-const $$mkTemplate = (id, v) => {
-  const template = document.createElement('template');
-  template.id = id;
-  template.innerHTML = v;
-  $$q('body').appendChild(template);
-};
-
 const $$da_t = (id) => document.body.appendChild($$tCc(id));
 const $$oa_t = (o, id) => o.appendChild($$tCc(id));
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const $$ogA = (o, ss) => o.getAttribute('data-' + ss);
 const $$ogD = (o, ss) => o.dataset[ss];
@@ -91,6 +106,17 @@ const $$qogA = (sel, ss) => $$q(sel).getAttribute('data-' + ss);
 const $$qogD = (sel, ss) => $$q(sel).dataset[ss];
 
 const $$na = (ss) => document.getElementsByName(ss); // form radio
+
+const $$getRadioValue = (na) => {
+  let ret = '';
+
+  $$na(na).forEach((elm) => {
+    if (elm.checked) {
+      ret = elm.value;
+    }
+  });
+  return ret;
+};
 
 const $$qcLm = (
   sel,
@@ -119,6 +145,9 @@ const $$oAcLm = (
     trgts.forEach((t) => t.classList[mN](cN));
   });
 };
+
+const $$hbs = (ss, context) => Handlebars.compile(ss)(context);
+const $$hbP = (ssP, context) => Handlebars.templates[ssP](context);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const $$bulmaMenu = (ss, ssT) => {
@@ -172,6 +201,16 @@ const $$bulmaTabR = (items, target, cN = 'is-active') => {
 const $$bulmaModal = (sel, selB, selM) => {
   $$qcLm(sel, { selT: selM });
   $$qcLm(selB, { selT: selM });
+};
+
+const $$bulmaSwitch = (selS, sel, cN, change, evNa = 'toggle') => {
+  $$qe(
+    selS,
+    (e) => {
+      $$qAll(sel).forEach((o) => $$ocL(o, cN, evNa));
+    },
+    change
+  );
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,13 +315,13 @@ const $$qoeSW = (
 
   switch (toggle) {
     case 'add':
-      $$qe(btnId, () => trgt.classList.add(changeClass));
+      $$qoe(btnId, () => trgt.classList.add(changeClass));
       break;
     case 'remove':
-      $$qe(btnId, () => trgt.classList.remove(changeClass));
+      $$qoe(btnId, () => trgt.classList.remove(changeClass));
       break;
     default:
-      $$qe(btnId, () => trgt.classList.toggle(changeClass));
+      $$qoe(btnId, () => trgt.classList.toggle(changeClass));
       break;
   }
 };
