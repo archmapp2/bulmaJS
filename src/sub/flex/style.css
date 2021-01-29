@@ -1,9 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-/*@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"); */
 
 html {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   /* overflow-y: scroll; */
 }
 
@@ -34,6 +32,16 @@ nav input {
   transition: all 0.2s;
 }
 
+/* 
+flex-wrap: nowrap;
+既定値
+flex-wrap: wrap;
+flex-wrap: wrap-reverse;
+ */
+.set_flex {
+  display: flex;
+  align-items: center;
+}
 
 .active {
   border-bottom: 10px solid #2196F3;
@@ -43,7 +51,8 @@ nav input {
 main {
   display: flex;
   align-items: stretch;
-  min-height: calc(100vh - 40px);
+  height: calc(100vh - 40px);
+  /* min-height: calc(100vh - 40px); */
 }
 
 section {
@@ -59,10 +68,12 @@ section {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .f_container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
-.flex_wrap {
-  flex-wrap: wrap;
+.flex_column {
+  flex-direction: column;
 }
 
 .sidebar-left {

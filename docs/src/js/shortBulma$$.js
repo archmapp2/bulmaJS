@@ -23,20 +23,16 @@ const $$oe = (o, f, evNa = 'click') => {
   o.addEventListener(evNa, f);
 };
 
-const $$qoe = (sel, f, evNa = 'click') => {
-  $$oe($$q(sel), f, evNa);
-};
-
-const $$dqoe = (sel, f) => {
-  $$de(() => $$qoe(sel, f));
-};
-
 const $$qecL = (sel, selT, cN = 'is-active', mN = 'toggle') => {
   $$qe(sel, (e) => {
     e.stopPropagation();
     $$qcL(sel, cN, mN);
     $$qcL(selT, cN, mN);
   });
+};
+
+const $$dqe = (sel, f) => {
+  $$de(() => $$qe(sel, f));
 };
 
 const $$qe = (sel, f, evNa = 'click') => {
@@ -315,13 +311,13 @@ const $$qoeSW = (
 
   switch (toggle) {
     case 'add':
-      $$qoe(btnId, () => trgt.classList.add(changeClass));
+      $$qe(btnId, () => trgt.classList.add(changeClass));
       break;
     case 'remove':
-      $$qoe(btnId, () => trgt.classList.remove(changeClass));
+      $$qe(btnId, () => trgt.classList.remove(changeClass));
       break;
     default:
-      $$qoe(btnId, () => trgt.classList.toggle(changeClass));
+      $$qe(btnId, () => trgt.classList.toggle(changeClass));
       break;
   }
 };

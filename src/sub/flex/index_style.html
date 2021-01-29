@@ -19,10 +19,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma-tooltip@3.0.2/dist/css/bulma-tooltip.min.css"
     />
 
-    <script
-      type="text/javascript"
-      src="../../js/bulma-quickview.min.js"
-    ></script>
+    <script type="text/javascript" src="../js/bulma-quickview.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -32,15 +29,18 @@
     <link
       rel="icon"
       type="image/png"
-      href="../../assets/img/faviconBulma.png"
+      href="../assets/img/faviconBulma.png"
       sizes="16x16"
     />
 
-    <script src="../../js/shortBulma$$.js"></script>
+    <script src="../js/shortBulma$$.js"></script>
 
-<style>
+    <!-- <link rel="stylesheet" href="style.css" type="text/css" /> -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
       html {
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
         /* overflow-y: scroll; */
       }
 
@@ -71,6 +71,17 @@
         transition: all 0.2s;
       }
 
+      /* 
+flex-wrap: nowrap;
+既定値
+flex-wrap: wrap;
+flex-wrap: wrap-reverse;
+ */
+      .set_flex {
+        display: flex;
+        align-items: center;
+      }
+
       .active {
         border-bottom: 10px solid #2196f3;
         padding-top: 10px;
@@ -79,7 +90,8 @@
       main {
         display: flex;
         align-items: stretch;
-        min-height: calc(100vh - 40px);
+        height: calc(100vh - 40px);
+        /* min-height: calc(100vh - 40px); */
       }
 
       section {
@@ -95,10 +107,12 @@
       /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
       .f_container {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
       }
 
-      .flex_wrap {
-        flex-wrap: wrap;
+      .flex_column {
+        flex-direction: column;
       }
 
       .sidebar-left {
@@ -196,7 +210,7 @@
         <button
           style="display: none"
           class="button is-primary is-medium mx-6 mb-3"
-          id="quick_none"
+          id="quick"
           data-show="quickview"
           data-target="quickviewDefault"
         >
@@ -205,13 +219,30 @@
 
         <input id="switchE" type="checkbox" name="switchE" class="switch" />
         <!-- checked="checked" -->
-        <label for="switchE" class="has-text-weight-bold">flex-wrap</label>
+        <label for="switchE" class="has-text-weight-bold">flex-column</label>
 
         <input id="switchE2" type="checkbox" name="switchE2" class="switch" />
         <label for="switchE2" class="has-text-weight-bold">width: 250px</label>
 
         <input id="switchE3" type="checkbox" name="switchE3" class="switch" />
         <label for="switchE3" class="has-text-weight-bold">9 / 5 枚</label>
+
+        <div class="field set_flex">
+          <label class="label mr-1">flex-wrap:</label>
+          <div class="control">
+            <div class="select has-background-warning">
+              <select
+                id="sel"
+                class="has-background-white-ter has-text-weight-semibold"
+              >
+                <!-- <select id="sel" class="has-background-grey-lighter"> -->
+                <option>nowrap</option>
+                <option>wrap</option>
+                <option class="is-size-7">wrap-reverse</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -247,7 +278,7 @@
             </article>
           </div>
           <footer class="quickview-footer has-background-primary mt-4">
-            <span class="has-text-centered">FLEXBOX練習帳</span>
+            <span class="has-text-centered">FLEXBOX 練習帳</span>
           </footer>
         </div>
       </div>
@@ -270,7 +301,7 @@
       <aside id="aside1" class="sidebar-left">
         <article class="panel is-primary">
           <p class="panel-heading has-text-centered">
-            FLEXBOX <span class="is-size-6">[row]</span>
+            FLEXBOX <span class="is-size-6"></span>
           </p>
           <p class="panel-tabs">
             <button
@@ -553,12 +584,22 @@
 
       $$de(() => {
         // const $$qcLAll = (selS, sel, cN, change, evNa = 'toggle') => {};
-        $$bulmaSwitch('#switchE', '.f_container', 'flex_wrap');
+        $$bulmaSwitch('#switchE', '.f_container', 'flex_column');
         $$bulmaSwitch('#switchE2', '.square', 'square_w');
         $$bulmaSwitch(
           '#switchE3',
           'section>div:nth-of-type(n+6)',
           'square_num'
+        );
+
+        $$qe(
+          '#sel',
+          (e) => {
+            const v = e.target.value;
+            console.log(v);
+            $$q('.f_container').style.flexWrap = v;
+          },
+          'change'
         );
 
         const aside_ch = (n) => {
