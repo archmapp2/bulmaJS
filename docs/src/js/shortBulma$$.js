@@ -23,6 +23,10 @@ const $$oe = (o, f, evNa = 'click') => {
   o.addEventListener(evNa, f);
 };
 
+const $$dqoe = (sel, f) => {
+  $$de(() => $$qe(sel, f));
+};
+
 const $$qecL = (sel, selT, cN = 'is-active', mN = 'toggle') => {
   $$qe(sel, (e) => {
     e.stopPropagation();
@@ -31,11 +35,8 @@ const $$qecL = (sel, selT, cN = 'is-active', mN = 'toggle') => {
   });
 };
 
-const $$dqe = (sel, f) => {
-  $$de(() => $$qe(sel, f));
-};
-
 const $$qe = (sel, f, evNa = 'click') => {
+  // console.log('$$qe', sel);
   $$oe($$q(sel), f, evNa);
 };
 
@@ -120,7 +121,7 @@ const $$qcLm = (
   mN = 'toggle',
   stopP = true
 ) => {
-  $$ocLm($$q(sel), { trgt: $$q(selT) });
+  $$ocLm($$q(sel), { trgt: $$q(selT) }, mN , stopP);
 };
 
 const $$ocLm = (o, { trgt, cN = 'is-active' }, mN = 'toggle', stopP = true) => {
@@ -203,7 +204,9 @@ const $$bulmaSwitch = (selS, sel, cN, change, evNa = 'toggle') => {
   $$qe(
     selS,
     (e) => {
-      $$qAll(sel).forEach((o) => $$ocL(o, cN, evNa));
+      $$qAll(sel).forEach((o) => {
+        $$ocL(o, cN, evNa);
+      });
     },
     change
   );
@@ -227,6 +230,14 @@ const $$codeS = (id) => { // クリックしたテキストをすべて選択
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// const $$cn = (ss) => document.getElementsByClassName(ss);
+// const $$cn1 = (ss) => document.getElementsByClassName(ss)[0];
+
+// const $$tn = (ss) => document.getElementsByTagName(ss);
+// const $$tn1 = (ss) => document.getElementsByTagName(ss)[0];
+
+// const $$na = (ss) => document.getElementsByName(ss);
+// const $$na1 = (ss) => document.getElementsByName(ss)[0];
 // const $$sBq = (btnId, { target, changeClass }, toggle) =>
 //   setBtn_q(btnId, { target, changeClass }, toggle);
 
@@ -474,3 +485,12 @@ setBtn_eTargetobjToggle = function (
       break;
   }
 };
+
+          // switch (n) {
+          //   case 1:
+          //     break;
+          //   case 2:
+          //     break;
+          //   case 3:
+          //     break;
+          // }
