@@ -72,9 +72,21 @@ section {
   flex-wrap: nowrap;
 }
 
+/* flex-direction */
+/* 
+  row | row-reverse | column | column-reverse
+*/
 .flex_column {
   flex-direction: column;
 }
+
+/* place-content */
+/* 
+  最初の値は align-content プロパティ値で、二番目の値は justify-content の値です。
+   二番目の値がない場合、最初の値に両方に有効な値が設定されていれば、両方に使用されます。どちらかに無効な値であれば、値自体が無効になります。
+*/
+/* 通常の配置 */
+/* align-content: normal; */
 
 .sidebar-left {
   background-color: #2b304b;

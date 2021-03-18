@@ -13,7 +13,7 @@ const $$Id = (id) => {
 const $$q = (sel) => document.querySelector(sel);
 const $$qAll = (sel) => document.querySelectorAll(sel);
 const $$oq = (o, sel) => o.querySelector(sel);
-const $$qoAll = (o, sel) => o.querySelectorAll(sel);
+const $$oqAll = (o, sel) => o.querySelectorAll(sel);
 
 const $$de = (f) => {
   document.addEventListener('DOMContentLoaded', f);

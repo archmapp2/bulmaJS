@@ -92,9 +92,9 @@
             <a href="../../sub/ang/ang.html" class="navbar-item has-text-right"
               >Angular</a
             >
-            <!-- <a href="../../sub/react/react.html" class="navbar-item has-text-right"
+            <a href="../../sub/react/react.html" class="navbar-item has-text-right"
               >React</a
-            > -->
+            >
             <a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a>
           </div>
         </div>
@@ -556,7 +556,7 @@
                         &lt;dd class=&quot;py-2&quot;&gt;idが&#039;sel&#039;である要素を取得&lt;/dd&gt;
                         &lt;dt&gt;$$ocL(o, cL, &#039;add&#039;)&lt;/dt&gt;
                         &lt;dd class=&quot;py-2&quot;&gt;要素oのクラスリストに、cLを追加&lt;/dd&gt;
-                        &lt;dt&gt;$$qoAll(o, &#039;div.traceF&#039;)&lt;/dt&gt;
+                        &lt;dt&gt;$$oqAll(o, &#039;div.traceF&#039;)&lt;/dt&gt;
                         &lt;dd class=&quot;py-2&quot;&gt;
                           要素oの子孫で、セレクター&#039;div.traceF&#039;を持つ全ての要素を取得
                         &lt;/dd&gt;
@@ -731,7 +731,7 @@
       };
 
       const getTraceTile = (o) =&gt; {
-        let tiles = $$qoAll(o, &#039;div.traceF&#039;);
+        let tiles = $$oqAll(o, &#039;div.traceF&#039;);
         console.log(&#039;getTraceTile -&gt; tiles.length - 1&#039;, tiles.length - 1);
         return tiles[tiles.length - 1];
       };
@@ -849,7 +849,7 @@
                         <dd class="py-2">idが'sel'である要素を取得</dd>
                         <dt>$$ocL(o, cL, 'add')</dt>
                         <dd class="py-2">要素oのクラスリストに、cLを追加</dd>
-                        <dt>$$qoAll(o, 'div.traceF')</dt>
+                        <dt>$$oqAll(o, 'div.traceF')</dt>
                         <dd class="py-2">
                           要素oの子孫で、セレクター'div.traceF'を持つ全ての要素を取得
                         </dd>
@@ -1046,7 +1046,7 @@
       };
 
       const getTraceTile = (o) => {
-        let tiles = $$qoAll(o, 'div.traceF');
+        let tiles = $$oqAll(o, 'div.traceF');
         console.log('getTraceTile -> tiles.length - 1', tiles.length - 1);
         return tiles[tiles.length - 1];
       };

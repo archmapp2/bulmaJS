@@ -28,6 +28,11 @@ const plugins = [
         from: '**/*.*',
         to: './src/sub/hbs/partials',
       },
+      {
+        context: './src/sub/tron/distReactOnly',
+        from: '**/*.*',
+        to: './src/sub/tron/distReactOnly',
+      },
     ],
   }),
 

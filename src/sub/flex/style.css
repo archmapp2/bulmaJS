@@ -72,6 +72,10 @@ section {
   flex-wrap: nowrap;
 }
 
+/* flex-direction */
+/* 
+  row | row-reverse | column | column-reverse
+*/
 .flex_column {
   flex-direction: column;
 }

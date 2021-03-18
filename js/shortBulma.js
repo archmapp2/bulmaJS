@@ -46,7 +46,7 @@ export const qoe = (sel, f) => {
 };
 
 export const qAe = (sel, f) => {
-  qAll(sel).forEach((o) => oe(o, f));
+  qAll(sel).forEach((o) => oe(o, () => f(o)))
 };
 
 export const qcL = (sel, cN = 'is-active', mN = 'toggle') =>

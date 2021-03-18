@@ -57,7 +57,7 @@ const $$qe = (ss, f) => {
 };
 
 const $$qAe = (sel, f) => {
-  $$qAll(sel).forEach((o) => o.addEventListener('click', f));
+  $$qAll(sel).forEach((o) => o.addEventListener('click', () => f(o)))
 };
 
 // const $$ = () => {

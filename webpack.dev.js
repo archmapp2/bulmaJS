@@ -6,44 +6,51 @@ const merge = require('webpack-merge');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'docs'),
-  },
+	mode: 'development',
+	devtool: 'inline-source-map',
+	output: {
+		filename: '[name].bundle.js',
+		path: path.resolve(__dirname, 'docs'),
+	},
 
-  devServer: {
-    before: function (app, server) {
-      server._watch('./src/sub/**/*.html');
-    },
-    // contentBase: 'docs',
-    contentBase: path.join(__dirname, 'docs'),
-    hot: true,
-    port: 3000,
-    host: '0.0.0.0',
-  },
+	devServer: {
+		before: function (app, server) {
+			server._watch('./src/sub/**/*.html')
+		},
+		// contentBase: 'docs',
+		contentBase: path.join(__dirname, 'docs'),
+		hot: true,
+		port: 3000,
+		host: '0.0.0.0',
+	},
 
-  // devServer: {
-  //   // writeToDisk: true,
-  //   // host: '0.0.0.0',
-  // },
+	// devServer: {
+	//   // writeToDisk: true,
+	//   // host: '0.0.0.0',
+	// },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.(scss|sass)$/i,
-        use: [
-          'style-loader', //3. Inject styles into DOM
-          'css-loader', //2. Turns css into commonjs
-          'sass-loader', //1. Turns sass into css
-        ],
-      },
-    ],
-  },
-});
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './src/index.html',
+		}),
+	],
+	module: {
+		rules: [
+			{
+				test: /\.(scss|sass)$/i,
+				use: [
+					'style-loader', //3. Inject styles into DOM
+					'css-loader', //2. Turns css into commonjs
+					'sass-loader', //1. Turns sass into css
+				],
+			},
+
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				use: [
+					{ loader: 'file-loader?name=font/[name]__[hash:base64:5].[ext]' },
+				],
+			},
+		],
+	},
+})

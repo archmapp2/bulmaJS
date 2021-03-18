@@ -23,10 +23,6 @@ const $$oe = (o, f, evNa = 'click') => {
   o.addEventListener(evNa, f);
 };
 
-const $$qoe = (sel, f, evNa = 'click') => {
-  $$oe($$q(sel), f, evNa);
-};
-
 const $$dqoe = (sel, f) => {
   $$de(() => $$qe(sel, f));
 };
@@ -40,15 +36,19 @@ const $$qecL = (sel, selT, cN = 'is-active', mN = 'toggle') => {
 };
 
 const $$qe = (sel, f, evNa = 'click') => {
+  // console.log('$$qe', sel);
   $$oe($$q(sel), f, evNa);
 };
 
-const $$doe = (o, f) => {
-  $$de(() => $$oe(o, f));
+const $$doe = (o, f, evNa = 'click') => {
+  $$de(() => $$oe(o, f, evNa));
 };
 
-const $$qAe = (sel, f) => {
-  $$qAll(sel).forEach((o) => $$oe(o, f));
+const $$qAe = (sel, f, evNa = 'click') => {
+  // console.log($$qAll(sel))
+  $$qAll(sel).forEach((o) => {
+    // console.log(o)
+    $$oe(o, () => f(o), evNa)});
 };
 
 const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
@@ -56,13 +56,34 @@ const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
 
 const $$ocL = (o, cN = 'is-active', mN = 'toggle') => o.classList[mN](cN);
 
+const $$qcLAll = (selS, sel, cN, change, evNa = 'toggle') => {
+  $$qe(
+    selS,
+    (e) => {
+      $$qAll(sel).forEach((o) => $$ocL(o, cN, evNa));
+    },
+    change
+  );
+};
+
+// $$qcLAll('#switchE2', '.square', 'square_w', 'change');
+
 const $$DF = () => new DocumentFragment();
 
 const $$oes = (o, f) => {
   o.addEventListener('submit', f);
 };
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  <template> 要素は、そのHTMLTemplateElement.contentプロパティにDocumentFragmentを含みます。
+
+const $$mkTemplate = (id, v) => {
+  const template = document.createElement('template');
+  template.id = id;
+  template.innerHTML = v;
+  $$q('body').appendChild(template);
+};
+
 const $$tC = (id) => {
   return $$Id(id).content;
 };
@@ -75,15 +96,9 @@ const $$tCco = (o, b = true) => {
   return document.importNode(o, b);
 };
 
-const $$mkTemplate = (id, v) => {
-  const template = document.createElement('template');
-  template.id = id;
-  template.innerHTML = v;
-  $$q('body').appendChild(template);
-};
-
 const $$da_t = (id) => document.body.appendChild($$tCc(id));
 const $$oa_t = (o, id) => o.appendChild($$tCc(id));
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const $$ogA = (o, ss) => o.getAttribute('data-' + ss);
 const $$ogD = (o, ss) => o.dataset[ss];
@@ -92,13 +107,24 @@ const $$qogD = (sel, ss) => $$q(sel).dataset[ss];
 
 const $$na = (ss) => document.getElementsByName(ss); // form radio
 
+const $$getRadioValue = (na) => {
+  let ret = '';
+
+  $$na(na).forEach((elm) => {
+    if (elm.checked) {
+      ret = elm.value;
+    }
+  });
+  return ret;
+};
+
 const $$qcLm = (
   sel,
   { selT, cN = 'is-active' },
   mN = 'toggle',
   stopP = true
 ) => {
-  $$ocLm($$q(sel), { trgt: $$q(selT) });
+  $$ocLm($$q(sel), { trgt: $$q(selT), cN }, mN , stopP);
 };
 
 const $$ocLm = (o, { trgt, cN = 'is-active' }, mN = 'toggle', stopP = true) => {
@@ -119,6 +145,9 @@ const $$oAcLm = (
     trgts.forEach((t) => t.classList[mN](cN));
   });
 };
+
+const $$hbs = (ss, context) => Handlebars.compile(ss)(context);
+const $$hbP = (ssP, context) => Handlebars.templates[ssP](context);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const $$bulmaMenu = (ss, ssT) => {
@@ -174,6 +203,65 @@ const $$bulmaModal = (sel, selB, selM) => {
   $$qcLm(selB, { selT: selM });
 };
 
+const $$bulmaSwitch = (selS, sel, cN, change, evNa = 'toggle') => {
+  $$qe(
+    selS,
+    (e) => {
+      $$qAll(sel).forEach((o) => {
+        $$ocL(o, cN, evNa);
+      });
+    },
+    change
+  );
+};
+
+// ~~ Animation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//  need CSS 'jump ...'
+$$jump = (sel) => {
+	$$qAe(
+		sel,
+		(o) => {
+			$$ocL(o, 'jump', 'add')
+		},
+		'mousedown'
+	)
+
+	$$qAe(
+		sel,
+		(o) => {
+			$$ocL(o, 'jump', 'remove')
+		},
+		'animationend'
+	)
+
+	$$qAe(
+		sel,
+		(o) => {
+			$$ocL(o, 'jump', 'remove')
+		},
+		'animationcancel'
+	)
+}
+
+/* 
+			.a_btn {
+				display: block;
+				cursor: pointer;
+			}
+			.a_btn.jump {
+				animation: 0.07s cubic-bezier(0.2, 1, 0.2, 1) 0s 1 jump;
+			}
+			@keyframes jump {
+				0%,
+				50% {
+					transform: translateY(-2px);
+				}
+				100% {
+					transform: translateY(0px);
+				}
+			}
+ */
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Bulmaとは直接関係ありません。
 const $$codeS = (id) => { // クリックしたテキストをすべて選択
@@ -192,6 +280,14 @@ const $$codeS = (id) => { // クリックしたテキストをすべて選択
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// const $$cn = (ss) => document.getElementsByClassName(ss);
+// const $$cn1 = (ss) => document.getElementsByClassName(ss)[0];
+
+// const $$tn = (ss) => document.getElementsByTagName(ss);
+// const $$tn1 = (ss) => document.getElementsByTagName(ss)[0];
+
+// const $$na = (ss) => document.getElementsByName(ss);
+// const $$na1 = (ss) => document.getElementsByName(ss)[0];
 // const $$sBq = (btnId, { target, changeClass }, toggle) =>
 //   setBtn_q(btnId, { target, changeClass }, toggle);
 
@@ -439,3 +535,12 @@ setBtn_eTargetobjToggle = function (
       break;
   }
 };
+
+          // switch (n) {
+          //   case 1:
+          //     break;
+          //   case 2:
+          //     break;
+          //   case 3:
+          //     break;
+          // }

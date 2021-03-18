@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <script src="./js/archLib.js"></script>
+
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <!-- <link rel="stylesheet" href="../css/bulma.css" /> -->
+
+    <title>Bulma Learning Kit - Reference - Layout: Level</title>
+	</head>
+	
+  <body>
+    <header>
+      <nav
+        class="navbar is-primary"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="../index.html" class="navbar-item">Bulma Learning Kit</a>
+            <div
+              id="navbar-burgerId"
+              class="navbar-burger"
+              data-target="navbarMenu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#0" class="navbar-link">Modifiers</a>
+                <ul class="navbar-dropdown is-boxed">
+                  <a href="helpers.html" class="navbar-item">Helpers</a>
+                  <a href="responsive-helpers.html" class="navbar-item"
+                    >Responsive Helpers</a
+                  >
+                  <a href="color-helpers.html" class="navbar-item"
+                    >Color Helpers</a
+                  >
+                  <a href="typography-helpers.html" class="navbar-item"
+                    >Typography Helpers</a
+                  >
+                </ul>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#0" class="navbar-link">Layout</a>
+                <ul class="navbar-dropdown is-boxed">
+                  <a href="columns.html" class="navbar-item">Columns</a>
+                  <a href="container.html" class="navbar-item">Container</a>
+                  <a href="hero.html" class="navbar-item">Hero</a>
+                  <a href="section.html" class="navbar-item">Section</a>
+                  <a href="footer.html" class="navbar-item">Footer</a>
+                  <a href="level.html" class="navbar-item">Level</a>
+                  <a href="media-object.html" class="navbar-item"
+                    >Media Object</a
+                  >
+                  <a href="tiles.html" class="navbar-item">Tiles</a>
+                </ul>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#0" class="navbar-link">Forms</a>
+                <ul class="navbar-dropdown is-boxed">
+                  <a href="general.html" class="navbar-item">General</a>
+                  <a href="input.html" class="navbar-item">Input</a>
+                  <a href="textarea.html" class="navbar-item">Textarea</a>
+                  <a href="select.html" class="navbar-item">Select</a>
+                  <a href="checkbox-radio.html" class="navbar-item"
+                    >Checkbox &amp; Radio Button</a
+                  >
+                  <a href="file.html" class="navbar-item">File</a>
+                </ul>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#0" class="navbar-link">Elements</a>
+                <ul class="navbar-dropdown is-boxed">
+                  <a href="box.html" class="navbar-item">Box</a>
+                  <a href="button.html" class="navbar-item">Button</a>
+                  <a href="content.html" class="navbar-item">Content</a>
+                  <a href="delete.html" class="navbar-item">Delete</a>
+                  <a href="icon.html" class="navbar-item">Icon</a>
+                  <a href="image.html" class="navbar-item">Image</a>
+                  <a href="notification.html" class="navbar-item"
+                    >Notification</a
+                  >
+                  <a href="progress.html" class="navbar-item">Progress</a>
+                  <a href="table.html" class="navbar-item">Table</a>
+                  <a href="tag.html" class="navbar-item">Tag</a>
+                  <a href="title.html" class="navbar-item">Title</a>
+                </ul>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#0" class="navbar-link">Components</a>
+                <ul class="navbar-dropdown is-boxed">
+                  <a href="breadcrumb.html" class="navbar-item">Breadcrumb</a>
+                  <a href="card.html" class="navbar-item">Card</a>
+                  <a href="dropdown.html" class="navbar-item">Dropdown</a>
+                  <a href="menu.html" class="navbar-item">Menu</a>
+                  <a href="message.html" class="navbar-item">Message</a>
+                  <a href="modal.html" class="navbar-item">Modal</a>
+                  <a href="navbar.html" class="navbar-item">Navbar</a>
+                  <a href="pagination.html" class="navbar-item">Pagination</a>
+                  <a href="panel.html" class="navbar-item">Panel</a>
+                  <a href="tabs.html" class="navbar-item">Tabs</a>
+                </ul>
+              </div>
+            </div>
+            <div class="navbar-end">
+              <div class="buttons has-addons">
+                <a href="../reference/level.html" class="button is-dark"
+                  >Reference</a
+                >
+                <a href="../practice/level.html" class="button is-light"
+                  >Practice</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+		section.section container
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Layout: Level</h1>
+        <hr />
+        <main>
+					<h2 class="subtitle has-text-weight-bold">Default level</h2>
+          nav.label [.level-left, .level-right] [.level-item] button.button.is-primary
+          
+          <nav class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <button class="button is-primary">Button</button>
+              </div>
+              <div class="level-item">
+                <button class="button is-success">Button</button>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="level-item">
+                <button class="button is-warning">Button</button>
+              </div>
+              <div class="level-item">
+                <button class="button is-danger">Button</button>
+              </div>
+            </div>
+          </nav>
+
+          <hr />
+          <h2 class="subtitle has-text-weight-bold">Centered level 4</h2>
+					nav.label [.level-item] button.button.is-primary
+          <nav class="level">
+            <div class="level-item">
+              <button class="button is-primary">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-success">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-warning">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-danger">Button</button>
+            </div>
+          </nav>
+
+          <hr />
+          <h2 class="subtitle has-text-weight-bold">Centered level 3</h2>
+					nav.label [.level-item] button.button.is-primary
+          <nav class="level">
+            <div class="level-item">
+              <button class="button is-primary">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-success">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-warning">Button</button>
+            </div>
+          </nav>
+
+          <hr />
+          <h2 class="subtitle has-text-weight-bold">Centered level 2</h2>
+					nav.label [.level-item] button.button.is-primary
+          <nav class="level">
+            <div class="level-item">
+              <button class="button is-primary">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-success">Button</button>
+            </div>
+          </nav>
+
+          <hr />
+          <h2 class="subtitle has-text-weight-bold">Centered level 1</h2>
+					nav.label [.level-item] button.button.is-primary
+          <nav class="level">
+            <div class="level-item">
+              <button class="button is-primary">Button</button>
+            </div>
+            <!-- <div class="level-item">
+              <button class="button is-success">Button</button>
+            </div> -->
+          </nav>
+
+          <hr />
+					<h2 class="subtitle has-text-weight-bold">Mobile default level</h2>
+					nav class="level is-mobile"
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <div class="level-item">
+                <button class="button is-primary">Button</button>
+              </div>
+              <div class="level-item">
+                <button class="button is-success">Button</button>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="level-item">
+                <button class="button is-warning">Button</button>
+              </div>
+              <div class="level-item">
+                <button class="button is-danger">Button</button>
+              </div>
+            </div>
+          </nav>
+
+          <hr />
+					<h2 class="subtitle has-text-weight-bold">Mobile centered level is-mobile</h2>
+					nav class="level is-mobile"
+          <nav class="level is-mobile">
+            <div class="level-item">
+              <button class="button is-primary">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-success">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-warning">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-danger">Button</button>
+            </div>
+          </nav>
+
+          <hr />
+					<h2 class="subtitle has-text-weight-bold">Mobile centered level</h2>
+					nav class="level"
+          <nav class="level">
+            <div class="level-item">
+              <button class="button is-primary">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-success">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-warning">Button</button>
+            </div>
+            <div class="level-item">
+              <button class="button is-danger">Button</button>
+            </div>
+          </nav>
+        </main>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      $$de(() => {
+        const o = $$Id('navbar-burgerId');
+        $$oe(o, () => {
+          $$ocL(o);
+          $$ocL($$Id('navMenu'));
+        });
+      });
+    </script>
+
+</body>
+</html>
