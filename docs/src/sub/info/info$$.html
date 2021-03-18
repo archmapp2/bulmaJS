@@ -1,0 +1,169 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma Handlebars"/><title>Bulma Project Handlebars</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script><script src="../../js/shortBulma$$.js"></script><script src="../../js/shortHbs$$.js"></script><script id="template" type="text/x-handlebars-template"><div class='columns is-centered'>
+        <div class='column is-10'>
+          <div class='box'>
+            <h1
+              class='notification title has-background-info-dark has-text-white'
+            >
+              <i class="fas fa-fw fa-2x fa-mug-hot goldenrod"></i>
+              <i class="fas fa-fw fa-x fa-mug-hot gold"></i>
+               {{bold title}}
+            </h1>
+
+            {{#people}}
+              <ul class='panel'>
+                <li>
+                  <h1 class='panel-block subtitle has-background-info-light'>
+                    {{bold name}}
+                  </h1>
+                </li>
+                <li class='ml-5'>
+                  書籍：{{book}}
+                </li>
+                {{#if url}}
+                  <li class='ml-5'>
+                    URL：
+                    <a href='{{url}}'>
+                      {{url}}
+                    </a>
+                  </li>
+                {{/if}}
+              </ul>
+            {{/people}}
+          </div>
+        </div>
+      </div></script><script id="template_success" type="text/x-handlebars-template"><div class='columns is-centered'>
+        <div class='column is-10'>
+          <div class='box'>
+            <h1
+              class='notification title has-background-success-dark has-text-white'
+            >
+              <i class="fas fa-fw fa-2x fa-mug-hot goldenrod"></i>
+              <i class="fas fa-fw fa-x fa-mug-hot gold"></i>
+               {{bold title}}
+            </h1>
+
+            {{#people}}
+              <ul class='panel'>
+                {{#if name}}
+                <li>
+                  <h1 class='panel-block subtitle has-background-success-light'>
+                    {{bold name}}
+                  </h1>
+                </li>
+                {{/if}}
+
+                {{#if subtitle}}
+                <li class='ml-5'>
+                    タイトル：{{subtitle}}
+                </li>
+                {{/if}}
+
+                {{#if book}}
+                <li class='ml-5'>
+                  書籍：{{book}}
+                </li>
+                {{/if}}
+                {{#if url}}
+                  <li class='ml-5'>
+                    URL：
+                    <a href='{{url}}'>
+                      {{url}}
+                    </a>
+                  </li>
+                {{/if}}
+                {{#if url2}}
+                  <li class='ml-5'>
+                    URL2：
+                    <a href='{{url2}}'>
+                      {{url2}}
+                    </a>
+                  </li>
+                {{/if}}
+              </ul>
+            {{/people}}
+          </div>
+        </div>
+      </div></script><link href="../../../main.94ce490bf93f8ee7a9f1.css" rel="stylesheet"></head><body><nav class="navbar is-primary has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="/bulmaJS/src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a> <a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a></div></div></div></nav><section class="section"><div class="container"><div class="notification has-background-primary-light is-bold mb-1"><div class="container"><h1 class="title">素敵な人々とWebサイト</h1><h2 class="subtitle is-5 mt-3 ml-3"><i class="fas fa-fw fa-x fa-mug-hot gold"></i> 感動と感謝を込めて !</h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li class="is-active"><a href="#">参考資料</a></li></ul></nav></div><div class="columns mt-5"><div class="column"></div><div class="column is-10"><article class="message is-primary"><div class="message-header subtitle mb-"><p>[<strong>参考資料</strong>]</p></div><div class="message-body has-background-grey-lighter" style="border-bottom: inset 2px #aaaa88"><p>様々なツールの提供と素晴らしい解説をありがとう。<br>お世話になっている方々のほんの一部です。</p></div></article><main><div id="contents"></div><hr/><div id="contents_success"></div></main></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li class="is-active"><a href="#">参考資料</a></li></ul></nav></div></div></section><script>$$bulmaMenu('#burger', '#nav-links');
+      $$codeS('#pre1');</script><script>let v = {
+        title: '素敵な人々',
+        people: [
+          {
+            name: 'David Flanagan 著、村上 列 訳',
+            book: 'JavaScript 第6版',
+            url: '',
+          },
+          {
+            name: '山田 祥寛',
+            book: '改訂新版JavaScript本格入門',
+            url: 'https://codezine.jp/author/33',
+          },
+          {
+            name: 'Stoyan Stefanov',
+            book: 'オブジェクト指向JavaScript',
+            url: '',
+          },
+        ],
+      };
+
+      let v_success = {
+        title: '素敵なWebサイト',
+        people: [
+          {
+            name: 'Maximilian',
+            subtitle: 'Angular & NodeJS - The MEAN Stack Guide [2020 Edition]',
+            book: '',
+            url: 'https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/',
+          },
+          {
+            name: 'Brad Traversy',
+            subtitle: 'Electron From Scratch: Build Desktop Apps With JavaScript',
+            book: '',
+            url: 'https://www.udemy.com/course/electron-from-scratch/learn/lecture/19824606?start=0#overview',
+          },
+          {
+            name: 'Colt Steele',
+            subtitle: 'Learn Webpack Pt. 1: What Even Is Webpack??',
+            book: '',
+            url: 'https://www.youtube.com/watch?v=3On5Z0gjf4U&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8',
+            url2: '',
+          },
+          {
+            name: 'Brad Schiff',
+            subtitle: 'Git a Web Developer Job: Mastering the Modern Workflow',
+            book: '',
+            url: `https://www.udemy.com/course/git-a-web-developer-job-mastering-the-modern-workflow/learn/lecture/5564052#overview`,
+            url2: 'https://www.youtube.com/watch?v=DG4obitDvUA',
+          },
+          {
+            name: 'Ninja',
+            subtitle: 'Bulma CSS Tutorial (Product Page Build) #1 - Intro & Setup',
+            book: '',
+            url: 'https://www.youtube.com/watch?v=SCSAExGFK1E&feature=push-sd&attr_tag=ZsDQcmGqg8eofyP1%3A6',
+            url2: 'https://www.youtube.com/watch?v=VQqXOK1jny8&feature=push-sd&attr_tag=78EQ6BOGmYP_GXb_%3A6',
+          },
+          {
+            name: 'webdevsimplified by Kyle',
+            subtitle: 'Learn CSS Pseudo Elements In 8 Minutes',
+            book: '',
+            url: 'https://www.youtube.com/watch?v=OtBpgtqrjyo',
+            url2: 'https://www.youtube.com/watch?v=yU7jJ3NbPdA',
+          },
+          {
+            name: 'Anthony Alicea',
+            subtitle: 'Learn and Understand NodeJS',
+            book: '',
+            url: 'https://www.udemy.com/course/understand-nodejs/learn/lecture/3658454#overview',
+            url2: 'https://www.youtube.com/watch?v=Bv_5Zv5c-Ts&t=150s',
+          },
+        ],
+      };
+
+      Handlebars.registerHelper('bold', function (text) {
+        text = Handlebars.escapeExpression(text);
+        // return new Handlebars.SafeString('<br>' + text + '</br>');
+        return new Handlebars.SafeString(text);
+      });
+
+      $$qtFnqT('#template', v, '#contents');
+
+      $$qtFnqT('#template_success', v_success, '#contents_success');</script><script src="../../../main.edb029307dd3d0de4efb.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>

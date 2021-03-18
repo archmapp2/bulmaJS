@@ -1,0 +1,275 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma Handlebars"/><title>Bulma Project Handlebars</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script><script src="../../js/shortBulma$$.js"></script><script src="../../js/shortHbs$$.js"></script><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script type="text/x-handlebars-template" id="template"><div class="notification is-info">
+        <h1 class="title">
+          lookup
+        </h1>
+        <div class="subtitle">
+          \{{lookup ../color firstname}}<br>
+        <span class="has-text-weight-normal is-size-7">提供されている<strong class=" is-size-6 has-text-grey-lighter"> 関数lookup()</strong>を使って、別のオブジェクトから値を引っ張てきます。</span>
+        </div>
+      </div>
+
+        <p class="panel-heading">
+          <span class="subtitle is-6">名簿</span>
+        </p>
+      <table class="table is-striped">
+        <tr class="has-background-primary-light">
+          <th>名前</th>
+          <th>姓</th>
+        </tr>
+        {{#meibo}}
+          <tr>
+            <td>{{firstname}}</td>
+            <td>{{lastname}}</td>
+          </tr>
+        {{/meibo}}
+      </table>
+
+        <p class="panel-heading">
+          <span class="subtitle is-6">好きなカラー</span>
+        </p>
+      <table class="table is-striped">
+        <tr class="has-background-primary-light">
+          <th>@index</th>
+          <th>@key</th>
+          <th>カラー</th>
+        </tr>
+        {{#each color}}
+          <tr>
+            <td>{{@index}}</td>
+            <td>{{@key}}</td>
+            <td>
+            {{this}}
+          </td>
+          </tr>
+        {{/each}}
+      </table>
+      <hr>
+
+      <div class="panel is-primary">
+        <p class="panel-heading">
+          <span class="title is-5">\{{lookup ../color firstname}} カラー</span><span class="subtitle is-6"> (panel)</span>
+        </p>
+      </div>
+       <table class="table is-striped">
+        <tr class="has-background-primary-light">
+            <th>名前</th>
+            <th>姓</th>
+            <th>カラー</th>
+          </tr>
+        {{#meibo}}
+          <tr>
+            <td>{{firstname}}</td>
+            <td>{{lastname}}</td>
+            <td>{{lookup ../color firstname}}</td>
+          </tr>
+        {{/meibo}}
+       </table></script><link href="../../../main.94ce490bf93f8ee7a9f1.css" rel="stylesheet"></head><body><nav class="navbar is-primary has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="/bulmaJS/src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a> <a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a></div></div></div></nav><section class="section"><div class="container"><div class="notification has-background-primary-light is-bold mb-1"><div class="container"><h1 class="title">Handlebars</h1><h2 class="subtitle is-5">Handlebars & Web Components</h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/hbs/hbs.html" class="has-text-grey-light">Handlebars</a></li><li class="is-active"><a href="#">each_lookup</a></li></ul></nav></div><div class="columns has-background-white-bis"><div class="column"></div><div class="column is-10 mt-4"><article class="message is-primary"><div class="message-header subtitle"><p>初めての [<strong>Handlebars</strong>]</p></div><div class="notification has-background-primary-light pt-1"><h3 class="subtitle">テンプレートを利用して、コンパイル！！</h3><div class="is-size-5">&lt;script type="text/x-handlebars-template" id="template"></div></div></article><main><div id="contents"></div></main><div class="box"><h2 class="subtitle has-background-white-ter mb-2 p-2">上記のソースコード</h2><blockquote class="is-size-6 ml-2"><pre id="pre1">
+&lt;!-- each_lookup$$.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Bulma Handlebars&quot; /&gt;
+    &lt;title&gt;Bulma Project Handlebars&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;
+    /&gt;
+
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script src=&quot;../../js/shortBulma$$.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;../../js/shortHbs$$.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script type=&quot;text/x-handlebars-template&quot; id=&quot;template&quot;&gt;
+      &lt;div class=&quot;notification is-info&quot;&gt;
+        &lt;h1 class=&quot;title &quot;&gt;
+          lookup
+        &lt;/h1&gt;
+        &lt;div class=&quot;subtitle&quot;&gt;
+          \{{lookup ../color firstname}}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+        &lt;p class=&quot;panel-heading&quot;&gt;
+          &lt;span class=&quot;subtitle is-6&quot;&gt;名簿&lt;/span&gt;
+        &lt;/p&gt;
+      &lt;table class=&quot;table is-striped&quot;&gt;
+        &lt;tr class=&quot;has-background-primary-light&quot;&gt;
+          &lt;th&gt;名前&lt;/th&gt;
+          &lt;th&gt;姓&lt;/th&gt;
+        &lt;/tr&gt;
+        {{#meibo}}
+          &lt;tr&gt;
+            &lt;td&gt;{{firstname}}&lt;/td&gt;
+            &lt;td&gt;{{lastname}}&lt;/td&gt;
+          &lt;/tr&gt;
+        {{/meibo}}
+      &lt;/table&gt;
+
+        &lt;p class=&quot;panel-heading&quot;&gt;
+          &lt;span class=&quot;subtitle is-6&quot;&gt;好きなカラー&lt;/span&gt;
+        &lt;/p&gt;
+      &lt;table class=&quot;table is-striped&quot;&gt;
+        &lt;tr class=&quot;has-background-primary-light&quot;&gt;
+          &lt;th&gt;@index&lt;/th&gt;
+          &lt;th&gt;@key&lt;/th&gt;
+          &lt;th&gt;カラー&lt;/th&gt;
+        &lt;/tr&gt;
+        {{#each color}}
+          &lt;tr&gt;
+            &lt;td&gt;{{@index}}&lt;/td&gt;
+            &lt;td&gt;{{@key}}&lt;/td&gt;
+            &lt;td&gt;
+            {{this}}
+          &lt;/td&gt;
+          &lt;/tr&gt;
+        {{/each}}
+      &lt;/table&gt;
+      &lt;hr&gt;
+
+      &lt;div class=&quot;panel is-primary&quot;&gt;
+        &lt;p class=&quot;panel-heading&quot;&gt;
+          &lt;span class=&quot;title is-5&quot;&gt;\{{lookup ../color firstname}} カラー&lt;/span&gt;&lt;span class=&quot;subtitle is-6&quot;&gt; (panel)&lt;/span&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+       &lt;table class=&quot;table is-striped&quot;&gt;
+        &lt;tr class=&quot;has-background-primary-light&quot;&gt;
+            &lt;th&gt;名前&lt;/th&gt;
+            &lt;th&gt;姓&lt;/th&gt;
+            &lt;th&gt;カラー&lt;/th&gt;
+          &lt;/tr&gt;
+        {{#meibo}}
+          &lt;tr&gt;
+            &lt;td&gt;{{firstname}}&lt;/td&gt;
+            &lt;td&gt;{{lastname}}&lt;/td&gt;
+            &lt;td&gt;{{lookup ../color firstname}}&lt;/td&gt;
+          &lt;/tr&gt;
+        {{/meibo}}
+       &lt;/table&gt;
+    &lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;columns has-background-white-bis&quot;&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;column is-10 mt-4&quot;&gt;
+            &lt;article class=&quot;message is-primary&quot;&gt;
+              &lt;div class=&quot;message-header subtitle&quot;&gt;
+                &lt;p&gt;初めての [&lt;strong&gt;Handlebars&lt;/strong&gt;]&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;main&gt;
+              &lt;section class=&quot;section&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                  &lt;div id=&quot;contents&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/section&gt;
+            &lt;/main&gt;
+
+            &lt;div class=&quot;box&quot;&gt;
+              &lt;div class=&quot;box&quot;&gt;
+                &lt;h2 class=&quot;is-size-4 has-background-white-ter p-2 km&quot;&gt;
+                  　解説
+                &lt;/h2&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;ul&gt;
+                    &lt;li&gt;
+                      BulmaでJavascriptを利用するために、このWebサイトでは&lt;br /&gt;
+                      　&lt;a href=&quot;/sub/js/shortBulma.html&quot;
+                        &gt;&lt;strong&gt;shortBulma$$.js&lt;/strong&gt; または
+                        &lt;strong&gt;shortBulma.js&lt;/strong&gt;&lt;/a
+                      &gt;&lt;br /&gt;
+                      というライブラリを使います。
+                    &lt;/li&gt;
+                    &lt;li class=&quot;pt-2&quot;&gt;
+                      使い方の例：&amp;lt;script
+                      src=&amp;quot;/src/js/shortBulma$$.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;br /&gt;
+                      headタグ内に挿入。但し、pathは状況によって変わります。
+                    &lt;/li&gt;
+                    &lt;li class=&quot;pt-2&quot;&gt;
+&lt;p class=&quot;pt-3 px-3&quot;&gt;
+                        例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は&lt;br /&gt;
+                        &amp;lt;script
+                        src=&amp;quot;./shortBulma$$.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+                        または&lt;br /&gt;
+                        &amp;lt;script
+                        src=&amp;quot;shortBulma$$.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+                        となります。
+                      &lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      同じく、handlebars用に&lt;br /&gt;
+                      　&lt;a href=&quot;/sub/js/shortBulma.html&quot;
+                        &gt;&lt;strong&gt;shortHbs$$.js&lt;/strong&gt;&lt;/a
+                      &gt;&lt;br /&gt;
+                      というライブラリを使います。
+                    &lt;/li&gt;
+                    &lt;hr&gt;
+                    &lt;li class=&quot;pt-1&quot;&gt;
+                      &lt;dl&gt;
+                        &lt;dt&gt;
+                          &lt;strong
+                            &gt;$$qtFnqT(&#039;#template&#039;, v, &#039;#target_link&#039;);&lt;/strong
+                          &gt;
+                        &lt;/dt&gt;
+                        &lt;dd class=&quot;py-2&quot;&gt;
+                          テンプレート#templateをコンパイルし、コンテキストｖを適用して得られたHTMLコードを、要素#target_linkのinnserHTMLプロパティに代入する。
+                        &lt;/dd&gt;
+                      &lt;/dl&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script&gt;
+      var v = {
+        meibo: [
+          { firstname: &#039;Kanako&#039;, lastname: &#039;Momota&#039; },
+          { firstname: &#039;Ayaka&#039;, lastname: &#039;Sasaki&#039; },
+          { firstname: &#039;Shiori&#039;, lastname: &#039;Tamai&#039; },
+          { firstname: &#039;Momoka&#039;, lastname: &#039;Ariyasu&#039; },
+          { firstname: &#039;Reni&#039;, lastname: &#039;Takagi&#039; },
+        ],
+        color: {
+          Kanako: &#039;red&#039;,
+          Ayaka: &#039;pink&#039;,
+          Shiori: &#039;yellow&#039;,
+          Momoka: &#039;green&#039;,
+          Reni: &#039;purple&#039;,
+        },
+      };
+
+      $$qtFnqT(&#039;#template&#039;, v, &#039;#contents&#039;);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></blockquote><div class="box"><h2 class="is-size-4 has-background-white-ter p-2 km">解説</h2><div class="content"><ul><li>BulmaでJavascriptを利用するために、このWebサイトでは<br/>　<a href="../../sub/js/shortBulma.html"><strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong></a><br/>というライブラリを使います。</li><li class="pt-2">使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br/>headタグ内に挿入。但し、pathは状況によって変わります。</li><li class="pt-2"><p class="pt-3 px-3">例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br/>&lt;script src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt; または<br/>&lt;script src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt; となります。</p></li><li>同じく、handlebars用に<br/>　<a href="../../sub/js/shortHbs.html"><strong class="has-text-warning-dark">shortHbs$$.js</strong></a><br/>というライブラリを使います。</li><hr/><dt>$$bulmaMenu('#burger', '#nav-links');</dt><dd class="py-2">狭い画面で表示されるBulmaのburgerメニューをコントロールします。<br/>burgerアイコンとbodyにそれぞれイベントを設定して、<ul><li>[burgerアイコン]のクリックでburgerメニューを開閉</li><li>[body]のクリックでburgerメニューを閉じます。</li></ul></dd><dt>$$codeS('#pre1')</dt><dd class="py-2">コードの全コピーを準備するため、コードをクリックしたときにそれを選択状態にします。</dd><li class="pt-1"><dl><dt><strong>$$qtFnqT('#template', v, '#target_link');</strong></dt><dd class="py-2">テンプレート#templateをコンパイルし、コンテキストｖを適用して得られたHTMLコードを、要素#target_linkのinnserHTMLプロパティに代入する。</dd></dl></li></ul></div></div></div></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/hbs/hbs.html" class="has-text-grey-light">Handlebars</a></li><li class="is-active"><a href="#">each_lookup</a></li></ul></nav></div></div></section><script>$$bulmaMenu('#burger', '#nav-links');
+      $$codeS('#pre1');</script><script>var v = {
+        meibo: [
+          { firstname: 'Kanako', lastname: 'Momota' },
+          { firstname: 'Ayaka', lastname: 'Sasaki' },
+          { firstname: 'Shiori', lastname: 'Tamai' },
+          { firstname: 'Momoka', lastname: 'Ariyasu' },
+          { firstname: 'Reni', lastname: 'Takagi' },
+        ],
+        color: {
+          Kanako: 'red',
+          Ayaka: 'pink',
+          Shiori: 'yellow',
+          Momoka: 'green',
+          Reni: 'purple',
+        },
+      };
+
+      $$qtFnqT('#template', v, '#contents');</script><script src="../../../main.edb029307dd3d0de4efb.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>

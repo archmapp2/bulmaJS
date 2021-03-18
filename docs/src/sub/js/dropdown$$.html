@@ -1,0 +1,304 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma入門 javascript Handlebars Electron Angular React"/><title>Bulma Project Javascript</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="../../js/shortBulma$$.js"></script><link href="../../../main.94ce490bf93f8ee7a9f1.css" rel="stylesheet"></head><body><nav class="navbar is-primary has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="/bulmaJS/src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a> <a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a></div></div></div></nav><section class="section"><div class="container"><div class="notification has-background-primary-light is-bold mb-1"><div class="container"><h1 class="title">Dropdown</h1><h2 class="subtitle is-5">Dropdown でメニュー表示</h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/js/js.html" class="has-text-grey-light">Javascript</a></li><li class="is-active"><a href="#">Dropdown</a></li></ul></nav></div><div class="columns mt-5"><div class="column"></div><div class="column is-8 content"><article class="message is-primary"><div class="message-header"><p>Dropdownでの選択</p></div><div class="message-body has-background-white-bis" style="border-bottom: inset 2px #aaaa88"><p>クリックしてメニュー表示 と ホバリングによる表示</p></div></article><div class="box"><article class="message is-primary"><div class="sel1 notification has-background-warning mb-3 py-2 px-5">下のドロップダウンをクリックして選択</div><div class="dropdown dd1"><div class="dropdown-trigger ml-3 mb-3"><button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu"><span>Todos</span> <span class="icon is-small"><i class="fas fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu dd1m" role="menu"><div class="dropdown-content"><a href="#" class="dropdown-item" data-item="1">1.Design a custom database to store </a><a href="#" class="dropdown-item" data-item="2">2.Take pictures of beautiful flowers </a><a href="#" class="dropdown-item" data-item="3">3.Ride to a horse and write experience </a><a href="#" class="dropdown-item" data-item="4">4.Go for a trip with bike </a><a href="#" class="dropdown-item" data-item="5">5.Design a custom database to store </a><a href="#" class="dropdown-item" data-item="6">6.Buy a sumsung headset </a><a href="#" class="dropdown-item" data-item="7">7.Listen music for one hour </a><a href="#" class="dropdown-item" data-item="8">8.Go for a morning walk</a></div></div></div>　</article><hr/><article class="message is-primary"><div class="sel1 notification has-background-primary-light mb-1">右下のドロップダウンをホバリング、クリックして選択</div><div class="columns is-mobile top"><div class="column is-6"></div><div class="column is-5"><div class="notification has-background-success-warning my-2 py-2"><strong>is-hoverable, is-up</strong></div><div class="dropdown dd2 is-hoverable is-up"><div class="dropdown-trigger"><button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu"><span>Todos2</span> <span class="icon is-small"><i class="fas fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu dd2m" role="menu"><div class="dropdown-content"><a href="#" class="dropdown-item" data-item="1">1.Design a custom database </a><a href="#" class="dropdown-item" data-item="2">2.Take pictures of flowers </a><a href="#" class="dropdown-item" data-item="3">3.Ride to a horse and write </a><a href="#" class="dropdown-item" data-item="4">4.Go for a trip with bike </a><a href="#" class="dropdown-item" data-item="5">5.Design a custom data </a><a href="#" class="dropdown-item" data-item="6">6.Buy a sumsung headset </a><a href="#" class="dropdown-item" data-item="7">7.Listen music for one hour </a><a href="#" class="dropdown-item" data-item="8">8.Go for a morning walk</a></div></div></div></div><div class="column is-2"></div></div><div class="columns is-mobile"><div class="column is-6"></div><div class="column is-6"><div class="sel2 notification has-background-warning mr-4 mt-1 py-2">ここに表示</div></div></div>　</article></div><div class="box"><h2 class="subtitle has-background-white-ter mb-2 p-2">上記のソースコード</h2><blockquote class="is-size-6 ml-2"><div class="sourceview"><pre id="pre1" class="brush: html;">
+&lt;!-- dropdown$$.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Bulma Project&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;
+    /&gt;
+    &lt;script
+      defer
+      src=&quot;https://use.fontawesome.com/releases/v5.7.1/js/all.js&quot;
+    &gt;&lt;/script&gt;
+
+    &lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- &lt;script src=&quot;./js/shortBulma$$.js&quot;&gt;&lt;/script&gt; --&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;notification has-background-primary-light is-bold mb-1&quot;&gt;
+          &lt;div class=&quot;container&quot;&gt;
+            &lt;h1 class=&quot;title&quot;&gt;Dropdownでの選択&lt;/h1&gt;
+            &lt;h2 class=&quot;subtitle is-5&quot;&gt;
+              クリックしてメニュー表示 と ホバリングによる表示
+            &lt;/h2&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;columns mt-5&quot;&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+          &lt;!-- 各ページ --&gt;
+          &lt;article class=&quot;message is-primary&quot;&gt;
+            &lt;div
+              class=&quot;sel1 notification has-background-warning mb-3 py-2 px-5&quot;
+            &gt;
+              下のドロップダウンをクリックして選択
+            &lt;/div&gt;
+            &lt;div class=&quot;dropdown dd1&quot;&gt;
+              &lt;!-- &lt;div class=&quot;dropdown is-hoverable&quot;&gt;  --&gt;
+              &lt;!-- &lt;div class=&quot;dropdown is-active&quot;&gt;  --&gt;
+
+              &lt;div class=&quot;dropdown-trigger ml-3 mb-3&quot;&gt;
+                &lt;button
+                  class=&quot;button is-primary&quot;
+                  aria-haspopup=&quot;true&quot;
+                  aria-controls=&quot;dropdown-menu&quot;
+                &gt;
+                  &lt;span&gt;Todos&lt;/span&gt;
+                  &lt;span class=&quot;icon is-small&quot;&gt;
+                    &lt;i class=&quot;fas fa-angle-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+
+              &lt;div class=&quot;dropdown-menu dd1m&quot; role=&quot;menu&quot;&gt;
+                &lt;div class=&quot;dropdown-content&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;1&quot;&gt;
+                    1.Design a custom database to store
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;2&quot;&gt;
+                    2.Take pictures of beautiful flowers
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;3&quot;&gt;
+                    3.Ride to a horse and write experience
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;4&quot;&gt;
+                    4.Go for a trip with bike
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;5&quot;&gt;
+                    5.Design a custom database to store
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;6&quot;&gt;
+                    6.Buy a sumsung headset
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;7&quot;&gt;
+                    7.Listen music for one hour
+                  &lt;/a&gt;
+
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;8&quot;&gt;
+                    8.Go for a morning walk
+                  &lt;/a&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            　
+          &lt;/article&gt;
+          &lt;hr /&gt;
+
+          &lt;article class=&quot;message is-primary&quot;&gt;
+            &lt;div class=&quot;sel1 notification has-background-primary-light mb-1&quot;&gt;
+              右下のドロップダウンをホバリング、クリックして選択
+            &lt;/div&gt;
+            &lt;div class=&quot;columns is-mobile top&quot;&gt;
+              &lt;div class=&quot;column is-6&quot;&gt;&lt;/div&gt;
+              &lt;div class=&quot;column is-5&quot;&gt;
+                &lt;div
+                  class=&quot;notification has-background-success-warning my-2 py-2&quot;
+                &gt;
+                  &lt;strong&gt;is-hoverable, is-up&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;dropdown dd2 is-hoverable is-up&quot;&gt;
+                  &lt;!-- &lt;div class=&quot;dropdown is-active&quot;&gt;  --&gt;
+
+                  &lt;div class=&quot;dropdown-trigger&quot;&gt;
+                    &lt;button
+                      class=&quot;button is-primary&quot;
+                      aria-haspopup=&quot;true&quot;
+                      aria-controls=&quot;dropdown-menu&quot;
+                    &gt;
+                      &lt;span&gt;Todos2&lt;/span&gt;
+                      &lt;span class=&quot;icon is-small&quot;&gt;
+                        &lt;i class=&quot;fas fa-angle-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                      &lt;/span&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class=&quot;dropdown-menu dd2m&quot; role=&quot;menu&quot;&gt;
+                    &lt;div class=&quot;dropdown-content&quot;&gt;
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;1&quot;&gt;
+                        1.Design a custom database
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;2&quot;&gt;
+                        2.Take pictures of flowers
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;3&quot;&gt;
+                        3.Ride to a horse and write
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;4&quot;&gt;
+                        4.Go for a trip with bike
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;5&quot;&gt;
+                        5.Design a custom data
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;6&quot;&gt;
+                        6.Buy a sumsung headset
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;7&quot;&gt;
+                        7.Listen music for one hour
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;8&quot;&gt;
+                        8.Go for a morning walk
+                      &lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;column is-2&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;columns is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-6&quot;&gt;&lt;/div&gt;
+              &lt;div class=&quot;column is-6&quot;&gt;
+                &lt;div
+                  class=&quot;sel2 notification has-background-warning mr-4 mt-1 py-2&quot;
+                &gt;
+                  ここに表示
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            　
+          &lt;/article&gt;
+          &lt;hr /&gt;
+
+          &lt;article class=&quot;message is-primary&quot;&gt;
+            &lt;div class=&quot;sel1 notification has-background-primary-light mb-1&quot;&gt;
+              右下のドロップダウンをホバリング、クリックして選択
+            &lt;/div&gt;
+            &lt;div class=&quot;columns is-mobile top&quot;&gt;
+              &lt;div class=&quot;column is-6&quot;&gt;&lt;/div&gt;
+              &lt;div class=&quot;column is-5&quot;&gt;
+                &lt;div
+                  class=&quot;notification has-background-success-warning my-2 py-2&quot;
+                &gt;
+                  &lt;strong&gt;is-hoverable, is-up&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;dropdown dd2 is-hoverable is-up&quot;&gt;
+                  &lt;!-- &lt;div class=&quot;dropdown is-active&quot;&gt;  --&gt;
+
+                  &lt;div class=&quot;dropdown-trigger&quot;&gt;
+                    &lt;button
+                      class=&quot;button is-primary&quot;
+                      aria-haspopup=&quot;true&quot;
+                      aria-controls=&quot;dropdown-menu&quot;
+                    &gt;
+                      &lt;span&gt;Todos2&lt;/span&gt;
+                      &lt;span class=&quot;icon is-small&quot;&gt;
+                        &lt;i class=&quot;fas fa-angle-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                      &lt;/span&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class=&quot;dropdown-menu dd2m&quot; role=&quot;menu&quot;&gt;
+                    &lt;div class=&quot;dropdown-content&quot;&gt;
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;1&quot;&gt;
+                        1.Design a custom database
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;2&quot;&gt;
+                        2.Take pictures of flowers
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;3&quot;&gt;
+                        3.Ride to a horse and write
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;4&quot;&gt;
+                        4.Go for a trip with bike
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;5&quot;&gt;
+                        5.Design a custom data
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;6&quot;&gt;
+                        6.Buy a sumsung headset
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;7&quot;&gt;
+                        7.Listen music for one hour
+                      &lt;/a&gt;
+
+                      &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot; data-item=&quot;8&quot;&gt;
+                        8.Go for a morning walk
+                      &lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;column is-2&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;columns is-mobile&quot;&gt;
+              &lt;div class=&quot;column is-6&quot;&gt;&lt;/div&gt;
+              &lt;div class=&quot;column is-6&quot;&gt;
+                &lt;div
+                  class=&quot;sel2 notification has-background-warning mr-4 mt-1 py-2&quot;
+                &gt;
+                  ここに表示
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            　
+          &lt;/article&gt;
+
+          &lt;!-- 各ページ終り --&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script&gt;
+      $$bulmaMenu(&#039;#burger&#039;, &#039;#nav-links&#039;);
+
+      const dd1 = $$q(&#039;.dd1&#039;);
+      $$ocLm(document.body, { trgt: dd1 }, &#039;remove&#039;);
+      $$ocLm(dd1, { trgt: dd1 }, &#039;toggle&#039;, true);
+
+      $$qAe(&#039;.dd1m a&#039;, (e) =&gt; {
+        e.preventDefault();
+        $$q(&#039;.sel1&#039;).innerText = e.target.innerText;
+      });
+
+      // $$q(&#039;.dd2 a&#039;)  is-hoverable
+      $$qAe(&#039;.dd2m a&#039;, (e) =&gt; {
+        e.preventDefault();
+        $$q(&#039;.sel2&#039;).innerText = e.target.innerText;
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div></blockquote><div class="box"><h2 class="is-size-4 has-background-white-ter p-2 km">解説</h2><div class="is-size-5-tablet lh7">~~ Bulmaの Dropdown機能~~</div><div class="content"><ul><li>BulmaでJavascriptを利用するとき、このWebサイトでは<br/>　<a href="shortBulma.html"><strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong></a><br/>というライブラリを使います。</li><li class="pt-2">使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br/>headタグ内に挿入。但し、pathは状況によって変わります。</li><li class="pt-2"><p class="pt-3 px-3">例えば、Dropdown$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br/>&lt;script src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt; または<br/>&lt;script src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt; となります。</p></li><li class="pt-2"><strong>shortBulma$$.js</strong>等のより詳しくは<a href="shortBulma.html"><strong> shortBulma$$.js </strong></a>をご覧ください。</li><hr/><li class="pt-2"><dl><dt>$$bulmaMenu('#burger', '#nav-links');</dt><dd class="py-2">狭い画面で表示されるBulmaのburgerメニューのコントロール</dd><dt>$$q('.sel1')</dt><dd class="py-2">セレクター'.sel1'を持つ最初の要素を取得します。<br/>ここでは、一番目のドロップダウンの選択肢の表示場所を取得</dd><dt>$$qAe('.dd1m a', f)</dt><dd class="py-2">セレクター'.dd1m a'を持つ全ての要素を取得し、それぞれにイベントリスナーf を設定する。<br/>ここでは、選択肢を選択肢をプロパティを使って$$q('.sel1')に表示</dd><dt>$$ocLm(document.body, { trgt: dd1 }, 'remove');</dt><dd class="py-2">document.bodyをクリックすると<br/>　「要素dd1のクラスリストから'is-active'を削除する」<br/>というイベントリスナーを設定（'is-active'はデフォルト）<br/>ここでは、document.bodyをクリックしても、ドロップダウンメニューを閉じれるようにします。</dd><dt>$$ocLm(dd1, { trgt: dd1 }, 'toggle', true);</dt><dd class="py-2">要素dd1をクリックすると<br/>　「要素dd1のクラスリストの'is-active'をtoggleする」<br/>というイベントリスナーを設定（'toggle'はデフォルト）<br/>ここでは、ドロップダウンメニューの開閉をトグルします。</dd></dl></li></ul></div></div></div></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/js/js.html" class="has-text-grey">Javascript</a></li><li class="is-active"><a href="#">Dropdown</a></li></ul></nav></div></div></section><script>$$codeS('#pre1');</script><script>$$bulmaMenu('#burger', '#nav-links');
+
+      const dd1 = $$q('.dd1');
+      $$ocLm(document.body, { trgt: dd1 }, 'remove');
+      $$ocLm(dd1, { trgt: dd1 }, 'toggle', true);
+
+      $$qAe('.dd1m a', (e) => {
+        e.preventDefault();
+        $$q('.sel1').innerText = e.target.innerText;
+      });
+
+      // $$q('.dd2 a')  is-hoverable
+      $$qAe('.dd2m a', (e) => {
+        e.preventDefault();
+        $$q('.sel2').innerText = e.target.innerText;
+      });</script><script src="../../../main.edb029307dd3d0de4efb.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>
