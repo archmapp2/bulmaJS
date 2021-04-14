@@ -33,6 +33,11 @@ const plugins = [
         from: '**/*.*',
         to: './src/sub/tron/distReactOnly',
       },
+      {
+        context: './src/sub/tron/img',
+        from: '**/*.*',
+        to: './src/sub/tron/img',
+      },
     ],
   }),
 

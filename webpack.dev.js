@@ -21,7 +21,7 @@ module.exports = merge(common, {
 		contentBase: path.join(__dirname, 'docs'),
 		hot: true,
 		port: 3000,
-		host: '0.0.0.0',
+		// host: '0.0.0.0',
 	},
 
 	// devServer: {

@@ -13,7 +13,7 @@ const $$Id = (id) => {
 const $$q = (sel) => document.querySelector(sel);
 const $$qAll = (sel) => document.querySelectorAll(sel);
 const $$oq = (o, sel) => o.querySelector(sel);
-const $$oqAll = (o, sel) => o.querySelectorAll(sel);
+const $$qoAll = (o, sel) => o.querySelectorAll(sel);
 
 const $$de = (f) => {
   document.addEventListener('DOMContentLoaded', f);
@@ -45,7 +45,10 @@ const $$doe = (o, f, evNa = 'click') => {
 };
 
 const $$qAe = (sel, f, evNa = 'click') => {
-  $$qAll(sel).forEach((o) => $$oe(o, () => f(o), evNa))
+  // console.log($$qAll(sel))
+  $$qAll(sel).forEach((o) => {
+    // console.log(o)
+    $$oe(o, () => f(o), evNa)});
 };
 
 const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
@@ -121,7 +124,7 @@ const $$qcLm = (
   mN = 'toggle',
   stopP = true
 ) => {
-  $$ocLm($$q(sel), { trgt: $$q(selT) }, mN , stopP);
+  $$ocLm($$q(sel), { trgt: $$q(selT), cN }, mN , stopP);
 };
 
 const $$ocLm = (o, { trgt, cN = 'is-active' }, mN = 'toggle', stopP = true) => {
@@ -211,6 +214,53 @@ const $$bulmaSwitch = (selS, sel, cN, change, evNa = 'toggle') => {
     change
   );
 };
+
+// ~~ Animation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//  need CSS 'jump ...'
+$$jump = (sel) => {
+	$$qAe(
+		sel,
+		(o) => {
+			$$ocL(o, 'jump', 'add')
+		},
+		'mousedown'
+	)
+
+	$$qAe(
+		sel,
+		(o) => {
+			$$ocL(o, 'jump', 'remove')
+		},
+		'animationend'
+	)
+
+	$$qAe(
+		sel,
+		(o) => {
+			$$ocL(o, 'jump', 'remove')
+		},
+		'animationcancel'
+	)
+}
+
+/* 
+			.a_btn {
+				display: block;
+				cursor: pointer;
+			}
+			.a_btn.jump {
+				animation: 0.07s cubic-bezier(0.2, 1, 0.2, 1) 0s 1 jump;
+			}
+			@keyframes jump {
+				0%,
+				50% {
+					transform: translateY(-2px);
+				}
+				100% {
+					transform: translateY(0px);
+				}
+			}
+ */
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Bulmaとは直接関係ありません。

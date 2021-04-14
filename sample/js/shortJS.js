@@ -124,7 +124,7 @@ export const hbP = (ssP, context) => Handlebars.templates[ssP](context)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const bulmaMenu = (ss, ssT) => {
-	// $$de( () => {... この中で使う } )
+	// de( () => {... この中で使う } )
 	qecL(ss, ssT)
 	qe('body', (e) => {
 		// bodyをクリックしてメニューを消す
