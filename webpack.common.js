@@ -6,61 +6,61 @@ const CopyFilePlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const plugins = [
-  new CleanWebpackPlugin(),
-  // new webpack.ProvidePlugin({
-  //   Handlebars: 'handlebars',
-  // }),
+	new CleanWebpackPlugin(),
+	// new webpack.ProvidePlugin({
+	//   Handlebars: 'handlebars',
+	// }),
 
-  new CopyFilePlugin({
-    patterns: [
-      {
-        context: './src/js',
-        from: '**/*.*',
-        to: './src/js',
-      },
-      {
-        context: './src/assets',
-        from: '**/*.*',
-        to: './src/assets',
-      },
-      {
-        context: './src/sub/hbs/partials',
-        from: '**/*.*',
-        to: './src/sub/hbs/partials',
-      },
-      {
-        context: './src/sub/tron/distReactOnly',
-        from: '**/*.*',
-        to: './src/sub/tron/distReactOnly',
-      },
-      {
-        context: './src/sub/tron/img',
-        from: '**/*.*',
-        to: './src/sub/tron/img',
-      },
-    ],
-  }),
+	new CopyFilePlugin({
+		patterns: [
+			{
+				context: './src/js',
+				from: '**/*.*',
+				to: './src/js',
+			},
+			{
+				context: './src/assets',
+				from: '**/*.*',
+				to: './src/assets',
+			},
+			{
+				context: './src/sub/hbs/partials',
+				from: '**/*.*',
+				to: './src/sub/hbs/partials',
+			},
+			{
+				context: './src/sub/tron/distReactOnly',
+				from: '**/*.*',
+				to: './src/sub/tron/distReactOnly',
+			},
+			{
+				context: './src/sub/tron/img',
+				from: '**/*.*',
+				to: './src/assets/img',
+			},
+		],
+	}),
 
-  // new CopyFilePlugin({
-  //   patterns: [
-  //     {
-  //       context: './src',
-  //       from: '**/*.*',
-  //       to: './src',
-  //       globOptions: {
-  //         dot: false, // .***のファイルは除外
-  //         gitignore: false, // falseじゃないとエラーになる。
-  //         ignore: [
-  //           '**/app/**', // test配下のhtmlは除外
-  //           '**/css/**', // sample.htmlは除外
-  //           '*.*',
-  //         ],
-  //       },
-  //     },
-  //   ],
-  // }),
-  // new WriteFilePlugin(),
-];
+	// new CopyFilePlugin({
+	//   patterns: [
+	//     {
+	//       context: './src',
+	//       from: '**/*.*',
+	//       to: './src',
+	//       globOptions: {
+	//         dot: false, // .***のファイルは除外
+	//         gitignore: false, // falseじゃないとエラーになる。
+	//         ignore: [
+	//           '**/app/**', // test配下のhtmlは除外
+	//           '**/css/**', // sample.htmlは除外
+	//           '*.*',
+	//         ],
+	//       },
+	//     },
+	//   ],
+	// }),
+	// new WriteFilePlugin(),
+]
 
 const sels = require('./fs_getFiles');
 const pages = sels
