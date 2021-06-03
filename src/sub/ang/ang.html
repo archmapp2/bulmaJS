@@ -1,356 +1,402 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Bulma入門 javascript Handlebars Electron Angular"
-    />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="Bulma入門 javascript Handlebars Electron Angular"
+		/>
 
-    <title>Bulma - Javascript Angular</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-    />
+		<title>Bulma - Javascript Angular</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+		/>
 
-    <script defer src="../../js/fontawesome-all.min.js"></script>
+		<script defer src="../../js/fontawesome-all.min.js"></script>
 
-    <!-- <script src="./js/shortBulna$$.js"></script> -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="../../assets/img/faviconBulma.png"
-      sizes="16x16"
-    />
+		<!-- <script src="./js/shortBulna$$.js"></script> -->
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/img/faviconBulma.png"
+			sizes="16x16"
+		/>
 
-    <script src="../../js/shortBulma$$.js"></script>
+		<script src="../../js/shortBulma$$.js"></script>
 
-    <style></style>
-  </head>
+		<style></style>
+	</head>
 
-  <body class="has-background-success-light">
-    <nav
-      class="navbar is-primary has-text-weight-medium has-shadow"
-      role="navigation"
-      aria-label="Main navigation"
-      id="nav"
-    >
-      <div class="container">
-        <div class="navbar-brand">
-          <a href="../../../index.html" class="navbar-item" title="Top page"
-            >BulmaProject</a
-          >
-          <div id="burger" class="navbar-burger" data-target="navbarMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links">
-          <div class="navbar-start navbar-item">
-            <a
-              href="https://bulma.io/documentation/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button navbar-item is-primary is-fullwidth mt-1"
-              title="Bulma home!!"
-            >
-              <span class="icon">
-                <img src="../../assets/img/bulma32.ico" alt="bulma" />
-              </span>
-              <span>Bulma</span>
-            </a>
-          </div>
+	<body class="has-background-success-light">
+		<nav
+			class="navbar is-primary has-text-weight-medium has-shadow"
+			role="navigation"
+			aria-label="Main navigation"
+			id="nav"
+		>
+			<div class="container">
+				<div class="navbar-brand">
+					<a href="../../../index.html" class="navbar-item" title="Top page"
+						>BulmaProject</a
+					>
+					<div id="burger" class="navbar-burger" data-target="navbarMenu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links">
+					<div class="navbar-start navbar-item">
+						<a
+							href="https://bulma.io/documentation/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button navbar-item is-primary is-fullwidth mt-1"
+							title="Bulma home!!"
+						>
+							<span class="icon">
+								<img src="../../assets/img/bulma32.ico" alt="bulma" />
+							</span>
+							<span>Bulma</span>
+						</a>
+					</div>
 
-          <div class="navbar-end has-text-dark">
-            <a href="../../sub/js/js.html" class="navbar-item has-text-right"
-              >Javascript</a
-            >
-            <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right"
-              >Handlebars</a
-            >
-            <a
-              href="../../sub/tron/tron.html"
-              class="navbar-item has-text-right"
-              >Electron</a
-            >
-            <a href="../../sub/ang/ang.html" class="navbar-item has-text-right"
-              >Angular</a
-            >
-            <a
-              href="../../sub/react/react.html"
-              class="navbar-item has-text-right"
-              >React</a
-            >
-            <a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+					<div class="navbar-end has-text-dark">
+						<a href="../../sub/js/js.html" class="navbar-item">Javascript</a>
+						<a href="../../sub/hbs/hbs.html" class="navbar-item">Handlebars</a>
+						<a href="../../sub/tron/tron.html" class="navbar-item">Electron</a>
+						<a href="../../sub/ang/ang.html" class="navbar-item">Angular</a>
+						<a href="../../sub/react/react.html" class="navbar-item">React</a>
+						<a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a>
+					</div>
+				</div>
+			</div>
+		</nav>
 
-    <section class="section">
-      <div class="container">
-        <div class="notification is-danger is-bold mb-1">
-          <div class="container">
-            <h1 class="title">Bulmaと共に！</h1>
-            <h2 class="subtitle is-5">&nbsp;Angular</h2>
-          </div>
-        </div>
+		<section class="section">
+			<div class="container">
+				<div class="notification is-danger is-bold mb-1">
+					<div class="container">
+						<h1 class="title">Bulmaと共に！</h1>
+						<h2 class="subtitle is-5">&nbsp;Angular</h2>
+					</div>
+				</div>
 
-        <!-- breadcrumbs -->
-        <div class="section pt-0 pb-0">
-          <nav class="breadcrumb has-arrow-separator">
-            <ul class="is-size-6 container">
-              <li>
-                <a href="/" class="has-text-grey-light">Top page</a>
-              </li>
-              <li class="is-active"><a href="#">Angular</a></li>
-            </ul>
-          </nav>
-        </div>
+				<!-- breadcrumbs -->
+				<div class="section pt-0 pb-0">
+					<nav class="breadcrumb has-arrow-separator">
+						<ul class="is-size-6 container">
+							<li>
+								<a href="../../../" class="has-text-grey-light">Top page</a>
+							</li>
+							<li class="is-active"><a href="#">Angular</a></li>
+						</ul>
+					</nav>
+				</div>
 
-        <div class="columns is-centered mt-5 mb-0">
-          <div class="column is-8 content">
-            <article class="message has-background-warning pb-1">
-              <div class="message-header has-background-grey">
-                <p>
-                  ~~~
-                  <span class="has-text-weight-bold is-size-4"
-                    >using Bulma, bulmaswatch</span
-                  >
-                  ~~~
-                </p>
-              </div>
-              <div class="message-body pb-2">
-                <p></p>
-              </div>
-              <blockquote class="is-size-5 p-2 mx-5 mb-3">
-                サーバは、github・Netlify を利用しています。
-              </blockquote>
-            </article>
-          </div>
-        </div>
+				<div class="columns is-centered mt-5 mb-0">
+					<div class="column is-8 content">
+						<article class="message has-background-warning pb-1">
+							<div class="message-header has-background-grey">
+								<p>
+									~~~
+									<span class="has-text-weight-bold is-size-4"
+										>using Bulma, bulmaswatch</span
+									>
+									~~~
+								</p>
+							</div>
+							<div class="message-body pb-2">
+								<p></p>
+							</div>
+							<blockquote class="is-size-5 p-2 mx-5 mb-3">
+								サーバは、github・Netlify を利用しています。
+							</blockquote>
+						</article>
+					</div>
+				</div>
 
-        <div class="columns is-centered mt-6 mb-0">
-          <div class="column is-8 content">
-            <article class="message is-primary pb-3">
-              <div class="message-header">
-                <p class="is-size-4">
-                  出典：<a href="https://angular.io/tutorial"
-                    >Tour of Heros
-                    <span class="is-size-5 has-text-danger"
-                      >( Angular original ) </span
-                    >へ
-                  </a>
-                </p>
-              </div>
-              <div class="message-body pb-2">
-                <p>
-                  <span class="has-text-primary-dark is-size-4"
-                    >bulmaswatch</span
-                  >
-                  のテーマを利用
-                </p>
-                <blockquote class="is-size-7 p-1 mx-5 mb-1">
-                  別のウィンドウまたはタブで開きます。
-                </blockquote>
-              </div>
+				<div class="columns is-centered mt-6 mb-0">
+					<div class="column is-8 content">
+						<article class="message is-primary pb-3">
+							<div class="message-header">
+								<p class="is-size-4">
+									出典：<a href="https://angular.io/tutorial"
+										>Tour of Heros
+										<span class="is-size-5 has-text-danger"
+											>( Angular original ) </span
+										>へ
+									</a>
+								</p>
+							</div>
+							<div class="message-body pb-2">
+								<p>
+									<span class="has-text-primary-dark is-size-4"
+										>bulmaswatch</span
+									>
+									のテーマを利用
+								</p>
+								<blockquote class="is-size-7 p-1 mx-5 mb-1">
+									別のウィンドウまたはタブで開きます。
+								</blockquote>
+							</div>
 
-              <div
-                class="box has-background-success-light has-text-primary-dark is-size-4 py-5 mx-5"
-                style="line-height: 2rem; display: block"
-              >
-                <nav class="level">
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      style="line-height: 2rem; display: inline-block"
-                      onclick='window.open("https://nostalgic-thompson-194a53.netlify.app")'
-                    >
-                      default
-                    </button>
-                  </div>
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      onclick='window.open("https://hungry-thompson-f5319a.netlify.app/")'
-                    >
-                      litera
-                    </button>
-                  </div>
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      onclick='window.open("https://mystifying-kirch-c9166f.netlify.app/")'
-                    >
-                      minty
-                    </button>
-                  </div>
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      onclick='window.open("https://reverent-euler-534006.netlify.app/")'
-                    >
-                      nuclear
-                    </button>
-                  </div>
-                </nav>
-              </div>
+							<div
+								class="
+									box
+									has-background-success-light has-text-primary-dark
+									is-size-4
+									py-5
+									mx-5
+								"
+								style="line-height: 2rem; display: block"
+							>
+								<nav class="level">
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											style="line-height: 2rem; display: inline-block"
+											onclick='window.open("https://nostalgic-thompson-194a53.netlify.app")'
+										>
+											default
+										</button>
+									</div>
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											onclick='window.open("https://hungry-thompson-f5319a.netlify.app/")'
+										>
+											litera
+										</button>
+									</div>
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											onclick='window.open("https://mystifying-kirch-c9166f.netlify.app/")'
+										>
+											minty
+										</button>
+									</div>
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											onclick='window.open("https://reverent-euler-534006.netlify.app/")'
+										>
+											nuclear
+										</button>
+									</div>
+								</nav>
+							</div>
 
-              <div
-                class="box has-background-success-light has-text-primary-dark is-size-4 py-5 mx-5"
-                style="line-height: 2rem; display: block"
-              >
-                <nav class="level">
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      style="line-height: 2rem; display: inline-block"
-                      onclick='window.open("https://stupefied-chandrasekhar-f44014.netlify.app/")'
-                    >
-                      sandstone
-                    </button>
-                  </div>
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      onclick='window.open("https://practical-colden-c3561d.netlify.app/")'
-                    >
-                      slate
-                    </button>
-                  </div>
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-primary-dark is-medium"
-                      onclick='window.open("https://dreamy-kare-b421d3.netlify.app/")'
-                    >
-                      solar
-                    </button>
-                  </div>
-                </nav>
-              </div>
-            </article>
+							<div
+								class="
+									box
+									has-background-success-light has-text-primary-dark
+									is-size-4
+									py-5
+									mx-5
+								"
+								style="line-height: 2rem; display: block"
+							>
+								<nav class="level">
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											style="line-height: 2rem; display: inline-block"
+											onclick='window.open("https://stupefied-chandrasekhar-f44014.netlify.app/")'
+										>
+											sandstone
+										</button>
+									</div>
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											onclick='window.open("https://practical-colden-c3561d.netlify.app/")'
+										>
+											slate
+										</button>
+									</div>
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-primary-dark
+												is-medium
+											"
+											onclick='window.open("https://dreamy-kare-b421d3.netlify.app/")'
+										>
+											solar
+										</button>
+									</div>
+								</nav>
+							</div>
+						</article>
 
-            <article class="message is-warning pb-3 mt-6">
-              <div class="message-header">
-                <p class="is-size-5">
-                  出典：<a
-                    href="https://www.youtube.com/watch?v=Fdf5aTYRW0E&t=232s"
-                  >
-                    ( YOUTUBE )
-                    <span class="is-size-4 has-text-warning-dark"
-                      >ToDo リスト </span
-                    >へ
-                  </a>
-                </p>
-              </div>
-              <div class="message-body pb-2">
-                <p>
-                  <span class="is-size-5"
-                    >[angular-crash-todolist-master] by
-                  </span>
-                  <span
-                    class="has-text-primary-dark has-text-weight-bold is-size-4"
-                    >Brad Traversy</span
-                  >
-                </p>
-                <blockquote class="is-size-7 p-1 mx-5 mb-1">
-                  別のウィンドウまたはタブで開きます。
-                </blockquote>
-              </div>
+						<article class="message is-warning pb-3 mt-6">
+							<div class="message-header">
+								<p class="is-size-5">
+									出典：<a
+										href="https://www.youtube.com/watch?v=Fdf5aTYRW0E&t=232s"
+									>
+										( YOUTUBE )
+										<span class="is-size-4 has-text-warning-dark"
+											>ToDo リスト </span
+										>へ
+									</a>
+								</p>
+							</div>
+							<div class="message-body pb-2">
+								<p>
+									<span class="is-size-5"
+										>[angular-crash-todolist-master] by
+									</span>
+									<span
+										class="has-text-primary-dark has-text-weight-bold is-size-4"
+										>Brad Traversy</span
+									>
+								</p>
+								<blockquote class="is-size-7 p-1 mx-5 mb-1">
+									別のウィンドウまたはタブで開きます。
+								</blockquote>
+							</div>
 
-              <div
-                class="box has-background-danger-light has-text-primary-dark is-size-4 py-5 mx-5 mb-2"
-                style="line-height: 2rem; display: block"
-              >
-                <nav class="level">
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-warning-dark is-medium"
-                      style="line-height: 2rem; display: inline-block"
-                      onclick='window.open("https://serene-brown-a0a706.netlify.app")'
-                    >
-                      ToDo リスト by Brad
-                    </button>
-                  </div>
-                </nav>
-              </div>
-            </article>
+							<div
+								class="
+									box
+									has-background-danger-light has-text-primary-dark
+									is-size-4
+									py-5
+									mx-5
+									mb-2
+								"
+								style="line-height: 2rem; display: block"
+							>
+								<nav class="level">
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-warning-dark
+												is-medium
+											"
+											style="line-height: 2rem; display: inline-block"
+											onclick='window.open("https://serene-brown-a0a706.netlify.app")'
+										>
+											ToDo リスト by Brad
+										</button>
+									</div>
+								</nav>
+							</div>
+						</article>
 
-            <article class="message is-warning pb-3 mt-6">
-              <div class="message-header">
-                <p class="is-size-5">
-                  出典：<a
-                    href="https://www.youtube.com/watch?v=j8OGOfKatBw"
-                  >
-                    ( YOUTUBE )
-                    <span class="is-size-4 has-text-warning-dark"
-                      >為替レート計算 </span
-                    >へ
-                  </a>
-                </p>
-              </div>
-              <div class="message-body pb-2">
-                <p>
-                  <span class="is-size-5"
-                    >[Angular 10 Tutorial from Scratch] by
-                  </span>
-                  <span
-                    class="has-text-primary-dark has-text-weight-bold is-size-4"
-                    >Yassine Rachid</span
-                  >
-                </p>
-                <blockquote class="is-size-7 p-1 mx-5 mb-1">
-                  別のウィンドウまたはタブで開きます。
-                </blockquote>
-              </div>
+						<!-- <article class="message is-warning pb-3 mt-6">
+							<div class="message-header">
+								<p class="is-size-5">
+									出典：<a href="https://www.youtube.com/watch?v=j8OGOfKatBw">
+										( YOUTUBE )
+										<span class="is-size-4 has-text-warning-dark"
+											>為替レート計算 </span
+										>へ
+									</a>
+								</p>
+							</div>
+							<div class="message-body pb-2">
+								<p>
+									<span class="is-size-5"
+										>[Angular 10 Tutorial from Scratch] by
+									</span>
+									<span
+										class="has-text-primary-dark has-text-weight-bold is-size-4"
+										>Yassine Rachid</span
+									>
+								</p>
+								<blockquote class="is-size-7 p-1 mx-5 mb-1">
+									別のウィンドウまたはタブで開きます。
+								</blockquote>
+							</div>
 
-              <div
-                class="box has-background-danger-light has-text-primary-dark is-size-4 py-5 mx-5 mb-2"
-                style="line-height: 2rem; display: block"
-              >
-                <nav class="level">
-                  <div class="level-item">
-                    <button
-                      type="button"
-                      class="button has-text-light has-background-warning-dark is-medium"
-                      style="line-height: 2rem; display: inline-block"
-                      onclick='window.open("https://competent-curran-ee1427.netlify.app/")'
-                    >
-                      為替レート計算 by Yassine
-                    </button>
-                  </div>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </div>
+							<div
+								class="
+									box
+									has-background-danger-light has-text-primary-dark
+									is-size-4
+									py-5
+									mx-5
+									mb-2
+								"
+								style="line-height: 2rem; display: block"
+							>
+								<nav class="level">
+									<div class="level-item">
+										<button
+											type="button"
+											class="
+												button
+												has-text-light has-background-warning-dark
+												is-medium
+											"
+											style="line-height: 2rem; display: inline-block"
+											onclick='window.open("https://competent-curran-ee1427.netlify.app/")'
+										>
+											為替レート計算 by Yassine
+										</button>
+									</div>
+								</nav>
+							</div>
+						</article> -->
+					</div>
+				</div>
 
-        <!-- breadcrumbs -->
-        <div class="section pt-0 pb-0">
-          <nav class="breadcrumb has-arrow-separator">
-            <ul class="is-size-6 container">
-              <li>
-                <a href="/" class="has-text-grey-light">Top page</a>
-              </li>
-              <li class="is-active"><a href="#">Angular</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </section>
+				<!-- breadcrumbs -->
+				<div class="section pt-0 pb-0">
+					<nav class="breadcrumb has-arrow-separator">
+						<ul class="is-size-6 container">
+							<li>
+								<a href="../../../" class="has-text-grey-light">Top page</a>
+							</li>
+							<li class="is-active"><a href="#">Angular</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</section>
 
-    <script type="text/javascript">
-      $$bulmaMenu('#burger', '#nav-links');
-    </script>
-  </body>
+		<script type="text/javascript">
+			$$bulmaMenu('#burger', '#nav-links')
+		</script>
+	</body>
 </html>
