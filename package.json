@@ -10,6 +10,7 @@
     "clean": "webpack --config webpack.clean.js",
     "watch": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js",
+    "serve": "serve -s docs -p 3300",
     "cpImg": "copy src\\assets\\img\\*.* docs\\src\\assets\\img",
     "cpB": "md docs\\src\\js 2> nul && copy src\\js\\short*$$.js docs\\src\\js && copy src\\js\\bulma-toast.min.js docs\\src\\js",
     "cpP": "md docs\\src\\sub\\hbs\\partials 2> nul && copy src\\sub\\hbs\\partials\\*.js docs\\src\\sub\\hbs\\partials",

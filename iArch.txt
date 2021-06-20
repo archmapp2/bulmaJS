@@ -1,0 +1,26 @@
+https://safe-peak-55766.herokuapp.com/api
+
+iArch
+environment.prod.ts
+  export const environment = {
+    production: true,
+
+    apiUrl: "https://safe-peak-55766.herokuapp.com/api"
+  };
+
+
+https://qiita.com/ozin/items/62bc7ef1dd3c827177fb
+お名前Id:
+9880011
+
+ドメインNaviにログインしてください。
+ログインすると上のメニューバーのDNSを押してください。
+DNSレコード設定を利用する　設定する
+中央に表示される内部ドメイン一覧から今回使用したいドメイン名にチェック
+DNSレコード設定を利用するという項目があるんで、設定するボタンを押してください。
+
+[登録済み]
+www.archmapp.tech	CNAME	
+3600
+VALUE:stark-quail-i6wh4kfkpr19j4k9v2zap6uu.herokudns.com
+有効
