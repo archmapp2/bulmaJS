@@ -278,6 +278,16 @@ const $$codeS = (id) => {
 	})
 }
 
+const $$codeSA = (sel) => {
+	qAll(sel).forEach((pre1) => {
+		oe(pre1, () => {
+			document
+				.getSelection()
+				.setBaseAndExtent(pre1, 0, pre1, pre1.childNodes.length)
+		})
+	})
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
