@@ -52,6 +52,12 @@ const $$qAe = (sel, f, evNa = 'click') => {
 	})
 }
 
+const $$qAe_ocL = (sel, selTrgt, evNa = 'click') => {
+	$$qAll(sel).forEach((o) => {
+		$$oe(o, () => $$ocL($$q(selTrgt)), evNa)
+	})
+}
+
 const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
 	$$q(sel).classList[mN](cN)
 
@@ -275,6 +281,16 @@ const $$codeS = (id) => {
 			.getSelection()
 			.setBaseAndExtent(pre1, 0, pre1, pre1.childNodes.length)
 		// console.log('pre1.childNodes.length', pre1.childNodes.length);
+	})
+}
+
+const $$codeSA = (sel) => {
+	qAll(sel).forEach((pre1) => {
+		oe(pre1, () => {
+			document
+				.getSelection()
+				.setBaseAndExtent(pre1, 0, pre1, pre1.childNodes.length)
+		})
 	})
 }
 

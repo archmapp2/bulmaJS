@@ -1,0 +1,43 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><title>BulmaProject Modal</title><link rel="icon" type="image/png" href="../assets/img/faviconBulma.png" sizes="16x16"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><script src="../../js/shortBulma$$.js"></script><link href="../../../main.94ce490bf93f8ee7a9f1.css" rel="stylesheet"></head><body><section class="section"><div class="container"><div class="columns is-centered"><div class="column is-6"><h1 class="title">Components: Modal</h1><hr/><main><h2 class="subtitle has-text-weight-bold">モーダル カード</h2><button class="button is-primary modalBtn" id="modalBtn">modal カード を開く</button><div class="notification mt-5">'Escape'キーでも開閉します</div><div id="modalTrgt" class="modal is-link"><div class="modal-background"></div><div class="modal-card has-background-primary"><header class="modal-card-head has-background-link-light"><h2 class="modal-card-title">Modal カード</h2><button class="delete modalBtn has-background-warning-dark" aria-label="Close"></button></header><section class="modal-card-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed pulvinar nulla. In congue ultricies nunc, a porttitor odio finibus vitae. Nulla aliquam risus dolor, nec bibendum mauris tincidunt ut. Donec finibus orci dolor, vel viverra tortor sagittis ut.</p></section><footer class="modal-card-foot"><button class="button is-success modalBtnOK px-6">OK</button> <span style="margin: auto"></span> <button class="button modalBtn has-background-warning">キャンセル</button></footer></div></div><div class="box"><h2 class="subtitle has-background-white-ter mb-2 p-2">参考ソースコード</h2><blockquote class="is-size-6 ml-2"><pre id="pre1"><div class="sourceview">
+<pre class="brush: html;">
+&lt;script type=&quot;text/javascript&quot;&gt;
+      $$de(() =&gt; {
+          $$oe(
+              document,
+              (e) =&gt; {
+                  if (e.key === &#039;Escape&#039;) {
+                      $$qcL(&#039;#modalTrgt&#039;)
+                  }
+              },
+              &#039;keyup&#039;
+          )
+      })
+
+      $$de(() =&gt; {
+          $$qAe_ocL(&#039;.modalBtn&#039;, &#039;#modalTrgt&#039;)
+          $$qe(&#039;.modalBtnOK&#039;, (e) =&gt; {
+              alert(e.target)
+              $$qcL(&#039;#modalTrgt&#039;)
+          })
+      })
+  &lt;/script&gt;
+</pre>
+</div></pre></blockquote></div></main></div></div></div></section><script>$$de(() => {
+				$$oe(
+					document,
+					(e) => {
+						if (e.key === 'Escape') {
+							$$qcL('#modalTrgt')
+						}
+					},
+					'keyup'
+				)
+			})
+
+			$$de(() => {
+				$$qAe_ocL('.modalBtn', '#modalTrgt')
+				$$qe('.modalBtnOK', (e) => {
+					alert('OK!　モーダル終了')
+					$$qcL('#modalTrgt')
+				})
+			})</script><script src="../../../main.edb029307dd3d0de4efb.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>

@@ -52,6 +52,12 @@ const $$qAe = (sel, f, evNa = 'click') => {
 	})
 }
 
+const $$qAe_ocL = (sel, selTrgt, evNa = 'click') => {
+	$$qAll(sel).forEach((o) => {
+		$$oe(o, () => $$ocL($$q(selTrgt)), evNa)
+	})
+}
+
 const $$qcL = (sel, cN = 'is-active', mN = 'toggle') =>
 	$$q(sel).classList[mN](cN)
 
