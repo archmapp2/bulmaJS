@@ -194,6 +194,9 @@
         }
       }
 
+      .gsel {
+        background: #00D1B2;
+      }
       .square {
         font-size: 50px;
         color: white;
@@ -279,15 +282,15 @@
 
         <input id="switchE" type="checkbox" name="switchE" class="switch" />
         <!-- checked="checked" -->
-        <label for="switchE" class="has-text-weight-bold">row / column</label>
+        <label for="switchE" class="has-text-weight-bold">row / <span class="gsel">column</span></label>
 
         <input id="switchE2" type="checkbox" name="switchE2" class="switch" />
         <label for="switchE2" class="has-text-weight-bold"
-          >width: null / 250px</label
+          >width: null / <span class="gsel">250px</span></label
         >
 
         <input id="switchE3" type="checkbox" name="switchE3" class="switch" />
-        <label for="switchE3" class="has-text-weight-bold">9 / 5 枚</label>
+        <label for="switchE3" class="has-text-weight-bold">9 / <span class="gsel">5 枚</span></label>
 
         <div class="field set_flex">
           <label class="label mr-1">flex-wrap:</label>
