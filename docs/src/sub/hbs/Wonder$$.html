@@ -1,0 +1,235 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Bulma Handlebars"/><title>Bulma Project Handlebars</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script><link rel="icon" type="image/png" href="../../assets/img/faviconBulma.png" sizes="16x16"/><script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script><script src="../../js/shortBulma$$.js"></script><script src="../../js/shortHbs$$.js"></script><script id="template" type="text/x-handlebars-template"><div class='columns'>
+        <div class='column is-8 is-offset-2'>
+          <div class='box'>
+            <h1
+              class='notification title has-background-info-dark has-text-white'
+            >
+              {{bold title}}
+            </h1>
+
+            {{#people}}
+              <ul class='panel'>
+                <li>
+                  <h1 class='panel-block subtitle has-background-info-light'>
+                    {{bold name}}
+                  </h1>
+                </li>
+                <li class='ml-5'>
+                  年齢：{{age}}
+                </li>
+                <li class='ml-5'>
+                  メール：
+                  <a href='mailto:{{email}}'>
+                    {{email}}
+                  </a>
+                </li>
+              </ul>
+            {{/people}}
+          </div>
+        </div>
+      </div></script><link href="../../../main.76ecd0cf390a2d17cc6a.css" rel="stylesheet"></head><body><nav class="navbar is-primary has-text-weight-medium has-shadow" role="navigation" aria-label="Main navigation" id="nav"><div class="container"><div class="navbar-brand"><a href="../../../index.html" class="navbar-item" title="Top page">BulmaProject</a><div id="burger" class="navbar-burger" data-target="navbarMenu"><span></span> <span></span> <span></span></div></div><div class="navbar-menu is-primary is-pulled-right mr-2" id="nav-links"><div class="navbar-start navbar-item"><a href="https://bulma.io/documentation/" target="_blank" rel="noopener noreferrer" class="button navbar-item is-primary is-fullwidth mt-1" title="Bulma home!!"><span class="icon"><img src="/bulmaJS/src/assets/img/bulma32.ico" alt="bulma"/> </span><span>Bulma</span></a></div><div class="navbar-end has-text-dark"><a href="../../sub/js/js.html" class="navbar-item has-text-right">Javascript</a> <a href="../../sub/hbs/hbs.html" class="navbar-item has-text-right">Handlebars</a> <a href="../../sub/tron/tron.html" class="navbar-item has-text-right">Electron</a> <a href="../../sub/ang/ang.html" class="navbar-item has-text-right">Angular</a> <a href="../../sub/react/react.html" class="navbar-item has-text-right">React</a> <a href="../../sub/flex/flex.html" class="navbar-item">FLEXBOX</a></div></div></div></nav><section class="section"><div class="container"><div class="notification has-background-primary-light is-bold mb-1"><div class="container"><h1 class="title">Handlebars</h1><h2 class="subtitle is-5">Handlebars & Web Components</h2></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/hbs/hbs.html" class="has-text-grey-light">Handlebars</a></li><li class="is-active"><a href="#">Wonderful people</a></li></ul></nav></div><div class="columns mt-5"><div class="column"></div><div class="column is-8"><article class="message is-primary"><div class="message-header subtitle"><p>初めての [<strong>Handlebars</strong>]</p></div><div class="notification has-background-primary-light py-1"><h3 class="subtitle is-size-6">テンプレートを利用して、コンパイル！！</h3><div class="subtitle">&lt;script type="text/x-handlebars-template" id="template"></div></div><div class="message-body has-background-grey-lighter" style="border-bottom: inset 2px #aaaa88"><p>シンプルな <strong>helper関数：bold</strong>の作成と、提供されている<strong>each関数</strong>の利用</p></div></article><main><div id="contents"></div><hr/></main><div class="box"><h2 class="subtitle has-background-white-ter mb-2 p-2">上記のソースコード</h2><blockquote class="is-size-6 ml-2"><pre id="pre1">
+&lt;!-- Wonder$$.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Bulma Handlebars&quot; /&gt;
+    &lt;title&gt;Bulma Project Handlebars&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;
+    /&gt;
+    &lt;script
+      defer
+      src=&quot;https://use.fontawesome.com/releases/v5.7.1/js/all.js&quot;
+    &gt;&lt;/script&gt;
+
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script src=&quot;../../js/shortBulma$$.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;../../js/shortHbs$$.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script id=&quot;template&quot; type=&quot;text/x-handlebars-template&quot;&gt;
+      &lt;div class=&#039;columns&#039;&gt;
+        &lt;div class=&#039;column is-8 is-offset-2&#039;&gt;
+          &lt;div class=&#039;box&#039;&gt;
+            &lt;h1
+              class=&#039;notification title has-background-info-dark has-text-white&#039;
+            &gt;
+              {{bold title}}
+            &lt;/h1&gt;
+
+            {{#people}}
+              &lt;ul class=&#039;panel&#039;&gt;
+                &lt;li&gt;
+                  &lt;h1 class=&#039;panel-block subtitle has-background-info-light&#039;&gt;
+                    {{bold name}}
+                  &lt;/h1&gt;
+                &lt;/li&gt;
+                &lt;li class=&#039;ml-5&#039;&gt;
+                  年齢：{{age}}
+                &lt;/li&gt;
+                &lt;li class=&#039;ml-5&#039;&gt;
+                  メール：
+                  &lt;a href=&#039;mailto:{{email}}&#039;&gt;
+                    {{email}}
+                  &lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            {{/people}}
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;section class=&quot;section&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;columns has-background-white-bis&quot;&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;column is-10 mt-4&quot;&gt;
+            &lt;article class=&quot;message is-primary&quot;&gt;
+              &lt;div class=&quot;message-header subtitle&quot;&gt;
+                &lt;p&gt;初めての [&lt;strong&gt;Handlebars&lt;/strong&gt;]&lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;div class=&quot;notification has-background-primary-light mb-1&quot;&gt;
+                &lt;h1 class=&quot;subtitle&quot;&gt;テンプレートを利用して、コンパイル！！&lt;/h1&gt;
+                &lt;div class=&quot;subtitle&quot;&gt;
+                  &amp;lt;script type=&quot;text/x-handlebars-template&quot; id=&quot;template&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div
+                class=&quot;message-body has-background-grey-lighter&quot;
+                style=&quot;border-bottom: inset 2px #aaaa88&quot;
+              &gt;
+                &lt;p&gt;シンプルな &lt;strong&gt;helper関数：bold&lt;/strong&gt;&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;main&gt;
+              &lt;div id=&quot;contents&quot;&gt;&lt;/div&gt;
+              &lt;hr /&gt;
+            &lt;/main&gt;
+
+            &lt;div class=&quot;box&quot;&gt;
+              &lt;div class=&quot;box&quot;&gt;
+                &lt;h2 class=&quot;is-size-4 has-background-white-ter p-2 km&quot;&gt;解説&lt;/h2&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;ul&gt;
+                    &lt;li&gt;
+                      BulmaでJavascriptを利用するために、このWebサイトでは&lt;br /&gt;
+                      　&lt;a href=&quot;/sub/js/shortBulma.html&quot;
+                        &gt;&lt;strong&gt;shortBulma$$.js&lt;/strong&gt; または
+                        &lt;strong&gt;shortBulma.js&lt;/strong&gt;&lt;/a
+                      &gt;&lt;br /&gt;
+                      というライブラリを使います。
+                    &lt;/li&gt;
+                    &lt;li class=&quot;pt-2&quot;&gt;
+                      使い方の例：&amp;lt;script
+                      src=&amp;quot;/src/js/shortBulma$$.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;br /&gt;
+                      headタグ内に挿入。但し、pathは状況によって変わります。
+                    &lt;/li&gt;
+                    &lt;li class=&quot;pt-2&quot;&gt;
+&lt;p class=&quot;pt-3 px-3&quot;&gt;
+                        例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は&lt;br /&gt;
+                        &amp;lt;script
+                        src=&amp;quot;./shortBulma$$.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+                        または&lt;br /&gt;
+                        &amp;lt;script
+                        src=&amp;quot;shortBulma$$.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+                        となります。
+                      &lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      同じく、handlebars用に&lt;br /&gt;
+                      　&lt;a href=&quot;/sub/js/shortBulma.html&quot;
+                        &gt;&lt;strong&gt;shortHbs$$.js&lt;/strong&gt;&lt;/a
+                      &gt;&lt;br /&gt;
+                      というライブラリを使います。
+                    &lt;/li&gt;
+                    &lt;hr&gt;
+                    &lt;li class=&quot;pt-1&quot;&gt;
+                      &lt;dl&gt;
+                        &lt;dt&gt;
+                          &lt;strong
+                            &gt;$$qtFnqT(&#039;#template&#039;, v, &#039;#contents&#039;);&lt;/strong
+                          &gt;
+                        &lt;/dt&gt;
+                        &lt;dd class=&quot;py-2&quot;&gt;
+                          テンプレート#templateをコンパイルし、コンテキストｖを適用して得られたHTMLコードを、要素#contentsのinnserHTMLプロパティに代入する。
+                        &lt;/dd&gt;
+                      &lt;/dl&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      let v = {
+        title: &#039;素敵な人々&#039;,
+        people: [
+          {
+            name: &#039;John&#039;,
+            age: 34,
+            email: &#039;john@gmail.com&#039;,
+          },
+          {
+            name: &#039;Sally&#039;,
+            age: 22,
+            email: &#039;sally12@gmail.com&#039;,
+          },
+          {
+            name: &#039;George&#039;,
+            age: 45,
+            email: &#039;george@hotmail.com&#039;,
+          },
+        ],
+      };
+
+      Handlebars.registerHelper(&#039;bold&#039;, function (text) {
+        text = Handlebars.escapeExpression(text);
+        return new Handlebars.SafeString(&#039;&lt;b&gt;&#039; + text + &#039;&lt;/b&gt;&#039;);
+      });
+
+      $$qtFnqT(&#039;#template&#039;, v, &#039;#contents&#039;);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></blockquote><div class="box"><h2 class="is-size-4 has-background-white-ter p-2 km">解説</h2><div class="content"><ul><li>BulmaでJavascriptを利用するために、このWebサイトでは<br/>　<a href="../../sub/js/shortBulma.html"><strong>shortBulma$$.js</strong> または <strong>shortBulma.js</strong></a><br/>というライブラリを使います。</li><li class="pt-2">使い方の例：&lt;script src=&quot;/src/js/shortBulma$$.js&quot;&gt;&lt;/script&gt;<br/>headタグ内に挿入。但し、pathは状況によって変わります。</li><li class="pt-2"><p class="pt-3 px-3">例えば、notification$$.htmlとshortBulma$$.jsが同じフォルダにある時は<br/>&lt;script src=&quot;./shortBulma$$.js&quot;&gt;&lt;/script&gt; または<br/>&lt;script src=&quot;shortBulma$$.js&quot;&gt;&lt;/script&gt; となります。</p></li><li>同じく、handlebars用に<br/>　<a href="../../sub/js/shortHbs.html"><strong class="has-text-warning-dark">shortHbs$$.js</strong></a><br/>というライブラリを使います。</li><hr/><dt>$$bulmaMenu('#burger', '#nav-links');</dt><dd class="py-2">狭い画面で表示されるBulmaのburgerメニューをコントロールします。<br/>burgerアイコンとbodyにそれぞれイベントを設定して、<ul><li>[burgerアイコン]のクリックでburgerメニューを開閉</li><li>[body]のクリックでburgerメニューを閉じます。</li></ul></dd><dt>$$codeS('#pre1')</dt><dd class="py-2">コードの全コピーを準備するため、コードをクリックしたときにそれを選択状態にします。</dd><li class="pt-1"><dl><dt><strong>$$qtFnqT('#template', v, '#contents');</strong></dt><dd class="py-2">テンプレート#templateをコンパイルし、コンテキストｖを適用して得られたHTMLコードを、要素#contentsのinnserHTMLプロパティに代入する。</dd></dl></li></ul></div></div></div></div><div class="column"></div></div><div class="section pt-0 pb-0"><nav class="breadcrumb has-arrow-separator"><ul class="is-size-6 container"><li><a href="/" class="has-text-grey-light">Top page</a></li><li><a href="../../sub/hbs/hbs.html" class="has-text-grey">Handlebars</a></li><li class="is-active"><a href="#">Wonderful people</a></li></ul></nav></div></div></section><script>$$bulmaMenu('#burger', '#nav-links');
+      $$codeS('#pre1');</script><script>let v = {
+        title: '素敵な人々',
+        people: [
+          {
+            name: 'John',
+            age: 34,
+            email: 'john@gmail.com',
+          },
+          {
+            name: 'Sally',
+            age: 22,
+            email: 'sally12@gmail.com',
+          },
+          {
+            name: 'George',
+            age: 45,
+            email: 'george@hotmail.com',
+          },
+        ],
+      };
+
+      Handlebars.registerHelper('bold', function (text) {
+        text = Handlebars.escapeExpression(text);
+        return new Handlebars.SafeString('<b>' + text + '</b>');
+      });
+
+      $$qtFnqT('#template', v, '#contents');</script><script src="../../../main.edb029307dd3d0de4efb.bundle.js"></script><script src="../../../vendor.a1ca0e1f75d8d838f56c.bundle.js"></script></body></html>
