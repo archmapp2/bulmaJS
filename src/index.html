@@ -10,12 +10,16 @@
 		<title>初回 Bulma Project</title>
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
 		/>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"
-    />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma-tooltip@3.0.2/dist/css/bulma-tooltip.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"
+		/>
 
 		<script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
 
@@ -118,7 +122,7 @@
 		</nav>
 
 		<section class="section">
-			<div class="container">
+			<div class="container mb-0">
 				<div class="hero is-primary is-bold">
 					<div class="hero-body">
 						<div class="container">
@@ -440,7 +444,7 @@
 				</div>
 
 				<!-- breadcrumbs -->
-				<div class="section pt-3">
+				<!-- <div class="section pt-3">
 					<nav class="breadcrumb has-arrow-separator">
 						<ul class="is-size-6 container">
 							<li class="is-active">
@@ -448,7 +452,7 @@
 							</li>
 						</ul>
 					</nav>
-				</div>
+				</div> -->
 			</div>
 		</section>
 
@@ -469,16 +473,30 @@
 					</div>
 					<div class="column">
 						<button
-							class="button is-large is-primary mb-2"
+							class="button is-large is-primary my-2"
 							id="quick"
 							title="toggle, [ESC]key"
 						>
 							<span class="is-size-5">初回・Bulmaと共に！　</span>ハイライト
 						</button>
+						<button
+							class="
+								button
+								is-large is-info
+								has-tooltip-top has-tooltip-warning
+								my-2
+							"
+							onclick='window.open("https://www.archmapp.tech/")'
+							data-tooltip="Bulma & React入門・ゲーム"
+						>
+							<span class="is-size-5"
+								><small class="is-size-5">第二版</small> ・Bulmaと共に！</span
+							>
+						</button>
 					</div>
 					<div class="column is-half-mobile is-one-quarter-desktop">
-						<h6 class="title is-5">
-							提供: <span class="is-size-5">アーキエムアップ</span>
+						<h6 class="is-size-7">
+							提供: <span class="is-size-6">アーキエムアップ</span>
 						</h6>
 
 						<address>
